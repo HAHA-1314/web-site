@@ -19,42 +19,44 @@
  }
 
  #top-logo {
-    top: 10px;
+     top: 10px;
  }
+
  input {
-        text-align: start;
-        font: 20px/35px;
-        color: #333;
-        /* appearance: auto; */
-        /* position: fixed; */
-        margin-left: 15px;
-        margin-top: 8px;
-        width: 240px;
-        /* width: 100%; */
-        height: 30px;
-        background-color:rgba(210, 208, 208, 0);
-        /* border-radius: 35px; */
-        border-width: 0;
+     text-align: start;
+     font: 20px/35px;
+     color: #333;
+     /* appearance: auto; */
+     /* position: fixed; */
+     margin-left: 15px;
+     margin-top: 8px;
+     width: 240px;
+     /* width: 100%; */
+     height: 30px;
+     background-color: rgba(210, 208, 208, 0);
+     /* border-radius: 35px; */
+     border-width: 0;
  }
 
  input:hover {
-    color: #d8dad3;
+     color: #d8dad3;
  }
 
  input:focus {
-    initial-value: none;
+     initial-value: none;
  }
 
  #input-background {
-    display: inline-block;
-    left: 28%;
-    top: 15px;
-    width: 270px;
-    height: 45px;
-    background-color: rgba(210, 208, 208, 0.663);
-    /* background-image: url(image/search-icon.png); */
-    border-radius: 35px; 
+     display: inline-block;
+     left: 28%;
+     top: 15px;
+     width: 270px;
+     height: 45px;
+     background-color: rgba(210, 208, 208, 0.663);
+     /* background-image: url(image/search-icon.png); */
+     border-radius: 35px;
  }
+
  body {
      background-color: rgb(20, 20, 20);
      /* background-image: url(/web-site/video/yufengxing.m3u8); */
@@ -69,7 +71,7 @@
  }
 
  .quick-link {
-    /* display: inline-flex; */
+     /* display: inline-flex; */
      width: 35px;
      margin: 3px 10px 3px;
  }
@@ -84,21 +86,24 @@
      height: 60px;
      /* background-color: #ead2c7; */
  }
-span.content-text {
-    display: inline-block;
-    position: relative;
-    width: 8px;
-    height: 10px;
-    color: rgb(255,255,255,.4);
-    line-height: 2px;
-    font-size: 32px;
-    font-weight: 100;
-    padding-left: 40px;
-}
+
+ span.content-text {
+     display: inline-block;
+     position: relative;
+     width: 8px;
+     height: 10px;
+     color: rgb(255, 255, 255, .4);
+     line-height: 2px;
+     font-size: 32px;
+     font-weight: 100;
+     padding-left: 40px;
+ }
+
  a.content-text {
      display: inline-block;
      position: relative;
-    color: rgb(255, 255, 255, .4);;
+     color: rgb(255, 255, 255, .4);
+     ;
      line-height: 20px;
      height: 20px;
      font-size: 22px;
@@ -139,8 +144,8 @@ span.content-text {
      width: 138px;
      /*侧边导航栏宽度 固定*/
      height: 90%;
-    
-    /*从主站模仿*/
+
+     /*从主站模仿*/
      position: fixed;
      direction: rtl;
      overflow-y: scroll;
@@ -149,13 +154,13 @@ span.content-text {
      scrollbar-color: rgb(255, 255, 255, .4) transparent;
  }
 
-.sidenav::-webkit-scrollbar {
-        background-color: #F5F5F5;
-    }
+ .sidenav::-webkit-scrollbar {
+     background-color: #F5F5F5;
+ }
 
  .left-icon {
-    width: 20px;
-    line-height: 22px;
+     width: 20px;
+     line-height: 22px;
  }
 
  .sidenav-text {
@@ -164,10 +169,10 @@ span.content-text {
      font-size: 18px;
      /* align: center; */
      /* padding: 10px; */
-    margin-left: 15px;
-    padding: 10px;
+     margin-left: 15px;
+     padding: 10px;
      text-decoration: none;
-    
+
  }
 
  .sidenav-list {
@@ -195,42 +200,43 @@ span.content-text {
     float: right;
  } */
  #vip-link {
-    position: fixed;
-    display: inline-flex;
+     position: fixed;
+     display: inline-flex;
      /* width: 30px; */
      top: 15px;
      left: 60%;
  }
 
  #game-link {
-    position: fixed;
+     position: fixed;
      /* width: 30px; */
      top: 15px;
      left: 64%;
  }
 
  #history-link {
-    position: fixed;
+     position: fixed;
      width: 30px;
      top: 15px;
      left: 68%;
  }
+
  #create-link {
-    position: fixed;
-        /* width: 30px; */
-    top: 15px;
-    left: 72%;
+     position: fixed;
+     /* width: 30px; */
+     top: 15px;
+     left: 72%;
  }
 
  #download-link {
-    position: fixed;
-    /* width: 30px; */
-    top: 18px;
-    left: 76%;
+     position: fixed;
+     /* width: 30px; */
+     top: 18px;
+     left: 76%;
  }
 
  #touxiang-link {
-    position: fixed;
+     position: fixed;
      top: 15px;
      left: 80%;
  }
@@ -245,112 +251,154 @@ span.content-text {
      margin: 3px;
  }
 
-#img-feipingfeiche:hover {
-    content: url(image/feipingfeiche.png);
-}
+ #img-feipingfeiche:hover {
+     .poster>img {
+         content: url(../image/feipingfeiche.png);
+     }
 
-#img-huanlesong:hover {
-    content: url(image/huanlesong.png);
-}
-.img-text {
-      font-size: 18px;
-      color: #d8dad3;
-      text-align: center;
-      /* text-decoration: none; */
-}
+     .img-text {
+         color: white;
+     }
+ }
 
-.poster {
-    text-decoration: none;
-}
+ #img-huanlesong:hover {
+     .poster>img {
+         content: url(../image/huanlesong.png);
+     }
 
-.img-text:hover {
-    color: white;
-}
-.bgi{
-    /* width: 800px; */
-    position:absolute;
-    top: 0;
-    left: 200px;
-    object-position: top center;
+     .img-text {
+         color: white;
+     }
+ }
+
+ #img-xianni:hover {
+     .poster>img {
+         content: url(../image/xianni.png);
+     }
+     .img-text {
+         color: white;
+     }
+ }
+
+ #img-yufengxing:hover {
+     .poster>img {
+         content: url(../image/yufengxing.png);
+     }
+     .img-text {
+         color: white;
+     }
+ }
+
+ #img-xiaorizi:hover {
+     .poster>img {
+         content: url(../image/xiaorizi.png);
+     }
+     .img-text {
+         color: white;
+     }
+ }
+
+ .img-text {
+     font-size: 18px;
+     color: #d8dad3;
+     text-align: center;
+     /* text-decoration: none; */
+ }
+
+ .poster {
+     text-decoration: none;
+ }
+
+ /* .img-text:hover {
+     color: white;
+ } */
+
+ .bgi {
+     /* width: 800px; */
+     position: absolute;
+     top: 0;
+     left: 200px;
+     object-position: top center;
  }
 
  .video-icon {
-    position: absolute;
-    /* width: 50px; */
-    top: 450px;
-    left: 300px;
+     position: absolute;
+     /* width: 50px; */
+     top: 450px;
+     left: 300px;
  }
 
  .video-text {
-    font-size: 20px;
-    color: white;
-    margin-top: 10px;
+     font-size: 20px;
+     color: white;
+     margin-top: 10px;
  }
 
-.fir-image {
-    /* display: inline-block; */
-    width: 1600px;
-    height: 290px;
-    position: relative;
-    top: 700px;
-    left:160px;
-    overflow-y: hidden;
-    
-}
+ .fir-image {
+     /* display: inline-block; */
+     width: 1600px;
+     height: 290px;
+     position: relative;
+     top: 700px;
+     left: 160px;
+     overflow-y: hidden;
 
-.sec-image {
-    width: 1600px;
-    height: 290px;
-    position: relative;
-    top: 750px;
-    left: 160px;
-    overflow-y: hidden;
-}
-.popular-poster {
-    width: 350px;
-    margin: 10px;
-    border-radius: 10px;
-}
+ }
 
-.popular {
-    display: inline-block;
-   
-    /* overflow: hidden; */
-}
+ .sec-image {
+     width: 1600px;
+     height: 290px;
+     position: relative;
+     top: 750px;
+     left: 160px;
+     overflow-y: hidden;
+ }
 
-.popular>a {
-    text-decoration: none;
-}
+ .popular-poster {
+     width: 350px;
+     margin: 10px;
+     border-radius: 10px;
+ }
 
-.poster-name {
-    color: white;
-    font-size: 24px;
-    margin: 10px 10px 8px 8px;
-    padding: 4px;
-    line-height: 5px;
-}
+ .popular {
+     display: inline-block;
 
-.poster-description {
-    font-size: 18px;
-    color: #d8dad3;
-    margin: 12px;
-}
+     /* overflow: hidden; */
+ }
 
-.side-funtion1 {
-    display:inline;
-    position: fixed;
-    right: 0;
-    top: 80%;
-    width: 40px;
-    height: 40px;
-    background-color: #d8dad4;
-}
+ .popular>a {
+     text-decoration: none;
+ }
 
-.side-funtion2 {
-    display: inline-block;
-    position: relative;
-    top: 100%;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-}
+ .poster-name {
+     color: white;
+     font-size: 24px;
+     margin: 10px 10px 8px 8px;
+     padding: 4px;
+     line-height: 5px;
+ }
+
+ .poster-description {
+     font-size: 18px;
+     color: #d8dad3;
+     margin: 12px;
+ }
+
+ .side-funtion1 {
+     display: inline;
+     position: fixed;
+     right: 0;
+     top: 80%;
+     width: 40px;
+     height: 40px;
+     background-color: #d8dad4;
+ }
+
+ .side-funtion2 {
+     display: inline-block;
+     position: relative;
+     top: 100%;
+     width: 40px;
+     height: 40px;
+     background-color: white;
+ }

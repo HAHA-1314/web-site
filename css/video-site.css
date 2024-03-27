@@ -400,7 +400,7 @@ div.line-2 {
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 300px;
+    height: 600px;
     top: 128px;
     background-color: rgb(38, 38, 38);
     border-radius: 15px;
@@ -433,12 +433,14 @@ div.line-2 {
 .sv-list {
     position: relative;
     display: inline-block;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-left: 15px;
-
+    height: 100px;
 }
 
 .sv-photo {
+    /* position: relative; */
+    /* top: -100px; */
     width: 200px;
     border-radius: 15px;
 }
@@ -452,4 +454,49 @@ div.line-2 {
     padding-right: 18px;
     color: white;
     font-size: 16px;
+}
+
+.sv-list>span {
+    position: relative;
+    color: #b3b6b0;
+    font-size: 14px;
+    /* top: -100px; */
+    /* left: 200px; */
+}
+
+.sv-des-1 {
+    top: -100px;
+    left: 210px;
+}
+
+.sv-des-2 {
+    top: -92px;
+    left: 210px;
+}
+
+.sv-des-2>a {
+    text-decoration: none;
+    color: #b3b6b0;
+    font-size: 14px;
+}
+
+.sv-image {
+    position: relative;
+    display: inline-block;
+    top: -88px;
+    width: 20px;
+    left: 208px;
+    border-radius: 2px;
+}
+
+.sv-all {
+    width: 90%;
+    height: 50px;
+    background-color: rgb(153, 153, 153);
+    color: #b3b6b0;
+    margin: 0px auto;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 25px;
 }
