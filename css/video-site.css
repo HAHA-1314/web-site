@@ -1,6 +1,20 @@
-.bgi {
-    top: 100px;
-    left: 100px;
+.box {
+    /* display: inline-block; */
+    /* top: 100px; */
+    /* left: 100px; */
+    /* float: left; */
+    margin: 100px 100px;
+    height: 100%;
+}
+
+input {
+    background-color: rgb(38, 38, 38);
+    color: #8f8f8f;
+}
+
+#input-background {
+    background-color: rgb(38, 38, 38);
+    border-radius: 35px;
 }
 
 .top-nav {
@@ -12,16 +26,19 @@
     left: 0px;
     height: 100px;
     width: 100%;
-    background-color: rgb(20,20,20);
+    background-color: rgb(20, 20, 20);
 }
 
 .top-text {
     display: inline-block;
     position: flex;
-    top:0px;
+    top: 0px;
     left: 250px;
     width: 100px;
-    
+}
+
+.top-text>a {
+    text-decoration: none;
 }
 
 .top-content {
@@ -34,4 +51,405 @@
 
 .top-content:hover {
     color: white;
+}
+
+#input-background {
+    top: 28px;
+    left: 800px;
+    /* width: 400px; */
+}
+
+#vip-link {
+    position: fixed;
+    display: inline-flex;
+    /* width: 30px; */
+    top: 28px;
+    left: 1100px;
+}
+
+#game-link {
+    position: fixed;
+    /* width: 30px; */
+    top: 28px;
+    left: 1160px;
+}
+
+#history-link {
+    position: fixed;
+    /* width: 30px; */
+    top: 28px;
+    left: 1220px;
+}
+
+#create-link {
+    position: fixed;
+    /* width: 50px; */
+    top: 28px;
+    left: 1280px;
+}
+
+#download-link {
+    position: fixed;
+    /* width: 30px; */
+    top: 31px;
+    left: 1340px;
+}
+
+#touxiang-link {
+    position: fixed;
+    top: 28px;
+    left: 1400px;
+}
+
+.box>video {
+    display: inline-block;
+}
+
+.right-list {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 1196px;
+    width: 420px;
+    height: 4000px;
+    background-color: #fff;
+    overflow: hidden;
+    /* right: 100000px; */
+}
+
+.vip-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    top: 100px;
+    border-radius: 15px;
+    background-color: rgb(38, 38, 38);
+}
+
+.vip {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    top: 10px;
+    left: 15px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #F4DDA0;
+    color: rgb(103, 78, 32);
+    text-align: center;
+    line-height: 45px;
+    /*朱山尽国服配色*/
+}
+
+.vip:hover {
+    background-color: #E2B359;
+}
+
+.decription-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    top: 110px;
+    height: 790px;
+    border-radius: 15px;
+    background-color: rgb(38, 38, 38);
+}
+
+.photo {
+    /* display: inline-block; */
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+#head-text {
+    color: white;
+    font-size: 26px;
+}
+
+.photo-text {
+    /* display: inline; */
+    position: relative;
+    left: 20px;
+    top: -95px;
+    color: rgb(84, 84, 84);
+}
+
+.intro {
+    position: absolute;
+    left: 249px;
+    top: 31px;
+    width: 13px;
+}
+
+.intro-2 {
+    position: absolute;
+    left: 146px;
+    top: 210px;
+    width: 13px;
+}
+
+.intro-text {
+    position: relative;
+    left: 28px;
+    top: -97px;
+    color: rgb(153, 153, 153);
+}
+
+.sec-intro-text {
+    position: relative;
+    left: 145px;
+    top: -87px;
+    color: rgb(153, 153, 153);
+}
+
+.thi-intro-text {
+    position: relative;
+    left: 128px;
+    top: -76px;
+    color: rgb(153, 153, 153);
+}
+
+.for-intro-text {
+    position: relative;
+    left: 128px;
+    top: -70px;
+    color: rgb(153, 153, 153);
+}
+
+.fif-intro-text {
+    position: relative;
+    display: inline-block;
+    left: 5px;
+    top: -40px;
+    margin: 5px;
+    line-height: 28px;
+    color: rgb(153, 153, 153);
+}
+
+.hot {
+    position: absolute;
+    display: inline-block;
+    left: 122px;
+    top: 60.2px;
+    width: 18px;
+}
+
+.img-1 {
+    position: relative;
+    /* display: inline-block; */
+    left: 45px;
+    top: -30px;
+    width: 50px;
+}
+
+.img-2 {
+    position: relative;
+    /* display: inline-block; */
+    left: 180px;
+    top: -30px;
+    width: 50px;
+}
+
+.img-3 {
+    position: relative;
+    /* display: inline-block; */
+    left: 325px;
+    top: -30px;
+    width: 50px;
+}
+
+
+.img-line {
+    display: inline-block;
+    position: relative;
+    /* width: 100px; */
+    height: 60px;
+}
+
+.img-link {
+    display: inline-block;
+    width: 0px;
+}
+
+hr {
+    position: relative;
+    top: -5%;
+    width: 95%;
+    opacity: .2;
+}
+
+.choose-list {
+    position: relative;
+    display: inline-block;
+    top: -30px;
+    width: 100%;
+}
+
+div.list-row-1 {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    background-color: rgb(88, 88, 88);
+    width: 55px;
+    margin-left: 15px !important;
+}
+
+
+div[class*="choose"] {
+    /* background-color: #fff; */
+    margin-top: 5px;
+    height: 50px;
+}
+
+div[class*="list-row"] {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    background-color: rgb(88, 88, 88);
+    width: 55px;
+    margin-left: 8px;
+    border-radius: 5px;
+}
+
+
+.list-num {
+    position: absolute;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color: #b3b6b0;
+}
+
+div[class*="list-row"]:hover {
+    .list-num {
+        color: white;
+    }
+}
+
+.bottom-header {
+    color: white;
+    font-size: 36px;
+    margin-top: 15px;
+    /* float: left; */
+    /* overflow: hidden; */
+}
+
+.tab-left {
+    position: relative;
+    display: inline-block;
+    left: 412px;
+    width: 25px;
+}
+
+.tab-right {
+    position: relative;
+    display: inline-block;
+    left: 408px;
+    /* top: -0.5px; */
+    width: 25px;
+}
+
+.num {
+    position: relative;
+    display: inline-block;
+    left: 410px;
+    top: -0.5px;
+    width: 24px;
+}
+
+.comment-line {
+    position: relative;
+    display: inline-block;
+    width: 340px;
+    height: 170px;
+    background-color: rgb(84, 84, 84);
+    margin-top: 20px;
+    margin-left: 18px;
+    border-radius: 18px;
+}
+
+.actor-line {
+    position: relative;
+    display: inline-block;
+    width: 240px;
+    height: 80px;
+    border-radius: 50px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: rgb(84, 84, 84);
+}
+
+div.line-1 {
+    display: inline-block;
+    height: 200px;
+    overflow-y: hidden;
+}
+
+div.line-2 {
+    display: inline-block;
+    height: 120px;
+    overflow-y: hidden;
+}
+
+.shortvideo {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    top: 128px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 15px;
+}
+
+.sv-head-text {
+    font-size: 30px;
+    color: white;
+    margin: 15px;
+}
+
+.sv-tab {
+    position: relative;
+    display: inline-block;
+    color: #b3b6b0;
+    background-color: rgb(84, 84, 84);
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 15px;
+    border-radius: 15px;
+}
+
+.sv-tab:hover {
+    color: white;
+}
+
+.sv-list {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 15px;
+
+}
+
+.sv-photo {
+    width: 200px;
+    border-radius: 15px;
+}
+
+.sv-content {
+    /* display: inline-block; */
+    position: relative;
+    top: -115px;
+    left: 210px;
+    width: 180px;
+    padding-right: 18px;
+    color: white;
+    font-size: 16px;
 }

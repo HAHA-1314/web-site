@@ -17,6 +17,10 @@
      height: 70px;
      background-color: rgb(20, 20, 20, 0.4);
  }
+
+ #top-logo {
+    top: 10px;
+ }
  input {
         text-align: start;
         font: 20px/35px;
@@ -36,6 +40,11 @@
  input:hover {
     color: #d8dad3;
  }
+
+ input:focus {
+    initial-value: none;
+ }
+
  #input-background {
     display: inline-block;
     left: 28%;
@@ -43,12 +52,13 @@
     width: 270px;
     height: 45px;
     background-color: rgba(210, 208, 208, 0.663);
+    /* background-image: url(image/search-icon.png); */
     border-radius: 35px; 
  }
  body {
      background-color: rgb(20, 20, 20);
      /* background-image: url(/web-site/video/yufengxing.m3u8); */
-     background-position: center top;
+     /* background-position: center top; */
      /* background-attachment: fixed; */
      background-repeat: no-repeat;
      background-size: 1442px;
@@ -61,13 +71,13 @@
  .quick-link {
     /* display: inline-flex; */
      width: 35px;
-     padding: 3px 10px 3px;
+     margin: 3px 10px 3px;
  }
 
  .content-head-text {
      display: inline-block;
      position: relative;
-     font-size: 28px;
+     font-size: 38px;
      font-weight: 500;
      line-height: 60px;
      color: white;
@@ -78,10 +88,10 @@ span.content-text {
     display: inline-block;
     position: relative;
     width: 8px;
-    height: 20px;
+    height: 10px;
     color: rgb(255,255,255,.4);
-    line-height: 0px;
-    font-size: 28px;
+    line-height: 2px;
+    font-size: 32px;
     font-weight: 100;
     padding-left: 40px;
 }
@@ -91,7 +101,7 @@ span.content-text {
     color: rgb(255, 255, 255, .4);;
      line-height: 20px;
      height: 20px;
-     font-size: 18px;
+     font-size: 22px;
      text-decoration: none;
      margin: 40px;
      /* border-right-color: 1px solid white; */
@@ -103,7 +113,7 @@ span.content-text {
      height: 90px;
      position: relative;
      left: 200px;
-     top: 820px;
+     top: 680px;
      overflow: hidden;
      /* color: white; */
  }
@@ -181,6 +191,9 @@ span.content-text {
      width: 100%;
  }
 
+ /* .top-link {
+    float: right;
+ } */
  #vip-link {
     position: fixed;
     display: inline-flex;
@@ -198,7 +211,7 @@ span.content-text {
 
  #history-link {
     position: fixed;
-     /* width: 30px; */
+     width: 30px;
      top: 15px;
      left: 68%;
  }
@@ -232,6 +245,13 @@ span.content-text {
      margin: 3px;
  }
 
+#img-feipingfeiche:hover {
+    content: url(image/feipingfeiche.png);
+}
+
+#img-huanlesong:hover {
+    content: url(image/huanlesong.png);
+}
 .img-text {
       font-size: 18px;
       color: #d8dad3;
@@ -267,3 +287,70 @@ span.content-text {
     margin-top: 10px;
  }
 
+.fir-image {
+    /* display: inline-block; */
+    width: 1600px;
+    height: 290px;
+    position: relative;
+    top: 700px;
+    left:160px;
+    overflow-y: hidden;
+    
+}
+
+.sec-image {
+    width: 1600px;
+    height: 290px;
+    position: relative;
+    top: 750px;
+    left: 160px;
+    overflow-y: hidden;
+}
+.popular-poster {
+    width: 350px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.popular {
+    display: inline-block;
+   
+    /* overflow: hidden; */
+}
+
+.popular>a {
+    text-decoration: none;
+}
+
+.poster-name {
+    color: white;
+    font-size: 24px;
+    margin: 10px 10px 8px 8px;
+    padding: 4px;
+    line-height: 5px;
+}
+
+.poster-description {
+    font-size: 18px;
+    color: #d8dad3;
+    margin: 12px;
+}
+
+.side-funtion1 {
+    display:inline;
+    position: fixed;
+    right: 0;
+    top: 80%;
+    width: 40px;
+    height: 40px;
+    background-color: #d8dad4;
+}
+
+.side-funtion2 {
+    display: inline-block;
+    position: relative;
+    top: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
