@@ -430,7 +430,7 @@ div.line-2 {
     position: relative;
     width: 94px;
     height: 94px;
-    top: 42px;
+    top: 40px;
     left: -149px;
     margin-left: -100px;
     background-color: rgb(84, 84, 84);
@@ -562,14 +562,428 @@ div.line-2 {
 
 .sv-all {
     position: relative;
+    display: inline-block;
     top: -65px;
     width: 90%;
     height: 50px;
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(88, 88, 88);
     color: #b3b6b0;
-    margin: 0px auto;
+    margin: 0px 20px;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
     border-radius: 25px;
+}
+
+.sv-a-all {
+    text-decoration: none;
+    color: #b3b6b0;
+    width: 90%;
+    height: 50px;
+    /* width:0px;  */
+    /* height: 0px; */
+    /* display: inline; */
+    position: relative;
+    /* top: -50px; */
+}
+
+.line-3 {
+    position: relative;
+    /* display: inline-block; */
+    top: -30px;
+    left: 40px;
+    /* height: 50px; */
+}
+
+.line-4 {
+    display: inline-block;
+    position: relative;
+    height: 310px;
+    top: -45px;
+    padding-top: 60px;
+    /* 图片高太大了，padding顶高 */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+}
+
+.poster-image>img {
+    width: 222px;
+    border-radius: 10px;
+}
+
+.act-poster {
+    position: relative;
+    display: inline-block;
+    top: -45px;
+    height: 355px;
+    width: 222px;
+    margin-left: 32px;
+    overflow: hidden;
+
+    /* padding-left: 12px; */
+}
+
+.vs-poster-name {
+    /* display: inline-block; */
+    position: relative;
+    font-size: 24px;
+    width: 222px;
+    text-align: center;
+    color: white;
+    margin-top: 8px;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+}
+
+.zb-goods {
+    position: relative;
+    display: inline-block;
+    top: 125px;
+    background-color: rgb(38, 38, 38);
+    width: 100%;
+    height: 430px;
+    border-radius: 15px;
+}
+
+.zb-head-text {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    color: white;
+    font-size: 32px;
+    /* line-height: 80px; */
+    padding-top: 15px;
+    margin-left: 20px;
+}
+
+.zb-head-text>span {
+    /* all: initial; */
+    left: 100px;
+}
+
+#zb-tab-left {
+    top: 5px;
+    left: 60px;
+}
+
+#zb-tab-num {
+    top: 3px;
+    left: 162px;
+}
+
+#zb-tab-right {
+    top: 2.5px;
+    left: 78.5px;
+}
+
+.item-list {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    /* background-color: #fff; */
+    width: 200px;
+    height: 285px;
+}
+
+.item-row>img {
+    width: 120px;
+    margin-top: 5px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+.item-list-column {
+    width: 200px;
+    height: 130px;
+    margin-top: 5px;
+    margin-left: 15px;
+    /* margin-right: 20px; */
+    position: relative;
+    display: inline-block;
+    /* overflow: hidden; */
+    white-space: nowrap;
+}
+
+.item-row {
+    display: inline-block;
+    position: relative;
+    width: 350px;
+    height: 130px;
+    background-color: rgb(88, 88, 88);
+    border-radius: 10px;
+    margin-right: 3px;
+}
+
+.item-title {
+    display: inline-block;
+    position: relative;
+    color: white;
+    top: -70px;
+    width: 200px;
+    left: 10px;
+    font-size: 22px;
+}
+
+.item-info-1 {
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    left: -195px;
+    font-weight: 800;
+    font-size: 18px;
+    /* 大于14px位置偏移？？？？？ */
+    font-family: PingFang SC;
+    color: white;
+    white-space: initial;
+}
+
+.item-info-2 {
+    display: inline-block;
+    position: relative;
+    top: -28px;
+    left: -198px;
+    font-size: 28px;
+    color: white;
+    font-weight: 700;
+    white-space: initial;
+    /* 字体不支持 */
+    /* font-family: VemPrice-Regular; */
+}
+
+.item-info-3 {
+    display: inline-block;
+    position: relative;
+    top: -28px;
+    left: -198px;
+    font-size: 14px;
+    /* white-space: initial; */
+    color: rgb(153, 153, 153);
+    /* font-weight: 700; */
+    /* 字体不支持 */
+    /* font-family: VemPrice-Regular; */
+}
+
+#zb-go-to {
+    top: 0px;
+}
+
+.game-ad {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    top: 140px;
+    height: 190px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 15px;
+}
+
+.game-title {
+    color: white;
+    position: relative;
+    font-size: 26px;
+    /* top: -190px; */
+    margin: 15px;
+    width: 250px;
+}
+
+.game-tab {
+    width: 20px;
+}
+
+.close-ad {
+    display: inline-block;
+    color: #b3b6b0;
+    background-color: rgb(84, 84, 84, .8);
+    top: -40px;
+    left: 335px;
+    height: 24px;
+    width: 60px;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.game-photo {
+    position: relative;
+    display: inline-block;
+    background-image: url(../image/game-1.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 15 center;
+    top: 10px;
+    /* background-color: rgb(84, 84, 84); */
+    margin-left: 15px;
+    height: 100px;
+    width: 90%;
+}
+
+.game-name {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    left: 110px;
+    top: 10px;
+}
+
+.game-info {
+    position: relative;
+    display: inline-block;
+    color: #8f8f8f;
+    font-size: 18px;
+    left: -75px;
+    top: 60px;
+}
+
+.game-buttom {
+    position: relative;
+    display: inline-block;
+    background-color: #DFBC0033;
+    height: 40px;
+    width: 75px;
+    left: 310px;
+    border-radius: 20px;
+    color: #DFBC00;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    /* font-weight: 500; */
+}
+
+.game-photo:hover {
+    .game-name {
+        color: #e7cd39;
+    }
+
+    .game-buttom {
+        color: #000;
+        background-color: #e7cd39;
+    }
+}
+
+.advice-box {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(28,28,28);
+    top: 60px;
+    border-radius: 15px;
+    width: 100%;
+    height: 1900px;
+}
+
+.advice-title {
+    color: white;
+    font-size: 28px;
+    margin-top: 15px;
+    /* margin-left: 20px; */
+}
+
+.advice-tab-column {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.advice-tab {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(84, 84, 84);
+    height: 30px;
+    line-height: 30px;
+    /* width: 130px; */
+    border-radius: 15px;
+    margin-right: 5px;
+    text-align: center;
+    color: #b3b6b0;
+}
+
+.advice-tab:hover {
+    color:white;
+}
+
+
+.advice-column {
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+    border-radius: 15px;
+    width: 100%;
+    background-color: rgb(38, 38, 38);
+    height: 380px;
+}
+
+.advice-bottom{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.advice-name {
+    color: white;
+    font-size: 22px;
+    position: relative;
+    display: inline-block;
+    top: -82px;
+    left: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 150px;
+    overflow: hidden;
+}
+
+.subscribe-buttom {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(68, 68, 68);
+    width: 70px;
+    height: 35px;
+    border-radius: 17.5px;
+    top:-95px;
+    left: 80px;
+    color: white;
+    /* text-align: left; */
+    line-height: 35px;
+}
+
+.advice-info-1 {
+    color: #8f8f8f;
+    position: relative;
+    display: inline-block;
+    top:-40px;
+    left: -126px;
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.advice-info-2 {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    left: 94px;
+    top: -45px;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    width: 150px;
+    white-space: nowrap;
+}
+
+#advice-img{
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#bottom-img {
+    border-radius: 10px;
+    width: 80px;
+}
+
+#subscribe-img {
+    width: 18px;
+    position: relative;
+    top: 3px;
+    left: 12px;
+    margin-right: 15px;
 }
