@@ -381,6 +381,60 @@ div[class*="list-row"]:hover {
     border-radius: 18px;
 }
 
+.comment-line img {
+    width: 50px;
+}
+
+#rating-line01 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    top: 25px;
+    font-size: 17px;
+}
+
+.rating-icon {
+    display: inline-block;
+    position: relative;
+    top: 35px;
+}
+
+.rating-icon span {
+    position: relative;
+    top: -15px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #f68616;
+}
+
+#rating-line03 {
+    position: relative;
+    display: inline-block;
+    top: 35px;
+    width: 100%;
+    color: #b3b6b0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.rating-box-left {
+    display: inline-block;
+    position: relative;
+    width: 140px;
+    height: 100%;
+}
+
+
+
+.rating-box-right {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 100%;
+}
+
 .actor-line {
     position: relative;
     display: inline-block;
@@ -836,31 +890,44 @@ div.line-2 {
 }
 
 @keyframes run {
-    0%,8% {
+
+    0%,
+    8% {
         /* left: 0px; */
-        transform: translateX(0px); 
+        transform: translateX(0px);
 
     }
-    16%,24% {
+
+    16%,
+    24% {
         /* left: -415px; */
         transform: translateX(-415px);
     }
-    32%,40% {
+
+    32%,
+    40% {
         /* left: -830px; */
         transform: translateX(-830px);
     }
-    48%,56% {
+
+    48%,
+    56% {
         /* left: -1245px; */
         transform: translateX(-1245px);
     }
-    64%,72% {
+
+    64%,
+    72% {
         /* left: -1660px; */
         transform: translateX(-1660px);
     }
-    80%,88% {
+
+    80%,
+    88% {
         /* left: -2075px; */
         transform: translateX(-2075px);
     }
+
     100% {
         /* left: 0px; */
         transform: translateX(0px);
@@ -1201,7 +1268,7 @@ div.line-2 {
     cursor: pointer;
 }
 
-.promo-nav input{
+.promo-nav input {
     position: absolute;
     width: 12px;
     height: 12px;
@@ -1213,11 +1280,11 @@ div.line-2 {
 
 
 
-input:hover + .nav-a {
-        background-color: #fff8 ; 
+input:hover+.nav-a {
+    background-color: #fff8;
 }
 
-input:checked + .nav-a {
+input:checked+.nav-a {
     background-color: white;
 }
 
