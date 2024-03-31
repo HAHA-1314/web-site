@@ -7,6 +7,12 @@
     height: 100%;
 }
 
+.left-list {
+    display: inline-block;
+    position: relative;
+    height: 4000px;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -20,6 +26,9 @@ input {
 #input-background {
     background-color: rgb(38, 38, 38);
     border-radius: 35px;
+    top: 28px;
+    left: 800px;
+    /* width: 400px; */
 }
 
 .top-nav {
@@ -56,12 +65,6 @@ input {
 
 .top-content:hover {
     color: white;
-}
-
-#input-background {
-    top: 28px;
-    left: 800px;
-    /* width: 400px; */
 }
 
 #vip-link {
@@ -117,7 +120,7 @@ input {
     left: 1196px;
     width: 420px;
     height: 4000px;
-    background-color: #fff;
+    /* background-color: #fff; */
     overflow: hidden;
     /* right: 100000px; */
 }
@@ -601,8 +604,9 @@ div.line-2 {
     height: 310px;
     top: -45px;
     padding-top: 60px;
+
     /* 图片高太大了，padding顶高 */
-    /* overflow: hidden; */
+    overflow: hidden;
     /* text-overflow: ellipsis; */
 }
 
@@ -767,6 +771,14 @@ div.line-2 {
     top: 0px;
 }
 
+.game-display-box {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    width: 2800px;
+    height: 140px;
+}
+
 .game-ad {
     position: relative;
     display: inline-block;
@@ -805,20 +817,78 @@ div.line-2 {
 
 .game-photo {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
+    float: left;
     background-image: url(../image/game-1.png);
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: 15 center;
     top: 10px;
+    /* left: -415px; */
     /* background-color: rgb(84, 84, 84); */
     margin-left: 15px;
     height: 100px;
-    width: 90%;
+    width: 400px;
+    animation-duration: 16s;
+    animation-name: run;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+}
+
+@keyframes run {
+    0%,8% {
+        /* left: 0px; */
+        transform: translateX(0px); 
+
+    }
+    16%,24% {
+        /* left: -415px; */
+        transform: translateX(-415px);
+    }
+    32%,40% {
+        /* left: -830px; */
+        transform: translateX(-830px);
+    }
+    48%,56% {
+        /* left: -1245px; */
+        transform: translateX(-1245px);
+    }
+    64%,72% {
+        /* left: -1660px; */
+        transform: translateX(-1660px);
+    }
+    80%,88% {
+        /* left: -2075px; */
+        transform: translateX(-2075px);
+    }
+    100% {
+        /* left: 0px; */
+        transform: translateX(0px);
+    }
+}
+
+#game-2 {
+    background-image: url(../image/game-2.png);
+}
+
+#game-3 {
+    background-image: url(../image/game-3.png);
+}
+
+#game-4 {
+    background-image: url(../image/game-4.png);
+}
+
+#game-5 {
+    background-image: url(../image/game-5.png);
+}
+
+#game-6 {
+    background-image: url(../image/game-6.png);
 }
 
 .game-name {
-    position: relative;
+    position: absolute;
     display: inline-block;
     color: white;
     font-size: 20px;
@@ -827,20 +897,21 @@ div.line-2 {
 }
 
 .game-info {
-    position: relative;
+    position: absolute;
     display: inline-block;
     color: #8f8f8f;
-    font-size: 18px;
-    left: -75px;
+    font-size: 15px;
+    left: 110px;
     top: 60px;
 }
 
 .game-buttom {
-    position: relative;
+    position: absolute;
     display: inline-block;
     background-color: #DFBC0033;
     height: 40px;
     width: 75px;
+    top: 30px;
     left: 310px;
     border-radius: 20px;
     color: #DFBC00;
@@ -864,8 +935,6 @@ div.line-2 {
 .advice-box {
     display: inline-block;
     position: relative;
-    background-color: rgb(28,28,28);
-    top: 60px;
     border-radius: 15px;
     width: 100%;
     height: 1900px;
@@ -899,7 +968,7 @@ div.line-2 {
 }
 
 .advice-tab:hover {
-    color:white;
+    color: white;
 }
 
 
@@ -913,21 +982,21 @@ div.line-2 {
     height: 380px;
 }
 
-.advice-bottom{
+.advice-bottom {
     margin-left: 15px;
     margin-top: 15px;
 }
 
 .advice-name {
     color: white;
-    font-size: 22px;
+    font-size: 26px;
     position: relative;
     display: inline-block;
-    top: -82px;
+    top: -75px;
     left: 10px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 150px;
+    width: 220px;
     overflow: hidden;
 }
 
@@ -938,8 +1007,8 @@ div.line-2 {
     width: 70px;
     height: 35px;
     border-radius: 17.5px;
-    top:-95px;
-    left: 80px;
+    top: -90px;
+    left: 10px;
     color: white;
     /* text-align: left; */
     line-height: 35px;
@@ -949,8 +1018,8 @@ div.line-2 {
     color: #8f8f8f;
     position: relative;
     display: inline-block;
-    top:-40px;
-    left: -126px;
+    top: -40px;
+    left: 95px;
     width: 150px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -961,15 +1030,20 @@ div.line-2 {
     font-size: 18px;
     position: relative;
     display: inline-block;
-    left: 94px;
-    top: -45px;
+    left: -60px;
+    top: -75px;
     text-overflow: ellipsis;
     font-weight: 500;
     width: 150px;
     white-space: nowrap;
 }
 
-#advice-img{
+.advice-a {
+    display: inline-block;
+
+}
+
+#advice-img {
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -987,3 +1061,177 @@ div.line-2 {
     left: 12px;
     margin-right: 15px;
 }
+
+.discuss-list {
+    position: relative;
+    display: inline-block;
+    height: 2000px;
+    width: 1100px;
+    margin-left: 100px;
+    margin-top: 40px;
+    top: -150px;
+}
+
+.discuss-title {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 36px;
+}
+
+
+.discuss-num {
+    color: white;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    font-style: 20px;
+    top: -10px;
+    /* height: 20px; */
+}
+
+.discuss-head-line {
+    margin-bottom: 25px;
+}
+
+.discuss-line {
+    position: relative;
+    display: inline-block;
+    /* top: 100px; */
+    height: 100px;
+    /* width: 700px; */
+}
+
+.discuss-line>a>img {
+    width: 60px;
+}
+
+.discuss-write>img {
+    width: 35px;
+    margin-left: 5px;
+    margin-bottom: -10px;
+}
+
+.discuss-input {
+    display: inline-block;
+    position: relative;
+    width: 860px;
+    margin-left: 9px;
+    background-color: rgb(48, 47, 47);
+    height: 45px;
+    border-radius: 10px;
+    top: -22px;
+}
+
+.discuss-login {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #51AFD8;
+    /* 突泉配色*/
+    margin-top: 4px;
+    margin-left: 10px;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    line-height: 36px;
+}
+
+.discuss-write {
+    position: relative;
+    top: -20px;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.discuss-tab {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(84, 84, 84);
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    color: #b3b6b0;
+}
+
+#video-input {
+    top: -12px;
+}
+
+#video-input:focus::placeholder {
+    color: rgb(38, 38, 38);
+}
+
+#video-input:hover {
+    color: white;
+
+    .button-span>img {
+        content: url(../icon/search-hot.png);
+    }
+}
+
+.promo-nav {
+    position: absolute;
+    /* top: 1px; */
+    bottom: 10px;
+    left: 200px;
+    width: 120px;
+    height: 15px;
+    margin-left: -60px;
+    background-color: transparent;
+    user-select: none;
+}
+
+.nav-a {
+    display: inline-block;
+    /* float: left; */
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #fff3;
+    border-radius: 100%;
+    z-index: 1;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.promo-nav input{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+input:hover + .nav-a {
+        background-color: #fff8 ; 
+}
+
+input:checked + .nav-a {
+    background-color: white;
+}
+
+/* 暂未完成游戏广告点击轮播 */
+/* #nav-control-1:checked {
+        transform: translateX(0px);
+}
+
+.game-container {
+    display: inline-block;
+    height: 120px;
+}
+
+#nav-control-2:checked ~.game-container {
+    transform: translateX(-415px);
+}
+ */
