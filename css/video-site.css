@@ -371,8 +371,9 @@ div[class*="list-row"]:hover {
 }
 
 .comment-line {
-    position: relative;
+    /* position: relative; */
     display: inline-block;
+    /* flex: 2; */
     width: 340px;
     height: 170px;
     background-color: rgb(84, 84, 84);
@@ -426,8 +427,6 @@ div[class*="list-row"]:hover {
     height: 100%;
 }
 
-
-
 .rating-box-right {
     display: inline-block;
     position: relative;
@@ -471,8 +470,11 @@ div[class*="list-row"]:hover {
 }
 
 div.line-1 {
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
     height: 200px;
+    width: 1050px;
     overflow-y: hidden;
 }
 

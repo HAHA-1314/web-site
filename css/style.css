@@ -360,24 +360,36 @@
 
  .popular-poster {
      width: 350px;
-     margin-right: 20px;
+     /* margin-right: 20px; */
      border-radius: 10px;
  }
 
  .popular {
      display: inline-block;
+     position: relative;
+     margin-right: 20px;
  }
 
  .popular:hover {
-     margin-right: 20px;
+     /* margin-right: 20px; */
      width: 350px;
-     height: 400px;
-     background-color: rgba(210, 208, 208, 0.663);
+     height: 290px;
+     background-color: rgb(68, 68, 68);
      border-radius: 15px;
 
      .popular-poster {
          border-bottom-right-radius: 0px;
          border-bottom-left-radius: 0px;
+     }
+     .poster-name {
+        margin-left: 10px;
+     }
+     .poster-description {
+        margin-left: 10px;
+     }
+
+     .sub-btn {
+        display: inline-block;
      }
  }
 
@@ -388,16 +400,39 @@
  .poster-name {
      color: white;
      font-size: 24px;
-     margin: 10px 10px 8px 8px;
-     padding: 4px;
-     line-height: 5px;
+     /* margin:  10px 8px 8px; */
+     /* padding: 4px; */
+     line-height: 35px;
  }
 
  .poster-description {
      font-size: 18px;
      color: #d8dad3;
-     margin: 12px;
+     /* margin: 12px; */
  }
+
+.sub-btn {
+    display: none;
+    position: absolute;
+    background-color: rgba(210, 208, 208, 0.663);
+    width: 88px;
+    height: 45px;
+    font-size: 20px;
+    border-radius: 44px;
+    top: 215px;
+    left: 245px;
+    color: white;
+    /* text-align: left; */
+    line-height: 35px;
+}
+
+#subscribe-img {
+    width: 28px;
+    position: relative;
+    top: 7px;
+    left: 12px;
+    margin-right: 15px;
+}
 
  .side-funtion1 {
      display: inline;
@@ -492,7 +527,7 @@
  }
 
  .drop-list {
-     top: 60px;
+     /* top: -1900px; */
      position: absolute;
  }
 
@@ -502,7 +537,7 @@
      left: min(1100px, 55%);
      width: 360px;
      height: 440px;
-     top: 100px;
+     top: 60px;
      background-color: rgb(10, 10, 10);
      border-radius: 20px;
      box-shadow: 0px 8px 16px 0px rgba(20, 20, 20, 0.5);
@@ -622,3 +657,19 @@
  #banner-right {
      left: 755px;
  }
+
+.corner-vip-icon {
+    color: rgb(102,61,0);
+    background-color: rgb(255,223,137);
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    border-radius: 6px;
+    width: 50px;
+    height: 25px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+    /* z-index: ; */
+}
