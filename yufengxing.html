@@ -15,14 +15,14 @@
 </head>
 <body>
     <!-- 本页所有的a herf="#"标签皆为占位符，后续完善功能 -->
-    <div class="box">
-            <!-- <div class="left-list"> -->
+        <div class="box">
+            <div class="left-list">
                 <video src="video/ad.mp4" 
                 autoplay="true"
-                height="600" 
                 loop="true"
                 muted;
-                controls="true"></video>
+                controls="true"
+                id="yufengxing-video"></video>
                 <div class="bottom-header">用户评价
                     <span class="tab-left">
                         <img src="icon/left.png" alt="left" class="tab-left">
@@ -105,42 +105,40 @@
                     <div class="act-poster"><a href="#"><div class="poster-image"><img src="image/zly-4.png" alt="4"></div><div class="vs-poster-name">青云志</div></a></div>
                 </div>
                 <!-- div.vs-poster-name -->
+                <div class="discuss-list">
+                    <div class="discuss-head-line">
+                        <span class="discuss-title">讨论</span>
+                        <span class="discuss-num">2604166</span>
+                    </div>
+                    <div class="discuss-line">
+                        <a href="#">
+                            <img src="icon/touxiang.png" alt="1">
+                        </a>
+                        
+                        <a href="#">
+                            <span class="discuss-input">
+                                <span class="discuss-login">登录后可发言</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="discuss-write">
+                                <img src="icon/write.png" alt="2"> 写长文
+                            </span>
+                        </a>
+                    </div>
+                    <div class="discuss-line">
+                        <a href="#">
+                            <span class="discuss-tab" style="background-color: rgb(56,102,103);
+                            color: rgb(91,177,179)">热门</span>
+                        </a>
+                        <a href="#">
+                            <span class="discuss-tab">最新</span>
+                        </a>
+                    </div>
+                    </div>
              </div>
 
-             <div class="discuss-list">
-                <div class="discuss-head-line">
-                    <span class="discuss-title">讨论</span>
-                    <span class="discuss-num">2604166</span>
-                </div>
-                <div class="discuss-line">
-                    <a href="#">
-                        <img src="icon/touxiang.png" alt="1">
-                    </a>
-                    
-                    <a href="#">
-                        <span class="discuss-input">
-                            <span class="discuss-login">登录后可发言</span>
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span class="discuss-write">
-                            <img src="icon/write.png" alt="2"> 写长文
-                        </span>
-                    </a>
-                </div>
-                <div class="discuss-line">
-                    <a href="#">
-                        <span class="discuss-tab" style="background-color: rgb(56,102,103);
-                        color: rgb(91,177,179)">热门</span>
-                    </a>
-                    <a href="#">
-                        <span class="discuss-tab">最新</span>
-                    </a>
-                </div>
-                </div>
-            <!-- </div> -->
-      
-
+            
 
         <div class="right-list">
             <div class="vip-list">
@@ -505,7 +503,6 @@
                 </div>
                 
                     <div class="game-display-box">
-
                         <div class="promo-nav">
                             <input type="radio" name="nav" checked="checked" id="nav-control-1" class="promo-input"></input>
                             <a href="#banner-1" class="nav-a"></a>
@@ -669,7 +666,7 @@
                 </div>
             </div>
         </div>
- 
+    </div>
         <!-- <div class="side-block"></div> -->
         <div class="top-block"></div>
         <div class="top-nav">

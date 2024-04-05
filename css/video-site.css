@@ -1,16 +1,22 @@
 .box {
-    /* display: inline-block; */
-    /* top: 100px; */
-    /* left: 100px; */
-    /* float: left; */
-    margin: 100px 100px;
-    height: 100%;
+    display: grid;
+    /* position: absolute; */
+    grid-template-columns: 4fr 1fr;
+    column-gap: 10px;
 }
 
 .left-list {
     display: inline-block;
-    position: relative;
-    height: 4000px;
+    /* flex-direction: column; */
+    height: 7000px;
+    width: 1000px;
+    position: absolute;
+    left: 100px;
+}
+
+#yufengxing-video {
+    width: 1050px;
+    height: 600px;
 }
 
 a {
@@ -116,13 +122,14 @@ input {
 .right-list {
     position: absolute;
     display: inline-block;
+    /* flex-direction: column; */
     top: 0;
     left: 1196px;
     width: 420px;
-    height: 4000px;
+    height: 7000px;
     /* background-color: #fff; */
     overflow: hidden;
-    /* right: 100000px; */
+    /* right: 100px; */
 }
 
 .vip-list {
@@ -1132,13 +1139,10 @@ div.line-2 {
 }
 
 .discuss-list {
-    position: relative;
     display: inline-block;
     height: 2000px;
     width: 1100px;
-    margin-left: 100px;
     margin-top: 40px;
-    top: -150px;
 }
 
 .discuss-title {
@@ -1168,7 +1172,8 @@ div.line-2 {
     display: inline-block;
     /* top: 100px; */
     height: 100px;
-    /* width: 700px; */
+    /* width: 740px; */
+    /* overflow: hidden; */
 }
 
 .discuss-line>a>img {
@@ -1280,14 +1285,16 @@ div.line-2 {
     z-index: 2;
 }
 
-
-
 input:hover+.nav-a {
     background-color: #fff8;
 }
 
 input:checked+.nav-a {
     background-color: white;
+}
+
+.top-link {
+    z-index: 999;
 }
 
 /* 暂未完成游戏广告点击轮播 */
@@ -1304,3 +1311,36 @@ input:checked+.nav-a {
     transform: translateX(-415px);
 }
  */
+
+@media screen and (min-width: 2000px) {
+    .left-list {
+        left: 15%;
+    }
+
+    .right-list {
+        left: 60%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .left-list {
+        width: 750px;
+        left: 20px;
+    }
+
+    #yufengxing-video {
+        width: 750px;
+    }
+
+    .right-list {
+        left: 800px;
+    }
+
+    .discuss-input {
+        width: 560px;
+    }
+
+    .discuss-line {
+        width: 760px;
+    }
+}
