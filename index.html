@@ -16,7 +16,7 @@
 <body>
     <!-- 快速导航图标 -->      
                 <div class="bgi">
-                    <a href="yufengxing.html">   
+                    <a href="yufengxing.html" class="index-video-a">   
                         <video src="video/yufengxing.mp4" 
                         autoplay="true"
                          muted="true" 
@@ -460,10 +460,9 @@
                 <img src="image/vip-privlige.png" alt="1" class="vip-pvg">
                 缓存特权
             </div>
-            <a href="#">
-                <div id="vip-drop-content-5">立即开通</div>
-            </a>
             
+                <div id="vip-drop-content-5">立即开通</div>
+                 
         </div>
 
         <div id="game-link">
@@ -490,11 +489,46 @@
                 <img src="icon/history-icon.png" alt="观看历史" class="quick-link">
             </a>
         </div>
-        <div  id="touxiang-link">
-            <a href="#" target="_blank">
-                <img src="icon/touxiang.png" alt="头像" class="quick-link">
-            </a>
-        </div>      
+        <div class="link-box">
+            <img src="icon/touxiang.png" alt="头像" class="quick-link"  id="touxiang-link">
+            <div class="drop-list" id="avatar-drop-box" ">
+                <div class="drop-line" id="avatar-drop-content-1">登陆之后可以</div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        同步多端观看记录
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        参与互动讨论
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        观看更个性化内容
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        领取专属游戏礼包
+                    </span>
+                </div>
+                <div class="login-in-btn">立即登录</div>
+            </div>      
+        </div>
+        
   
         <div class="top-block" id="input-background">
             <input type="text" placeholder="与凤行" id="index-input">
@@ -509,6 +543,74 @@
             <div class="side-funtion2"></div>
         </div>
        
+        <div class="login-back">  
+        </div>
+        <div class="login-modal">
+            <div class="login-bar">
+                <span class="login-head-text">账号登录</span>
+                <span class="login-close"><img src="icon/close.png" alt="1" class="login-close-btn"></span>
+            </div>
+            <div class="login-text">
+                微信和QQ是两个独立账号，账号信息不互通
+            </div>
+            <div class="login-qq">QQ登录</div>
+            <div class="login-wx">微信登录</div>
+            <div class="login-alert">
+                请阅读并勾选下方协议
+            </div>
+            <div class="login-select">
+                <span class="un-selected"><img src="icon/un-selected.png" alt="" class="login-radio"></span>
+                <span class="is-selected"><img src="icon/is-selected.png" alt="" class="login-radio" style="width: 22px;"></span>
+                同意 
+                <span class="login-a">《服务协议》
+                </span>、<span class="login-a">《隐私政策》</span>、
+                <span class="login-a">《儿童隐私保护声明》</span>、
+                <span class="login-a">《已采集个人信息清单》</span>和 
+                <span class="login-a">《第三方信息共享清单》</span>
+            </div>  
+        </div>
+        <!-- qq登录模块 -->
+        <div class="login-qq-modal">
+            <div class="login-bar">
+                <span class="login-back-to-first"><img src="icon/left.png" alt="1" class="login-back-btn"></span>
+                <span class="login-head-text" style="margin-left: 290px">QQ账号登录</span>
+                <span class="login-close"><img src="icon/close.png" alt="1" class="login-close-btn"></span>
+            </div>
+            <div class="login-qq-text">
+                登录后高清播放更流畅
+            </div>
+            <div class="login-qq-container">
+                <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                    <div class="qq-head-text">密码登录</div>
+                    <div style="margin-bottom: 20px">推荐使用快捷登录，防止盗号</div>
+                    <input type="text" class="qq-input">
+                    <input type="password" class="qq-input">
+                    <div class="login-qq-btn" style="margin-top: 40px">登录</div>
+                    <div class="login-bottom-function">
+                        <span>找回密码</span>
+                        <span class="login-hr">|</span>
+                        <span>注册账号</span>
+                        <span class="login-hr">|</span>
+                        <span>意见反馈</span>
+                    </div>
+                </div>
+                <div class="login-qq-box">
+                    <div class="login-right-container">
+                        <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox">
+                        <span>腾讯视频将获取以下权限</span> 
+                    </div>
+                    <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox"> 
+                        <span >使用你的QQ头像、昵称信息</span>
+                    </div> 
+                    <div class="login-right-text" style="margin-left: 20px">授权即同意服务协议和QQ隐私保护指引</div>
+                </div>
+                    </div>
+                    
+            </div>
+        </div>
 
+        <script type="text/javascript" src="javascript/funtional.js"></script>
 </body>
 </html>

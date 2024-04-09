@@ -112,7 +112,9 @@ input {
 #touxiang-link {
     position: fixed;
     top: 28px;
+    width: 50px;
     left: 1400px;
+    z-index: 999;
 }
 
 .box>video {
@@ -943,6 +945,17 @@ div.line-2 {
     }
 }
 
+@keyframes intro-run {
+    from {
+        left: 390px;
+        opacity: 0.4;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
 #game-2 {
     background-image: url(../image/game-2.png);
 }
@@ -1344,3 +1357,54 @@ input:checked+.nav-a {
         width: 760px;
     }
 }
+
+.intro-modal {
+    display: none;
+    position: fixed;
+    width: 420px;
+    height: 100%;
+    background-color: rgb(38, 38, 38);
+    top: 100px;
+    z-index: 999;
+    opacity: 1;
+    margin-left: 400px;
+}
+
+.intro-close >img {
+    position: relative;
+    width: 30px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.intro-close {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    height: 40px;
+    color: white;
+    font-size: 28px;
+    line-height: 10px;
+}
+
+.intro-modal-text .hot {
+    position: absolute;
+    left: 20px;
+    top: 90px;
+}
+
+.intro-modal-text span {
+    color: #b3b6b0;
+    position: relative;
+    display: inline-block;
+    top: 90px;
+    text-indent: 20px;
+    left: 20px;
+    font-size: 18px;
+    width: 360px;
+    /* display: none; */
+    padding-bottom: 20px;
+    /* white-space: ; */
+}
+
