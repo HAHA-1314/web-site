@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top-block {
+    display: grid;
+    grid-template-columns: 50px 150px 520px 250px 200px;
+    position: fixed;
+    background-color: #fff;
+    height: 40px;
+    width: 100%;
+    top: 10px;
+}
+
+.top-logo {
+    grid-column-start: 2;
+    background-image: url(../icon/txvideo.png);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: 0 3px;
+}
+
+.top-content-link {
+    display: grid;
+    grid-column-start: 3;
+    grid-template-columns: 50px 80px 50px 50px 50px 50px 80px 50px 50px;
+}
+
+.top-context {
+    display: inline-block;
+    width: 60px;
+    line-height: 40px;
+}
+
+.input-box {
+    place-self: center;
+}
+
+.body-box {
+    display: grid;
+    position: relative;
+    grid-template-columns: 200px 20% 60% 5%;
+    top: 100px;
+}
+
+.person-info {
+    width: 100%;
+    height: 200px;
+}
+
+.left-box {
+    grid-column-start: 2;
+}
+
+.function-list {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: start;
+}
+
