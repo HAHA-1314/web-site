@@ -978,8 +978,8 @@
 
 .login-qq-modal {
     background-color: white;
-    /* display: block; */
-    display: none;
+    display: block;
+    /* display: none; */
     position: fixed;
     width: 700px;
     height: 500px;
@@ -1107,8 +1107,8 @@ div.login-right-text {
 
 .reg-qq-modal {
     background-color: white;
-    display: block;
-    /* display: none; */
+    /* display: block; */
+    display: none;
     position: fixed;
     width: 700px;
     height: 500px;

@@ -47,7 +47,19 @@
   1 "变量" var let -name- = -value- ;
   2 "函数" function () { } 
   3 递归 循环 
-  **4 JavaScript 箭头函数**
+  4 **JavaScript 箭头函数**
+  ```
+  箭头函数语法
+  支持 async 
+   () => expression 当只有一个简单参数时可以忽略括号
+   () => {
+    statements  多行代码不可省略大括号
+   }
+   相当于 (function (a) {
+    return expression;
+   })
+  ```
+
   x.addEventListener("click",-functionName-); **鼠标点击事件监听**
   .offsetLeft .offsetWidth .OffsetHeight .OffsetTop; **获取位置偏移量以及元素大小 数值没有单位 不可赋值**
   **style只能获取行内样式表的样式值**
@@ -57,8 +69,8 @@
   === 严格相等（也称为三重相等运算符）检查变量的值及其数据类型 **严格等于 区别于c++**
 
   基础知识
-   -创建一条消息 
-  ##### 改变样式
+   -创建一条消息
+
   x.style.opacity
   x.style.maginLeft **区别于css的margin-left**
 
@@ -72,6 +84,9 @@
 - ##### ES6
   1.需要在node.js环境下运行
 ![alt text](<屏幕截图 2024-04-07 230219.png>)
+  2.es6 的 Promising
+    promise的状态只能从 未完成->完成, 未完成->失败 且状态不可逆转
+
 
 - ##### ajax 
     ajax=JavaScript + 异步
@@ -165,3 +180,41 @@
 
 主站 媒体查询
    
+##### JSONP
+  对于 fetch() 与 xmlhttprequest,一般会出现 cors 跨域问题
+  
+##### 构造函数 Promise
+  避免回调地狱所诞生 ES6的新的解决方案之一
+  封装了异步的任务并且对结果处理的方法 
+
+  基本语法结构 
+  let promise = new Promise(resolve , reject) {
+    if (...) {
+      resolve(data); //请求成功调用
+    }
+    else {
+      reject(data);
+    }
+  }
+```
+ Promise对象 属性 PromiseState 只读 有 padding resolved rejected 三种属性
+```
+```
+ PromiseResult，保存着对象 成功/失败 的结果，也不能直接通过实例对象进行修改。能修改它的有三种方法：
+ resolve()
+ reject()
+ 抛出异常throw
+```
+**promise的状态只能由pending变为fulfilled 或者 由pending变为rejected,且状态改变之后不会再发生改变**
+
+Promise构造方法传的是一个回调函数，回调函数里面也带着两个参数，
+一个是resolve，请求成功之后的回调，第二个是reject，请求失败的回调
+
+- then():属于构造函数原型里面的方法，通过实例化Promise去调用，返回promise对象，这也让promise可以进行链式调用，有两个参数。  
+- catch()：也是属于构造函数原型里面的方法，指定错误的时候回调，这里相当于then()的第二个参数，所以一般不写then()的第二个参数，直接写调用catch(),由于then()返回的是promise对象，这里就可以在后面直接调用这个方法
+- Promise.all()：是构造函数本身的一个方法，将多个promise实例对象包装成一个新实例，返回全部实例状态变更后的结果数组(全部变更再返回)
+        - 参数：接受一个由promise对象组成的数组
+        - 失败：其中一个实例状态变成rejected，最终状态就会变成rejected
+        - 成功：只有全部实例状态变成fulfilled，最终返回状态才会变成fulfilled
+- Promise.race()：将多个实例包装成一个新实例，返回全部实例状态优先变更后的结果(先变更先返回)
+        
