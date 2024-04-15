@@ -493,7 +493,7 @@
                 <img src="icon/history-icon.png" alt="观看历史" class="quick-link">
             </a>
         </div>
-        < class="link-box">
+        <a class="link-box">
             <img src="icon/touxiang.png" alt="头像" class="quick-link"  id="touxiang-link">
             <div class="drop-list" id="avatar-drop-box">
                 <!-- 未登录   -->
@@ -535,28 +535,30 @@
         </div>
         <!-- 已登录 -->
         <div class="drop-list" id="avatar-logined">
-            <div class="drop-line" id="avatar-drop-content-1">
+            <div class="drop-line" id="avatar-logined-content-1">
                 <div class="person-name">哈哈</div>
                 <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
                 <div class="avatar-vip-btn">开通腾讯视频VIP</div>
             </div>
+            <a href="info.html" target="_blank">
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box" id="person-index">
+                        个人中心
+                    </span>
+                    </div>
+            </a>
             <div class="drop-line" id="avatar-logined-content-2">
                 <span class="img-drop-box">
                     <img src="#" alt="">
                 </span>
-                <span class="content-logined-box">
-                    个人中心
-                </span>
-                </div>
-            <div class="drop-line" id="avatar-drop-content-2">
-                <span class="img-drop-box">
-                    <img src="#" alt="">
-                </span>
-                <span class="content-logined-box">
+                <span class="content-logined-box" id="my-favorite">
                     我的加追
                 </span>
                 </div>
-            <div class="drop-line" id="avatar-drop-content-2">
+            <div class="drop-line" id="avatar-logined-content-2">
                 <span class="img-drop-box">
                     <img src="#" alt="">
                 </span>
@@ -564,7 +566,7 @@
                     我的游戏礼包
                 </span>
             </div>
-            <div class="drop-line" id="avatar-drop-content-2">
+            <div class="drop-line" id="avatar-logined-content-2">
                 <span class="img-drop-box">
                     <img src="#" alt="">
                 </span>
@@ -631,11 +633,11 @@
                     <div class="qq-head-text">密码登录</div>
                     <div style="margin-bottom: 20px">推荐使用快捷登录，防止盗号</div>
                     <!-- post?? -->
-                    <form method="get">  
+                    
                         <input type="text" class="qq-input" id="login-username">
                         <input type="password" class="qq-input" id="login-password">
-                        <input type="submit" value="登录" class="login-qq-btn" id="login-button" style="margin-top: 40px">
-                    </form>
+                        <button class="login-qq-btn" id="login-button" style="margin-top: 40px">登录</button>
+                    
                     
                     <div class="login-bottom-function">
                         <span>找回密码</span>
@@ -676,7 +678,7 @@
                     <div style="margin-bottom: 20px">请输入账号与密码</div>
                     <!-- post?? -->
                      
-                        <input type="text" class="qq-input" id="reg-username">
+                        <input type="text" class="qq-input" id="reg-username" placeholder="长度至少为6,至少包含一个小写字母">
                         <input type="password" class="qq-input" id="reg-password">
                         <button class="login-qq-btn" style="margin-top: 40px" id="reg-button">注册</button>
                     

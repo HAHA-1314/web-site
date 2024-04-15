@@ -217,4 +217,15 @@ Promise构造方法传的是一个回调函数，回调函数里面也带着两�
         - 失败：其中一个实例状态变成rejected，最终状态就会变成rejected
         - 成功：只有全部实例状态变成fulfilled，最终返回状态才会变成fulfilled
 - Promise.race()：将多个实例包装成一个新实例，返回全部实例状态优先变更后的结果(先变更先返回)
-        
+
+##### 本地存储
+- localStorage
+  ```
+  不会被爬虫获取
+  本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡
+  localStorage与sessionStorage的唯一一点区别就是localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对会被清空
+  ```
+- SessionStorage 
+  ```
+  浏览器关闭即失效
+  ```

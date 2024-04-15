@@ -4,10 +4,9 @@ var reg_button = document.querySelector("#reg-button");
 
 var change_button = document.querySelector('.change-content');
 
-var isLogin = false; //全局变量
+var person_name = document.querySelector('.person-name');
 
-//假设 token 已经存储 于 本地或 cookie
-var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ7aWQ9NH0iLCJpYXQiOjE3MTEwMDE4MDksImV4cCI6MTcxMzU5MzgwOX0.vNSaeC77IwR5k1SMJnGz370wJEbt5qUwdeLK868EidMhfQHvRYfAwxiPKrPH79ATLorLbGM2Fit3RYWeGuaymA"
+let token = localStorage.getItem("token");
 
 var myHeaders = new Headers();
     myHeaders.append("token", token);
@@ -17,9 +16,46 @@ var url = "https://blog.zifeiyu.love";
 
 var urlChange = url + "/video/random?size=4";
 
-function isLogin() {
-    // if () { }
+async function isLogin() {
+    var urlisLogin = url + "/info/query";
+    let token = localStorage.getItem("token");
+    // console.log("isLogin?");
+    // console.log(token);
+    // console.log(urlisLogin);
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type' : "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    }; 
+    var isLoginData;
+    await fetch(urlisLogin, requestOptions)
+        .then(function (response) {
+            if (response.ok == true) {
+                isLoginData = response.json();     //转化为json
+                // console.log(isLoginData);
+                // console.log(token);
+           }
+            else {
+                console.log("Something Wrong in isLogin TAT");
+            }
+        }
+    )
+        isLoginData.then(result => {
+            if (result.errorMsg == "未登录" || result.errorMsg == "身份异常") {
+                return; 
+            }
+            else {
+                console.log(result.errorMsg); //正常时为null
+                console.log(result);
+                // alert("用户已经登录过了");
+                person_name.innerHTML=(result.data.username);
+            }
+        })
+        console.log(token);
 }
+isLogin();  //直接执行，每次页面刷新都进行一次判断
 
 login_button.onclick = async function () {
     var username = document.querySelector("#login-username").value;
@@ -33,52 +69,43 @@ login_button.onclick = async function () {
         mode: "cors",
     }; 
     var Login_Data;  //起名 Reg_Data 与 Login_Data 只为更容易辨认
-    var Login_Result;
-    let response = await fetch(urlLogin, requestOptions) //fetch
+    await fetch(urlLogin, requestOptions) //fetch
         .then(function (response) {
             if (response.ok == true) {
                 Login_Data = response.json();     //转化为json
+                // console.log(Login_Data);
             }
             else {
                 console.log("Something Wrong in response TAT");
             }
         }
     )
-    // var Reg_Result = Reg_Data.selectVaildEvent();
     Login_Data.then(result => {
-        // console.log(result.errorMsg);
-        // Reg_Result = result;
-        // return result;
         if (result.errorMsg == null) {
             alert("登录成功!");
-            isLogin = true; // 标记成功登录
+            localStorage.clear();
+            localStorage.setItem("token", result.data.tokenValue);
+            token = localStorage.getItem("token");
+            console.log(token);
+            location.reload();
             // setTimeout(SuccessReg, 1000);
         }
         else {
             alert("错误的用户名和密码");
         }
-        console.log(result.data);
     })
-    
-    console.log(Login_Data);
 }
 
 reg_button.onclick = async function () {
     var username = document.querySelector("#reg-username").value;
     var password = document.querySelector('#reg-password').value;
     var urlReg = url + "/user/register" + "?" + "username=" + username + "&" + "password=" + password;
-    var data = {
-        "username": username,
-        "password": password,
-    };
     if (username == '' || password == '') {
         //正则表达式
         alert("用户名或者密码不能为空!");
         return;
     }
-    
     // console.log(urlReg);
-
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -87,8 +114,7 @@ reg_button.onclick = async function () {
         mode: "cors",
     }; 
     var Reg_Data;
-    var Reg_Result;
-    let response = await fetch(urlReg, requestOptions) //fetch
+    await fetch(urlReg, requestOptions) //fetch
         .then(function (response) {
             if (response.ok == true) {
                 Reg_Data = response.json();     //转化为json
@@ -118,14 +144,29 @@ reg_button.onclick = async function () {
 
 }
 
-change_button.onclick = function () {
-    var change_xml = new XMLHttpRequest();
-    change_xml.open("GET", urlChange, true);
-    change_xml.onreadystatechange = function () {
-        if (change_xml.readyState == 4 && change_xml.status == 200) {
-            console.log(change_xml.responseType);
-        }
-    }
-    change_xml.
-    change_xml.send();
+change_button.onclick = async function () {
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type' : "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    }; 
+    var changeData;
+    await fetch(urlChange, requestOptions)
+        .then(response => {
+            if(response.ok) 
+            {
+                changeData = response.json();
+            }
+            else {
+                console("Something error in change");
+            }
+        })
+        changeData.then(result => {
+            console.log(result.data[0]);
+            console.log(result.data[1]);
+            console.log(result.data[2]);
+            console.log(result.data[3]);
+    })
 }

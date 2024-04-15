@@ -1,6 +1,6 @@
 var login_modal = document.querySelector(".login-modal");
 
-var login_back = document.querySelector(".login-back-btn");
+var login_back = document.querySelector(".login-back");
 
 var reg_back = document.querySelector("#reg-back");
 
@@ -36,12 +36,14 @@ var login_alert = document.querySelector(".login-alert");   //请勾选用户协
 
 var login_selected = 0;    //用户登录是否同意政策
 
+const url = "https://blog.zifeiyu.love";
+
+var token = localStorage.getItem("token");
+
 var login_in = 0;
 
 // console.log(login_unselected.style.display);
 // console.log(login_selected);
-
-
 // login_wx.addEventListener("click", myLoginWX);
 login_1.addEventListener("click", myLoginOpen);
 login_2.addEventListener("click", myLoginOpen);
@@ -58,10 +60,41 @@ go_reg.addEventListener("click", myRegQQ);
 go_login.addEventListener("click", myLoginQQ);
 // login_wx.addEventListener("click", myLoginWX);
 
+async function isLogin() {
+    var urlisLogin = url + "/info/query";
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type' : "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    }; 
+    var isLoginData;
+    await fetch(urlisLogin, requestOptions)
+        .then(function (response) {
+            if (response.ok == true) {
+                isLoginData = response.json();     //转化为json
+           }
+            else {
+                console.log("Something Wrong in isLogin TAT");
+            }
+        }
+    )
+        isLoginData.then(result => {
+            if (result.errorMsg == "未登录" || result.errorMsg == "身份异常") {
+                return; 
+            }
+            else {
+                login_in = 1;
+            }
+        })
+
+}
+isLogin();
 
 function myLoginOpen() {
     login_modal.style.display = "inline-block";
-    login_back.style.display = "inline-block";
+    login_back.style.display = "block";
     login_qq_modal.style.display = "none";
 }
 
