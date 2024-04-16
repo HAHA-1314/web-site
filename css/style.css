@@ -800,8 +800,8 @@
 
 #avatar-logined {
     background-color: rgb(49, 48, 48);
-    display: block;
-    /* display: none; */
+    /* display: block; */
+    display: none;
     width: 360px;
     height: 460px;
     top: 65px;  
@@ -897,6 +897,10 @@
     display: block;
 }
 
+#touxiang-link:hover +#avatar-logined{
+    display: block;
+}
+
 .login-back {
     display: none;
     position: fixed;
@@ -905,7 +909,7 @@
     height: 105%;
     top: -5px;
     left: -5px;
-    z-index: 99;
+    z-index: 9;
 }
 
 .login-modal {
@@ -1060,13 +1064,14 @@
     background-color: white;
     display: block;
     display: none;
-    /* position: fixed; */
+    position: fixed;
+    /* position: relative; */
     width: 700px;
     height: 500px;
     margin-left: 50%;
-    /* margin-top: auto; */
+    margin-top: -250px;
     left: -350px;
-    top: calc(50% - 250px);
+    top: 50%;
     z-index: 99;
 }
 
@@ -1077,6 +1082,11 @@
 }
 
 .login-back-btn {
+    width: 25px;
+    cursor: pointer;
+}
+
+.login-modal-back-btn {
     width: 25px;
     cursor: pointer;
 }

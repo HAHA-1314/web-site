@@ -532,7 +532,6 @@
                 </div>
                 <div class="login-in-btn">立即登录</div>
             </div>      
-        </div>
         <!-- 已登录 -->
         <div class="drop-list" id="avatar-logined">
             <div class="drop-line" id="avatar-logined-content-1">
@@ -577,7 +576,6 @@
             <div class="login-out-btn">退出登录</div>
         </div>      
     
-        
         <!-- 选择登录方式模块 -->
         <div class="top-block" id="input-background">
             <input type="text" placeholder="与凤行" id="index-input">
@@ -621,7 +619,7 @@
         <!-- qq登录模块 -->
         <div class="login-qq-modal">
             <div class="login-bar">
-                <span class="login-back-to-first"><img src="icon/left.png" alt="1" class="login-back-btn"></span>
+                <span class="login-back-to-first" id="back-to-modal"><img src="icon/left.png" alt="1" class="login-back-btn"></span>
                 <span class="login-head-text" style="margin-left: 290px">QQ账号登录</span>
                 <span class="login-close"><img src="icon/close.png" alt="1" class="login-qq-close"></span>
             </div>
@@ -707,7 +705,9 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="javascript/funtional.js"></script>
-        <script type="text/javascript" src="javascript/index-login.js"></script>
+        <script type="text/javascript" src="javascript/isLogined.js"></script>
+        <script type="text/javascript" src="javascript/FetchLogin.js"></script>
+        <script type="text/javascript" src="javascript/LoginModal.js"></script>
+        <script type="text/javascript" src="javascript/GetChange.js"></script>
 </body>
 </html>]
