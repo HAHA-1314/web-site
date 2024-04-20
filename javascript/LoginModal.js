@@ -57,9 +57,15 @@ go_reg.addEventListener("click", myRegQQ);
 go_login.addEventListener("click", myLoginQQ);
 // notLoginedbox.addEventListener("mouseenter", notLoginedboxOpen);
 // isLoginedbox.addEventListener("mouseenter", isLoginedboxOpen);
+avatarButton.addEventListener("mouseenter", openLoginBox);
+notLoginedbox.addEventListener("mouseenter", openLoginBox);
 isLoginedbox.addEventListener("mouseenter", openLoginBox);
 
 function myLoginOpen() {
+    console.log("islogined", isLogined);
+    if (isLogined == 1) {
+        return;
+    }
     login_modal.style.display = "block";
     login_back.style.display = "block";
     login_qq_modal.style.display = "none";
@@ -120,11 +126,31 @@ function myRegQQ() {
 }
 
 function openLoginBox() {
-    console.log("yes");
     if (isLogined == 1) {
         isLoginedbox.style.display = "block";
+        console.log("yes");
+        avatarButton.onmouseover = isLoginedbox.onmouseover = function () {
+            isLoginedbox.style.display = "block";
+            clearTimeout(loginedbox);
+        }
+        avatarButton.onmouseout = isLoginedbox.onmouseout = function () {
+            // isLoginedbox.style.display = "none";
+            loginedbox = setTimeout(() => {
+                isLoginedbox.style.display = "none";
+            }, 200);
+        }
     }
     else {
         notLoginedbox.style.display = "block";
+        console.log("notlogined");
+        avatarButton.onmouseover = notLoginedbox.onmouseover = function () {
+            notLoginedbox.style.display = "block";
+            clearTimeout(loginedbox);
+        }
+        avatarButton.onmouseout = notLoginedbox.onmouseout = function () {
+            loginedbox = setTimeout(() => {
+                notLoginedbox.style.display = "none";
+            }, 200);
+        }
     }
 }

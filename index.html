@@ -129,9 +129,10 @@
             <div class="fir-image">
                 <span class="popular">
                     <a href="yufengxing.html">
-                    <img src="image/1-1.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">与凤行</div>
-                    <div class="poster-description">赵丽颖林更新甜虐二搭</div>
+                    <img src="image/1-1.jpeg" alt="" class="popular-poster" id="pic-1-1">
+                    <div class="poster-name" id="name-1-1">与凤行</div>
+                    <div class="poster-description" id="description-1-1">赵丽颖林更新甜虐二搭</div>
+                    <!-- brief 与 introdiction -->
                     </a>
                     <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -145,9 +146,9 @@
                 </span>
             <span class="popular">
                 <a href="other.html" target="_blank">
-                    <img src="image/1-2.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">养蜂人</div>
-                    <div class="poster-description">杀光！杰森斯坦森绝不留情</div>
+                    <img src="image/1-2.jpeg" alt="" class="popular-poster" id="pic-1-2">
+                    <div class="poster-name" id="name-1-2">养蜂人</div>
+                    <div class="poster-description" id="description-1-2">杀光！杰森斯坦森绝不留情</div>
                 </a>
                 <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -161,9 +162,9 @@
             </span>
             <span class="popular">
                 <a href="other.html" target="_blank">
-                    <img src="image/1-3.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">狂王</div>
-                    <div class="poster-description">命运有我主宰，无畏血战成王</div>
+                    <img src="image/1-3.jpeg" alt="" class="popular-poster" id="pic-1-3">
+                    <div class="poster-name" id="name-1-3">狂王</div>
+                    <div class="poster-description" id="description-1-3">命运有我主宰，无畏血战成王</div>
                 </a>
                 <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -177,9 +178,9 @@
             </span>
             <span class="popular">
                 <a href="other.html" target="_blank">
-                    <img src="image/1-4.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">谜案寻凶</div>
-                    <div class="poster-description">谜案丛生，揭面追凶</div>
+                    <img src="image/1-4.jpeg" alt="" class="popular-poster" id="pic-1-4">
+                    <div class="poster-name"  id="name-1-4">谜案寻凶</div>
+                    <div class="poster-description" id="description-1-4">谜案丛生，揭面追凶</div>
                 </a>
                 <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -193,9 +194,9 @@
             </span>
             <span class="popular">
                 <a href="other.html" target="_blank">
-                    <img src="image/1-5.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">倾爱</div>
-                    <div class="poster-description">黑莲花嫁豪门开启禁忌之恋</div>
+                    <img src="image/1-5.jpeg" alt="" class="popular-poster" id="pic-1-5">
+                    <div class="poster-name"  id="name-1-5">倾爱</div>
+                    <div class="poster-description" id="description-1-5">黑莲花嫁豪门开启禁忌之恋</div>
                 </a>
                 <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -209,9 +210,9 @@
             </span>
             <span class="popular">
                 <a href="other.html" target="_blank">
-                    <img src="image/1-6.jpeg" alt="" class="popular-poster">
-                    <div class="poster-name">追缉</div>
-                    <div class="poster-description">张浚源阮经天上演猫鼠游戏</div>
+                    <img src="image/1-6.jpeg" alt="" class="popular-poster" id="pic-1-6">
+                    <div class="poster-name"  id="name-1-6">追缉</div>
+                    <div class="poster-description" id="description-1-6">张浚源阮经天上演猫鼠游戏</div>
                 </a>
                 <div class="corner-vip-icon">VIP</div>
                     <a href="#">
@@ -535,7 +536,7 @@
         <!-- 已登录 -->
         <div class="drop-list" id="avatar-logined">
             <div class="drop-line" id="avatar-logined-content-1">
-                <div class="person-name">哈哈</div>
+                <div class="person-name" id="user-name">哈哈</div>
                 <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
                 <div class="avatar-vip-btn">开通腾讯视频VIP</div>
             </div>
@@ -704,10 +705,13 @@
                 </div>
             </div>
         </div>
-
+        <div id="user-name-2" style="display: none"></div>
+        <div style="display: none"><img src="#" alt="" class="user-avatar"></div>
+        <!-- 占位符将isLogined.js通用化 -->
         <script type="text/javascript" src="javascript/isLogined.js"></script>
         <script type="text/javascript" src="javascript/FetchLogin.js"></script>
         <script type="text/javascript" src="javascript/LoginModal.js"></script>
         <script type="text/javascript" src="javascript/GetChange.js"></script>
+        <script type="text/javascript" src="javascript/Logout.js"></script>
 </body>
 </html>]

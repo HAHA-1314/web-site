@@ -7,6 +7,7 @@ logoff_btn.addEventListener("click", logoff);
 
 function toIndex() {
     window.location.href = "index.html";
+    // 使用html a标签将影响grid布局
 }
 
 async function logoff() {
@@ -34,6 +35,7 @@ async function logoff() {
     logoffData.then(result => {
         if (result.errorMsg == null) {
             alert("成功注销您的账号");
+            window.location.href = "index.html";
         }
         else {
             console.log("Something Error in Logoff.errorMsg!");

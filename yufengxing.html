@@ -11,14 +11,13 @@
     </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/video-site.css">
-    <title>与凤行第01集_电视剧_高清完整版视频在线观看_爱奇艺</title>
+    <title class="window-title">与凤行第01集_电视剧_高清完整版视频在线观看_爱奇艺</title>
 </head>
 <body>
     <!-- 本页所有的a herf="#"标签皆为占位符，后续完善功能 -->
         <div class="box">
             <div class="left-list">
                 <video src="video/ad.mp4" 
-                autoplay="true"
                 loop="true"
                 muted;
                 controls="true"
@@ -137,8 +136,6 @@
                     </div>
                     </div>
              </div>
-
-            
 
         <div class="right-list">
             <div class="intro-modal">
@@ -507,77 +504,76 @@
                         <img src="icon/right-light.png" alt="right" class="game-tab"> 
                     </a>
                 </div>
-                <a href="#">
-                    <!-- 占位符关闭广告的按钮 -->
-                     <span class="close-ad">
-                        广告 ×
-                    </span>
-                </a>
 
-                </div>
-                
+                <span class="close-ad" style="cursor: pointer;">
+                    广告 ×
+                </span>
+
+                    <!-- <div class="game-display-box">
+                    </div> -->
+
                     <div class="game-display-box">
-                        <div class="promo-nav">
-                            <input type="radio" name="nav" checked="checked" id="nav-control-1" class="promo-input"></input>
-                            <a href="#banner-1" class="nav-a"></a>
-                            <input type="radio" name="nav" id="nav-control-2" class="promo-input"></input>
-                            <a href="#banner-2" class="nav-a"></a>
-                            <input type="radio" name="nav" id="nav-control-3" class="promo-input"></input>
-                            <a href="#banner-3" class="nav-a"></a>
-                            <input type="radio" name="nav" id="nav-control-4" class="promo-input"></input>
-                            <a href="#banner-4" class="nav-a"></a>
-                            <input type="radio" name="nav" id="nav-control-5" class="promo-input"></input>
-                            <a href="#banner-5" class="nav-a"></a>
-                            <input type="radio" name="nav" id="nav-control-6" class="promo-input"></input>
-                            <a href="#banner-6" class="nav-a"></a>
-                        </div>
-
-                    <div class="game-container">
                         <a href="#">
                             <div class="game-photo">
                             <span class="game-name">仙境传说：爱如初见</span>
                             <span class="game-info">再见如初，就是RO！</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a>
                         <a href="#">
                             <div class="game-photo" id="game-2">
                             <span class="game-name">二之国：交错世界</span>
                             <span class="game-info">异世界生活冒险角色扮演手游</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a>
                         <a href="#">
                             <div class="game-photo" id="game-3">
                             <span class="game-name">白荆回廊</span>
                             <span class="game-info">异世交汇即时多维战斗手游</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a>
                         <a href="#">
                             <div class="game-photo" id="game-4">
                             <span class="game-name">冲呀！饼干人：王国</span>
                             <span class="game-info">饼干人轻松冒险手游</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a>
                         <a href="#">
                             <div class="game-photo" id="game-5">
                             <span class="game-name">舞动极光</span>
                             <span class="game-info">腾讯首款体感健身应用</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a>
                         <a href="#">
                             <div class="game-photo" id="game-6">
                             <span class="game-name">元梦之星</span>
                             <span class="game-info">正版合家派对游戏</span>
                             <span class="game-buttom">秒玩</span>
-                        </div>
+                            </div>
                         </a> 
                     </div>
 
-                    </div> 
+                    <div class="promo-nav">
+                        <!-- input使用 css实现 轮播功能 -->
+                        <!-- <input type="radio" name="nav" checked="checked" id="nav-control-1" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                        <!-- <input type="radio" name="nav" id="nav-control-2" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                        <!-- <input type="radio" name="nav" id="nav-control-3" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                        <!-- <input type="radio" name="nav" id="nav-control-4" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                        <!-- <input type="radio" name="nav" id="nav-control-5" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                        <!-- <input type="radio" name="nav" id="nav-control-6" class="promo-input"></input> -->
+                        <div class="nav-a"></div>
+                    </div>
+
+                </div> 
                 
                 
                 <!-- 占位符 -->
@@ -735,11 +731,224 @@
             </a>
         </div>
          <div class="top-link" id="touxiang-link">
-            <a href="#" target="_blank">
-                <img src="icon/touxiang.png" alt="头像" class="quick-link">
+            <img src="icon/touxiang.png" alt="头像" class="quick-link">
+            <div class="drop-list" id="avatar-drop-box">
+                <!-- 未登录   -->
+                <div class="drop-line" id="avatar-drop-content-1">登陆之后可以</div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        同步多端观看记录
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        参与互动讨论
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        观看更个性化内容
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-drop-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-drop-box">
+                        领取专属游戏礼包
+                    </span>
+                </div>
+                <div class="login-in-btn">立即登录</div>
+            </div>      
+        <!-- 已登录 -->
+        <div class="drop-list" id="avatar-logined">
+            <div class="drop-line" id="avatar-logined-content-1">
+                <div class="person-name" id="user-name">哈哈</div>
+                <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
+                <div class="avatar-vip-btn">开通腾讯视频VIP</div>
+            </div>
+            <a href="info.html" target="_blank">
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box" id="person-index">
+                        个人中心
+                    </span>
+                    </div>
             </a>
-        </div>
-        <script type="text/javascript" src="javascript/video-funtional.js"></script>   
+            <div class="drop-line" id="avatar-logined-content-2">
+                <span class="img-drop-box">
+                    <img src="#" alt="">
+                </span>
+                <span class="content-logined-box" id="my-favorite">
+                    我的加追
+                </span>
+                </div>
+            <div class="drop-line" id="avatar-logined-content-2">
+                <span class="img-drop-box">
+                    <img src="#" alt="">
+                </span>
+                <span class="content-logined-box">
+                    我的游戏礼包
+                </span>
+            </div>
+            <div class="drop-line" id="avatar-logined-content-2">
+                <span class="img-drop-box">
+                    <img src="#" alt="">
+                </span>
+                <span class="content-logined-box">
+                    VIP消息
+                </span>
+            </div>
+            <div class="login-out-btn">退出登录</div>
+        </div>      
+
+ <!-- 选择登录方式模块 -->
+        <div class="top-block" id="input-background">
+            <input type="text" placeholder="与凤行" id="index-input">
+            <button type="button">
+                <span>
+                    <img src="icon/search-icon.png" alt="1" class="search-icon">
+                </span>
+            </button>
+        </div>  
         
+        <div class="side-funtion1"> 
+            <div class="side-funtion2"></div>
+        </div>
+       
+        <div class="login-back">  
+        </div>
+        <div class="login-modal">
+            <div class="login-bar">
+                <span class="login-head-text">账号登录</span>
+                <span class="login-close"><img src="icon/close.png" alt="1" class="login-close-btn"></span>
+            </div>
+            <div class="login-text">
+                微信和QQ是两个独立账号，账号信息不互通
+            </div>
+            <div class="login-qq">QQ登录</div>
+            <div class="login-wx">微信登录</div>
+            <div class="login-alert">
+                请阅读并勾选下方协议
+            </div>
+            <div class="login-select">
+                <span class="un-selected"><img src="icon/un-selected.png" alt="" class="login-radio"></span>
+                <span class="is-selected"><img src="icon/is-selected.png" alt="" class="login-radio" style="width: 22px;"></span>
+                同意 
+                <span class="login-a">《服务协议》
+                </span>、<span class="login-a">《隐私政策》</span>、
+                <span class="login-a">《儿童隐私保护声明》</span>、
+                <span class="login-a">《已采集个人信息清单》</span>和 
+                <span class="login-a">《第三方信息共享清单》</span>
+            </div>  
+        </div>
+        <!-- qq登录模块 -->
+        <div class="login-qq-modal">
+            <div class="login-bar">
+                <span class="login-back-to-first" id="back-to-modal"><img src="icon/left.png" alt="1" class="login-back-btn"></span>
+                <span class="login-head-text" style="margin-left: 290px">QQ账号登录</span>
+                <span class="login-close"><img src="icon/close.png" alt="1" class="login-qq-close"></span>
+            </div>
+            <div class="login-qq-text">
+                登录后高清播放更流畅
+            </div>
+            <div class="login-qq-container">
+                <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                    <div class="qq-head-text">密码登录</div>
+                    <div style="margin-bottom: 20px">推荐使用快捷登录，防止盗号</div>
+                    <!-- post?? -->
+                    
+                        <input type="text" class="qq-input" id="login-username">
+                        <input type="password" class="qq-input" id="login-password">
+                        <button class="login-qq-btn" id="login-button" style="margin-top: 40px">登录</button>
+                    
+                    
+                    <div class="login-bottom-function">
+                        <span>找回密码</span>
+                        <span class="login-hr">|</span>
+                        <span class="go-to-reg-btn">注册账号</span>
+                        <span class="login-hr">|</span>
+                        <span>意见反馈</span>
+                    </div>
+                </div>
+                <div class="login-qq-box">
+                    <div class="login-right-container">
+                        <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox">
+                        <span>腾讯视频将获取以下权限</span> 
+                    </div>
+                    <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox"> 
+                        <span >使用你的QQ头像、昵称信息</span>
+                    </div> 
+                    <div class="login-right-text" style="margin-left: 20px">授权即同意服务协议和QQ隐私保护指引</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- qq注册模块 -->
+        <div class="reg-qq-modal">
+            <div class="login-bar">
+                <span class="login-back-to-first"><img src="icon/left.png" alt="1" class="login-back-btn" id="reg-back"></span>
+                <span class="login-head-text" style="margin-left: 290px">QQ账号注册</span>
+                <span class="login-close"><img src="icon/close.png" alt="1" class="reg-close"></span>
+            </div>
+            <div class="login-qq-text">
+                注册后跳转登录
+            </div>
+            <div class="login-qq-container">
+                <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                    <div class="qq-head-text">注册账号</div>
+                    <div style="margin-bottom: 20px">请输入账号与密码</div>
+                    <!-- post?? -->
+                     
+                        <input type="text" class="qq-input" id="reg-username" placeholder="长度至少为6,至少包含一个小写字母">
+                        <input type="password" class="qq-input" id="reg-password">
+                        <button class="login-qq-btn" style="margin-top: 40px" id="reg-button">注册</button>
+                    
+                    
+                    <div class="login-bottom-function">
+                        <span>找回密码</span>
+                        <span class="login-hr">|</span>
+                        <span class="go-to-login-btn">已有账号，登录</span>
+                        <span class="login-hr">|</span>
+                        <span>意见反馈</span>
+                    </div>
+                </div>
+                <div class="login-qq-box">
+                    <div class="login-right-container">
+                        <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox">
+                        <span>腾讯视频将获取以下权限</span> 
+                    </div>
+                    <div class="login-right-text">
+                        <input type="checkbox" class="login-checkbox"> 
+                        <span >使用你的QQ头像、昵称信息</span>
+                    </div> 
+                    <div class="login-right-text" style="margin-left: 20px">授权即同意服务协议和QQ隐私保护指引</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="user-name-2" style="display: none"></div>
+        <div style="display: none"><img src="#" alt="" class="user-avatar"></div>
+        <!-- 占位符将alljs通用化 -->
+        <script type="text/javascript" src="javascript/FetchLogin.js"></script>   
+        <script type="text/javascript" src="javascript/isLogined.js"></script> 
+        <script type="text/javascript" src="javascript/LoginModal.js"></script> 
+        <script type="text/javascript" src="javascript/Advertise.js"></script> 
+        <script type="text/javascript" src="javascript/videoIntro.js"></script>
 </body>
 </html>

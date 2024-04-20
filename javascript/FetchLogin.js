@@ -2,14 +2,6 @@ var login_button = document.querySelector("#login-button");
 
 var reg_button = document.querySelector("#reg-button");
 
-// var person_name = document.querySelector('.person-name');
-
-// var myHeaders = new Headers();
-//     myHeaders.append("token", token);
-//     myHeaders.append("User-Agent", "Apifox/1.0.0 (https://apifox.com)");
-
-// var url = "https://blog.zifeiyu.love";
-
 login_button.onclick = async function () {
     var username = document.querySelector("#login-username").value;
     var password = document.querySelector("#login-password").value;
@@ -36,7 +28,7 @@ login_button.onclick = async function () {
     Login_Data.then(result => {
         if (result.errorMsg == null) {
             alert("登录成功!");
-            localStorage.clear();
+            localStorage.clear("token");
             localStorage.setItem("token", result.data.tokenValue);
             token = localStorage.getItem("token");
             console.log(token);
