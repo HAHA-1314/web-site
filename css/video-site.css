@@ -1330,12 +1330,18 @@ input:checked+.nav-a {
  */
 
 @media screen and (min-width: 2000px) {
+    .box {
+        grid-template-columns: 2000px 400px;
+    }
     .left-list {
-        left: 15%;
+        left: 20%;
     }
 
     .right-list {
-        left: 60%;
+        left: 80%;
+    }
+    #yufengxing-video {
+        width: 1050px;
     }
 }
 
@@ -1344,7 +1350,6 @@ input:checked+.nav-a {
         width: 750px;
         left: 20px;
     }
-
     #yufengxing-video {
         width: 750px;
     }

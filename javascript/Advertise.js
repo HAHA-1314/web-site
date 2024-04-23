@@ -12,7 +12,7 @@ game_modal.addEventListener("mouseleave", start);
 nav_modal.addEventListener("mouseenter", pause);
 nav_modal.addEventListener("mouseleave", start);
 
-let timer;
+let timer = 2200;
 let i = 1; //计数器
 // var run; //settimeout
 const count = 6; //一共有六个模块轮换
@@ -35,12 +35,12 @@ function autoPlay() {
             var left;
             // game_modal.style.marginLeft = ((i % count == 0) ? -415 * 5 : (-415 * (i % count - 1))) + "px";
             left = (i % count == 0) ? 0 : (-415 * (i % count -1) - 415);
-            console.log(left);
+            // console.log(left);
             runAnimation(left);
             i++;
             autoPlay();
             changeButton(i);
-        }, 2000);
+        }, timer);
     //无动画版本
 }
 autoPlay();

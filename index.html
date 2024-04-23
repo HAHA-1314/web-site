@@ -16,16 +16,8 @@
     <!-- 快速导航图标 -->      
                 <div class="bgi">   
                         <video src="video/yufengxing.mp4" 
-                        autoplay="true"
-                         muted="true" 
-                         loop="true"
-                         alt="1"
-                          poster="image/bgi.png" 
-                          playsinline="true" 
-                          disablepictureinpicture="ture" 
-                          id="index-video"
-                          ></video>
-                          
+                        disablepictureinpicture
+                        autoplay="true" muted="true" loop="true"  id="index-video"></video>   
                         <div class="bgi-container-box">
                         <span class="video-tab">
                             <span class="video-icon">
@@ -80,7 +72,7 @@
                          </div>
                          <span class="banner-buttom" id="banner-right"><img src="icon/right-white.png" alt="1" ></span>
                       </span>
-                </div>
+                    </div>
                 </div>
                 <!-- </div> -->
                  
@@ -94,33 +86,25 @@
                     |
                 </span>
                 <span class="content-tab">
-                        <a href="#" class="content-text" style="color: rgb(255,255,255)">全部     
-                       </a>
+                        <a class="content-text" style="color: rgb(255,255,255);" id='content-all'>全部</a>
                 </span>
                 <span class="content-tab">
-                
-                   <a href="#" class="content-text">电视剧
-                </a>
+                   <a class="content-text" id='content-video'>电视剧</a>
             </span>
             <span class="content-tab">
-               <a href="#" class="content-text">综艺
-                </a>
+               <a class="content-text">综艺</a>
+            </span>
+            <span class="content-tab">
+                <a class="content-text" id="content-movie" style="cursor: pointer;">电影</a>
+            </span>
+            <span class="content-tab">
+                <a class="content-text">动漫</a>
+            </span>
+            <span class="content-tab">
+                <a class="content-text">少儿</a>
             </span>
              <span class="content-tab">
-                <a href="#" class="content-text">电影
-                </a>
-            </span>
-            <span class="content-tab">
-                 <a href="#" class="content-text">动漫
-                </a>
-            </span>
-            <span class="content-tab">
-                <a href="#" class="content-text">少儿
-                </a>
-            </span>
-             <span class="content-tab">
-                <a href="#" class="content-text">纪录片
-                </a>
+                <a class="content-text">纪录片</a>
             </span>  
             <span class="change-content">
                 <img src="icon/change.png" alt="1">换一换
@@ -130,6 +114,7 @@
                 <span class="popular">
                     <a href="yufengxing.html">
                     <img src="image/1-1.jpeg" alt="" class="popular-poster" id="pic-1-1">
+                    <video src="video/yufengxing.mp4" width=300px height=168px id="video-1-1" class="popular-video"></video>
                     <div class="poster-name" id="name-1-1">与凤行</div>
                     <div class="poster-description" id="description-1-1">赵丽颖林更新甜虐二搭</div>
                     <!-- brief 与 introdiction -->
@@ -147,6 +132,9 @@
             <span class="popular">
                 <a href="other.html" target="_blank">
                     <img src="image/1-2.jpeg" alt="" class="popular-poster" id="pic-1-2">
+                    <video src="video/yufengxing.mp4" width=300px height=168px 
+                    disablepictureinpicture
+                    id="video-1-2" class="popular-video"></video>
                     <div class="poster-name" id="name-1-2">养蜂人</div>
                     <div class="poster-description" id="description-1-2">杀光！杰森斯坦森绝不留情</div>
                 </a>
@@ -328,7 +316,7 @@
      </div>
      <div class="side-block"></div>
      <div class="top-block"></div>
-         </div>
+    </div>
                
       <!-- 侧边导航栏模块 -->
      <ul class="sidenav" style="list-style-type: none; padding-top: 0px; padding-left: 25px;" align=left>
@@ -437,147 +425,14 @@
         <li class="sidenav-list" >Copyright © 1998 - 2024 Tencent. All Rights Reserved.</li>
         <li class="sidenav-list" >腾讯公司 版权所有</li>
     </ul>     
+
+    <div class="grid-container">
+        <!-- 留白 logo  搜索框 功能栏 留白-->
         <div class="top-nav" id="top-logo">
-              <a href="index.html">
+            <a href="index.html">
                 <img src="icon/txvideo.png" alt="tecent-logo" class="logo">
             </a>  
         </div>
-        <div id="vip-link">
-            <a href="#" target="_blank">
-                <img src="icon/vip-color-icon.png" alt="会员中心" class="quick-link">
-            </a>
-        </div>
-        <div class="drop-list" id="vip-drop-box">
-            <div id="vip-drop-content-1">扫码优惠开通会员</div>
-            <div id="vip-drop-content-2"></div>
-            <div id="vip-drop-content-3">开通VIP会员<img src="image/qrcode.png" alt="2" id="vip-qrcode"></div>
-            <div id="vip-drop-content-4">
-                <img src="image/vip-1080p.png" alt="1" class="vip-pvg">
-                1080P
-            </div>
-            <div id="vip-drop-content-4">
-                <img src="image/vip-first.png" alt="1" class="vip-pvg">
-                内容抢先看
-            </div>        
-            <div id="vip-drop-content-4">
-                <img src="image/vip-view.png" alt="1" class="vip-pvg">  
-                臻彩视听            
-            </div>
-            <div id="vip-drop-content-4">
-                <img src="image/vip-privlige.png" alt="1" class="vip-pvg">
-                缓存特权
-            </div>
-                <div id="vip-drop-content-5">立即开通</div>   
-        </div>
-
-        <div id="game-link">
-            <a href="#" target="_blank">
-                <img src="icon/game-icon.png" alt="游戏" class="quick-link">
-            </a>
-        </div>
-        <div class="drop-list" id="game-drop-box">
-            <div class="drop-line" id="game-drop-content"></div>
-            <div class="drop-line" id="game-drop-content"></div>
-        </div>
-        <div id="create-link">
-            <a href="#" target="_blank">
-                <img src="icon/working-icon.png" alt="创作中心" class="quick-link">
-            </a>
-        </div>
-        <div  id="download-link">
-            <a href="#" target="_blank">
-                <img src="icon/download-icon2.png" alt="下载" class="quick-link">
-            </a>
-        </div>
-        <div  id="history-link">
-            <a href="#" target="_blank">
-                <img src="icon/history-icon.png" alt="观看历史" class="quick-link">
-            </a>
-        </div>
-        <a class="link-box">
-            <img src="icon/touxiang.png" alt="头像" class="quick-link"  id="touxiang-link">
-            <div class="drop-list" id="avatar-drop-box">
-                <!-- 未登录   -->
-                <div class="drop-line" id="avatar-drop-content-1">登陆之后可以</div>
-                <div class="drop-line" id="avatar-drop-content-2">
-                    <span class="img-drop-box">
-                        <img src="#" alt="">
-                    </span>
-                    <span class="content-drop-box">
-                        同步多端观看记录
-                    </span>
-                    </div>
-                <div class="drop-line" id="avatar-drop-content-2">
-                    <span class="img-drop-box">
-                        <img src="#" alt="">
-                    </span>
-                    <span class="content-drop-box">
-                        参与互动讨论
-                    </span>
-                    </div>
-                <div class="drop-line" id="avatar-drop-content-2">
-                    <span class="img-drop-box">
-                        <img src="#" alt="">
-                    </span>
-                    <span class="content-drop-box">
-                        观看更个性化内容
-                    </span>
-                    </div>
-                <div class="drop-line" id="avatar-drop-content-2">
-                    <span class="img-drop-box">
-                        <img src="#" alt="">
-                    </span>
-                    <span class="content-drop-box">
-                        领取专属游戏礼包
-                    </span>
-                </div>
-                <div class="login-in-btn">立即登录</div>
-            </div>      
-        <!-- 已登录 -->
-        <div class="drop-list" id="avatar-logined">
-            <div class="drop-line" id="avatar-logined-content-1">
-                <div class="person-name" id="user-name">哈哈</div>
-                <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
-                <div class="avatar-vip-btn">开通腾讯视频VIP</div>
-            </div>
-            <a href="info.html" target="_blank">
-                <div class="drop-line" id="avatar-logined-content-2">
-                    <span class="img-drop-box">
-                        <img src="#" alt="">
-                    </span>
-                    <span class="content-logined-box" id="person-index">
-                        个人中心
-                    </span>
-                    </div>
-            </a>
-            <div class="drop-line" id="avatar-logined-content-2">
-                <span class="img-drop-box">
-                    <img src="#" alt="">
-                </span>
-                <span class="content-logined-box" id="my-favorite">
-                    我的加追
-                </span>
-                </div>
-            <div class="drop-line" id="avatar-logined-content-2">
-                <span class="img-drop-box">
-                    <img src="#" alt="">
-                </span>
-                <span class="content-logined-box">
-                    我的游戏礼包
-                </span>
-            </div>
-            <div class="drop-line" id="avatar-logined-content-2">
-                <span class="img-drop-box">
-                    <img src="#" alt="">
-                </span>
-                <span class="content-logined-box">
-                    VIP消息
-                </span>
-            </div>
-            <div class="login-out-btn">退出登录</div>
-        </div>      
-    
-        <!-- 选择登录方式模块 -->
         <div class="top-block" id="input-background">
             <input type="text" placeholder="与凤行" id="index-input">
             <button type="button">
@@ -586,13 +441,156 @@
                 </span>
             </button>
         </div>  
+        <div class="grid-function">
+            <div id="vip-link">
+                <a href="#" target="_blank">
+                    <img src="icon/vip-color-icon.png" alt="会员中心" class="quick-link">
+                </a>
+                <div class="drop-list" id="vip-drop-box">
+                    <div id="vip-drop-content-1">扫码优惠开通会员</div>
+                    <div id="vip-drop-content-2"></div>
+                    <div id="vip-drop-content-3">开通VIP会员<img src="image/qrcode.png" alt="2" id="vip-qrcode"></div>
+                    <div id="vip-drop-content-4">
+                        <img src="image/vip-1080p.png" alt="1" class="vip-pvg">
+                        1080P
+                    </div>
+                    <div id="vip-drop-content-4">
+                        <img src="image/vip-first.png" alt="1" class="vip-pvg">
+                        内容抢先看
+                    </div>        
+                    <div id="vip-drop-content-4">
+                        <img src="image/vip-view.png" alt="1" class="vip-pvg">  
+                        臻彩视听            
+                    </div>
+                    <div id="vip-drop-content-4">
+                        <img src="image/vip-privlige.png" alt="1" class="vip-pvg">
+                        缓存特权
+                    </div>
+                        <div id="vip-drop-content-5">立即开通</div>   
+                </div>
+            </div>
+            <div id="game-link">
+                <a href="#" target="_blank">
+                    <img src="icon/game-icon.png" alt="游戏" class="quick-link">
+                </a>
+            </div>
+            <div class="drop-list" id="game-drop-box">
+                <div class="drop-line" id="game-drop-content"></div>
+                <div class="drop-line" id="game-drop-content"></div>
+            </div>
+            <div id="create-link">
+                <a href="#" target="_blank">
+                    <img src="icon/working-icon.png" alt="创作中心" class="quick-link">
+                </a>
+            </div>
+            <div id="download-link">
+                <a href="#" target="_blank">
+                    <img src="icon/download-icon2.png" alt="下载" class="quick-link">
+                </a>
+            </div>
+            <div  id="history-link">
+                <a href="#" target="_blank">
+                    <img src="icon/history-icon.png" alt="观看历史" class="quick-link">
+                </a>
+            </div>
+            <div class="link-box">
+                <img src="icon/touxiang.png" alt="头像" class="quick-link"  id="touxiang-link">
+                <div class="drop-list" id="avatar-drop-box">
+                    <!-- 未登录   -->
+                    <div class="drop-line" id="avatar-drop-content-1">登陆之后可以</div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            同步多端观看记录
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            参与互动讨论
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            观看更个性化内容
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            领取专属游戏礼包
+                        </span>
+                    </div>
+                    <div class="login-in-btn">立即登录</div>
+            </div>      
+        </div>
+            
+            <!-- 已登录 -->
+            <div class="drop-list" id="avatar-logined">
+                <div class="drop-line" id="avatar-logined-content-1">
+                    <div class="person-name" id="user-name">哈哈</div>
+                    <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
+                    <div class="avatar-vip-btn">开通腾讯视频VIP</div>
+                </div>
+                <a href="info.html" target="_blank">
+                    <div class="drop-line" id="avatar-logined-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-logined-box" id="person-index">
+                            个人中心
+                        </span>
+                        </div>
+                </a>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box" id="my-favorite">
+                        我的加追
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box">
+                        我的游戏礼包
+                    </span>
+                </div>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box">
+                        VIP消息
+                    </span>
+                </div>
+                <div class="login-out-btn">退出登录</div>
+            </div> 
+
+        </div>
+        
+    
+       
+       
         
         <div class="side-funtion1"> 
             <div class="side-funtion2"></div>
         </div>
        
         <div class="login-back">  
-        </div>
+        </div> 
+        <!-- 选择登录方式模块 -->
         <div class="login-modal">
             <div class="login-bar">
                 <span class="login-head-text">账号登录</span>
@@ -711,7 +709,8 @@
         <script type="text/javascript" src="javascript/isLogined.js"></script>
         <script type="text/javascript" src="javascript/FetchLogin.js"></script>
         <script type="text/javascript" src="javascript/LoginModal.js"></script>
-        <script type="text/javascript" src="javascript/GetChange.js"></script>
         <script type="text/javascript" src="javascript/Logout.js"></script>
+        <script type="text/javascript" src="javascript/ChangePoster.js"></script>
+        <script type="text/javascript" src="javascript/randomIndexVideo.js"></script>
 </body>
 </html>]

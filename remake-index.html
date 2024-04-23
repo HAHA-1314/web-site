@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二轮考核任务</title>
+    <style>
+        * {
+            border: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="css/remake-indexStyle.css">
+</head>
+<body style="background-color: rgb(20, 20, 20);">
+    <!-- 顶部功能栏 -->
+    <div class="top-block">
+        <div class="top-logo"></div>
+        <div class="top-content-link">
+            <span class="top-context"></span>
+            <span class="top-context"></span>
+            <span class="top-context"></span>
+            <span class="top-context"></span>
+            <span class="top-context"></span>
+            <span class="top-context"></span>
+            <span class="top-context" id="documentary-context"></span>
+            <span class="top-context" id="game-context"></span>
+            <span class="top-context"></span>
+        </div>
+        <div class="input-box">
+            <span class="input-zone">
+                <input type="text" placeholder="与凤行" id="index-input">
+            </span>
+            <span class="input-zone">
+                <button>全网搜</button>
+            </span>
+        </div>
+        <div class="top-link">
+            <span class="link-img"><img src="icon/vip-color-icon.png" alt="" id="vip-color-icon"></span>
+            <span class="link-img"><img src="icon/game-icon.png" alt="" id="game-icon"></span>
+            <span class="link-img"><img src="icon/history-icon.png" alt="" id="history-icon"></span>
+            <span class="link-img"><img src="icon/working-icon.png" alt="" id="working-icon"></span>
+            <span class="link-img"><img src="icon/download-icon2.png" alt="" id="download-icon2"></span>
+            <span class="link-img"><img src="icon/touxiang.png" alt="" id="touxiang-link"></span>
+                <div class="drop-list" id="avatar-drop-box">
+                    <!-- 未登录   -->
+                    <div class="drop-line" id="avatar-drop-content-1">登陆之后可以</div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            同步多端观看记录
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            参与互动讨论
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            观看更个性化内容
+                        </span>
+                        </div>
+                    <div class="drop-line" id="avatar-drop-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-drop-box">
+                            领取专属游戏礼包
+                        </span>
+                    </div>
+                    <div class="login-in-btn">立即登录</div>
+                </div>      
+            <!-- 已登录 -->
+            <div class="drop-list" id="avatar-logined">
+                <div class="drop-line" id="avatar-logined-content-1">
+                    <div class="person-name" id="user-name">哈哈</div>
+                    <div class="avatar-logined-content">开通VIP/超级影视SVIP 看大片</div>
+                    <div class="avatar-vip-btn">开通腾讯视频VIP</div>
+                </div>
+                <a href="info.html" target="_blank">
+                    <div class="drop-line" id="avatar-logined-content-2">
+                        <span class="img-drop-box">
+                            <img src="#" alt="">
+                        </span>
+                        <span class="content-logined-box" id="person-index">
+                            个人中心
+                        </span>
+                        </div>
+                </a>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box" id="my-favorite">
+                        我的加追
+                    </span>
+                    </div>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box">
+                        我的游戏礼包
+                    </span>
+                </div>
+                <div class="drop-line" id="avatar-logined-content-2">
+                    <span class="img-drop-box">
+                        <img src="#" alt="">
+                    </span>
+                    <span class="content-logined-box">
+                        VIP消息
+                    </span>
+                </div>
+                <div class="login-out-btn">退出登录</div>
+            </div> 
+                 
+            </span>
+        </div>
+    </div>
+        
+          <!-- 侧边导航栏模块 -->
+          <ul class="sidenav" style="list-style-type: none; padding-top: 0px; padding-left: 25px;" align=left>
+            <li>
+            <a href="index.html" class="sidenav-text">     
+                    <div style="color:#51afd8"> <img src="icon/home.png" alt="" class="left-icon"> 首页 
+                    </div>
+            </a>
+                   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/chinesevideo.png" alt="" class="left-icon"> 中视频
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/shortmovie-icon.png" alt="" class="left-icon"> 电视剧
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/movie.png" alt="" class="left-icon"> 电影
+                    </div>
+                </a>   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/zongyi.png" alt="" class="left-icon"> 综艺
+                    </div>
+                </a>   
+                
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/animation.png" alt="" class="left-icon"> 动漫
+                    </div>
+                </a>   
+               
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/children-icon.png" alt="" class="left-icon"> 少儿
+                    </div>
+                </a>   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div> 
+                        <img src="icon/basketball-icon.png" alt="" class="left-icon"> 体育
+                    </div>
+                </a>   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/documentary-icon.png" alt="" class="left-icon"> 纪录片
+                    </div>
+                </a>           
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/shortmovie-icon.png" alt="" class="left-icon"> 短剧
+                    </div>
+                </a>   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/nba-icon.png" alt="" class="left-icon"> NBA
+                    </div>
+                </a>   
+            </li>
+            <li>
+                <a href="index.html" class="sidenav-text">
+                    <div>
+                        <img src="icon/vip-icon.png" alt="" class="left-icon"> VIP会员
+                    </div>
+                </a>   
+            </li>
+    
+         <hr>
+            <li class="sidenav-list" >腾讯视频隐私保护指引</li>
+            <li class="sidenav-list" >腾讯视频用户服务协议</li>
+            <li class="sidenav-list" >腾讯视频第三方信息共享清单</li>
+            <li class="sidenav-list" >腾讯视频已收集个人信息清单</li>
+            <li class="sidenav-list" >腾讯儿童隐私保护声明</li>
+            <li class="sidenav-list" >腾讯视频系列会员服务协议</li>
+        <hr>
+           <li class="sidenav-list" >粤网文[2023]2882-203号 </li>
+            <li class="sidenav-list" >网络视听许可证1904073号</li>
+            <li class="sidenav-list" >粤公网安备 44030002000001号</li>
+            <li class="sidenav-list" >增值电信业务经营许可证：粤B2-20090059</li>
+            <li class="sidenav-list" >关于腾讯 |  </li>
+            <li class="sidenav-list"> About Tencent 服务条款 |</li>
+            <li class="sidenav-list">广告设置 | 腾讯招聘 客服中心 | 网站导航</li>
+            <li class="sidenav-list" >Copyright © 1998 - 2024 Tencent. All Rights Reserved.</li>
+            <li class="sidenav-list" >腾讯公司 版权所有</li>
+        </ul>   
+        
+        <div class="body-box">
+            <div class="video-box">
+                <video src="video/yufengxing2.mp4" muted autoplay loop disablepictureinpicture id="index-video"></video>
+                <div class="videoleft">
+                    <div class="video-icon">
+                        <img src="image/yufengxing-icon.png" alt="1">
+                    </div>
+                    <div class="video-text" id="video-name">诛仙2</div>
+                    <div class="video-text" id="video-tag">东方仙侠 · 东方玄幻 · 英雄</div>
+                    <div class="video-text" id="video-brief">正魔大战已过去十年，张小凡化身鬼厉，在魔教内斗中征伐四方。</div>
+                    <div class="video-btn">播放正片</div>
+                    <span class="mute-btn">
+                        <img src="icon/mute-btn2.png" alt="1" id="video-muted">
+                        <img src="icon/mute-btn1.png" alt="2" id="video-notmuted">
+                    </span>
+                </div>
+                <div class="videoright">
+                    <div class="video-pic-btn" id="video-left-btn">
+                        <img src="icon/left-white.png" alt="l">
+                    </div>
+                    <div class="video-pic">
+                        <div class="img-box" id="img-feipingfeiche">
+                                <img src="image/feipingfeiche-hover.png" alt=".">
+                                <div class="img-text" id="img-name-1">废品飞车</div>
+                        </div>     
+                        <div class="img-box" id="img-huanlesong">
+                                <img src="image/huanlesong-hover.png" alt=".">
+                                <div class="img-text" id="img-name-2">欢乐颂</div>
+                        </div> 
+                        <div class="img-box" id="img-xianni">
+                                <img src="image/xianni-hover.png" alt="." >
+                                <div class="img-text" id="img-name-3">仙逆</div>
+                        </div>
+                        <div class="img-box" id="img-xiaorizi">
+                                <img src="image/xiaorizi-hover.png" alt=".">
+                                <div class="img-text" id="img-name-4">小日子</div>
+                        </div>
+                        <div class="img-box" id="img-yufengxing">
+                                <img src="image/yufengxing-hover.png" alt=".">
+                                <div class="img-text" id="img-name-5">与风行</div>                         
+                        </div>
+                    </div>
+                    <div class="video-pic-btn" id="video-right-btn">
+                        <img src="icon/right-white.png" alt="r">
+                    </div>
+                </div>
+            </div>
+            <div class="poster-box">
+
+            </div>
+            <div class="adder-box">
+
+            </div>
+        </div>
+    <div class="gray-block"></div>
+    <div class="side-block"></div>   
+    <div class="login-back">  
+    </div> 
+    <!-- 选择登录方式模块 -->
+    <div class="login-modal">
+        <div class="login-bar">
+            <span class="login-head-text">账号登录</span>
+            <span class="login-close"><img src="icon/close.png" alt="1" class="login-close-btn"></span>
+        </div>
+        <div class="login-text">
+            微信和QQ是两个独立账号，账号信息不互通
+        </div>
+        <div class="login-qq">QQ登录</div>
+        <div class="login-wx">微信登录</div>
+        <div class="login-alert">
+            请阅读并勾选下方协议
+        </div>
+        <div class="login-select">
+            <span class="un-selected"><img src="icon/un-selected.png" alt="" class="login-radio"></span>
+            <span class="is-selected"><img src="icon/is-selected.png" alt="" class="login-radio" style="width: 22px;"></span>
+            同意 
+            <span class="login-a">《服务协议》
+            </span>、<span class="login-a">《隐私政策》</span>、
+            <span class="login-a">《儿童隐私保护声明》</span>、
+            <span class="login-a">《已采集个人信息清单》</span>和 
+            <span class="login-a">《第三方信息共享清单》</span>
+        </div>  
+    </div>
+    <!-- qq登录模块 -->
+    <div class="login-qq-modal">
+        <div class="login-bar">
+            <span class="login-back-to-first" id="back-to-modal"><img src="icon/left.png" alt="1" class="login-back-btn"></span>
+            <span class="login-head-text" style="margin-left: 290px">QQ账号登录</span>
+            <span class="login-close"><img src="icon/close.png" alt="1" class="login-qq-close"></span>
+        </div>
+        <div class="login-qq-text">
+            登录后高清播放更流畅
+        </div>
+        <div class="login-qq-container">
+            <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                <div class="qq-head-text">密码登录</div>
+                <div style="margin-bottom: 20px">推荐使用快捷登录，防止盗号</div>
+                <!-- post?? -->
+                
+                    <input type="text" class="qq-input" id="login-username">
+                    <input type="password" class="qq-input" id="login-password">
+                    <button class="login-qq-btn" id="login-button" style="margin-top: 40px">登录</button>
+                
+                
+                <div class="login-bottom-function">
+                    <span>找回密码</span>
+                    <span class="login-hr">|</span>
+                    <span class="go-to-reg-btn">注册账号</span>
+                    <span class="login-hr">|</span>
+                    <span>意见反馈</span>
+                </div>
+            </div>
+            <div class="login-qq-box">
+                <div class="login-right-container">
+                    <div class="login-right-text">
+                    <input type="checkbox" class="login-checkbox">
+                    <span>腾讯视频将获取以下权限</span> 
+                </div>
+                <div class="login-right-text">
+                    <input type="checkbox" class="login-checkbox"> 
+                    <span >使用你的QQ头像、昵称信息</span>
+                </div> 
+                <div class="login-right-text" style="margin-left: 20px">授权即同意服务协议和QQ隐私保护指引</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- qq注册模块 -->
+    <div class="reg-qq-modal">
+        <div class="login-bar">
+            <span class="login-back-to-first"><img src="icon/left.png" alt="1" class="login-back-btn" id="reg-back"></span>
+            <span class="login-head-text" style="margin-left: 290px">QQ账号注册</span>
+            <span class="login-close"><img src="icon/close.png" alt="1" class="reg-close"></span>
+        </div>
+        <div class="login-qq-text">
+            注册后跳转登录
+        </div>
+        <div class="login-qq-container">
+            <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                <div class="qq-head-text">注册账号</div>
+                <div style="margin-bottom: 20px">请输入账号与密码</div>
+                <!-- post?? -->
+                 
+                    <input type="text" class="qq-input" id="reg-username" placeholder="长度至少为6,至少包含一个小写字母">
+                    <input type="password" class="qq-input" id="reg-password">
+                    <button class="login-qq-btn" style="margin-top: 40px" id="reg-button">注册</button>
+                
+                
+                <div class="login-bottom-function">
+                    <span>找回密码</span>
+                    <span class="login-hr">|</span>
+                    <span class="go-to-login-btn">已有账号，登录</span>
+                    <span class="login-hr">|</span>
+                    <span>意见反馈</span>
+                </div>
+            </div>
+            <div class="login-qq-box">
+                <div class="login-right-container">
+                    <div class="login-right-text">
+                    <input type="checkbox" class="login-checkbox">
+                    <span>腾讯视频将获取以下权限</span> 
+                </div>
+                <div class="login-right-text">
+                    <input type="checkbox" class="login-checkbox"> 
+                    <span >使用你的QQ头像、昵称信息</span>
+                </div> 
+                <div class="login-right-text" style="margin-left: 20px">授权即同意服务协议和QQ隐私保护指引</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="user-name-2" style="display: none"></div>
+        <div style="display: none"><img src="#" alt="" class="user-avatar"></div>
+        <!-- 占位符将isLogined.js通用化 -->
+        <script type="text/javascript" src="javascript/isLogined.js"></script>
+        <script type="text/javascript" src="javascript/FetchLogin.js"></script>
+        <script type="text/javascript" src="javascript/LoginModal.js"></script>
+        <script type="text/javascript" src="javascript/Logout.js"></script>
+        <script type="text/javascript" src="javascript/ChangePoster.js"></script>
+        <script type="text/javascript" src="javascript/randomIndexVideo.js"></script>
+</body>
+</html>
