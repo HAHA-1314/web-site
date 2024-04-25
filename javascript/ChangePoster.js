@@ -80,13 +80,11 @@ const description_2_6 = document.querySelector('#description-2-6');
 
 var page = 1;
 
-const total = 2; //目前接口支持的最大page
-
 var type = "all";
 
 var urlMovie = url + "/video/search?type=电影&name=&size=6&page=" + page;
 
-var urlChange = url + "/video/random?size=6";
+var urlChange = url + "/video/random?size=12";
 
 var urlVideo = url + "/video/search?type=电视剧&name=&size=6&page=" + page;
 
@@ -155,7 +153,8 @@ function videoTab() {
     }
 }
 
-async function videoChange() {
+async function videoChange(x) {
+    var total;
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -170,38 +169,54 @@ async function videoChange() {
                 changeData = response.json();
             }
             else {
-                console("Something error in Moviechange");
+                console("Something error in VideoChange");
             }
         })
     changeData.then(result => {
-        // console.log(result);
-        // console.log(result.data.name);
-        // console.log(result.data.records.name);   
-        pic_1_1.setAttribute('src', result.data.records[0].cover);
-        name_1_1.innerHTML = result.data.records[0].name;
-        description_1_1.innerHTML = result.data.records[0].brief;
-        pic_1_2.setAttribute('src', result.data.records[1].cover);
-        name_1_2.innerHTML = result.data.records[1].name;
-        description_1_2.innerHTML = result.data.records[1].brief;
-        pic_1_3.setAttribute('src', result.data.records[2].cover);
-        name_1_3.innerHTML = result.data.records[2].name;
-        description_1_3.innerHTML = result.data.records[2].brief;
-        pic_1_4.setAttribute('src', result.data.records[3].cover);
-        name_1_4.innerHTML = result.data.records[3].name;
-        description_1_4.innerHTML = result.data.records[3].brief;
-        pic_1_5.setAttribute('src', result.data.records[4].cover);
-        name_1_5.innerHTML = result.data.records[4].name;
-        description_1_5.innerHTML = result.data.records[4].brief;
-        pic_1_6.setAttribute('src', result.data.records[5].cover);
-        name_1_6.innerHTML = result.data.records[5].name;
-        description_1_6.innerHTML = result.data.records[5].brief;
+        total = (result.data.total / result.data.size);          //获取 total/size 页 size=5 的indexPoster
+        total = total | 0;
+        if (x != null) {
+            if (page == total) page = 1;
+            else page++;
+        }
+        else page = 1;
     })
-    console.log(page);
-    if (page == total) page = 1;
-    else page++;
+        .then(async function () {
+            urlVideo = url + "/video/search?type=电视剧&name=&size=6&page=" + (page);
+            await fetch(urlVideo, requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        changeData = response.json();
+                    }
+                    else {
+                        console("Something error in secVideoChange");
+                    }
+                })
+            changeData.then(result => {
+                pic_1_1.setAttribute('src', result.data.records[0].cover);
+                name_1_1.innerHTML = result.data.records[0].name;
+                description_1_1.innerHTML = result.data.records[0].brief;
+                pic_1_2.setAttribute('src', result.data.records[1].cover);
+                name_1_2.innerHTML = result.data.records[1].name;
+                description_1_2.innerHTML = result.data.records[1].brief;
+                pic_1_3.setAttribute('src', result.data.records[2].cover);
+                name_1_3.innerHTML = result.data.records[2].name;
+                description_1_3.innerHTML = result.data.records[2].brief;
+                pic_1_4.setAttribute('src', result.data.records[3].cover);
+                name_1_4.innerHTML = result.data.records[3].name;
+                description_1_4.innerHTML = result.data.records[3].brief;
+                pic_1_5.setAttribute('src', result.data.records[4].cover);
+                name_1_5.innerHTML = result.data.records[4].name;
+                description_1_5.innerHTML = result.data.records[4].brief;
+                pic_1_6.setAttribute('src', result.data.records[5].cover);
+                name_1_6.innerHTML = result.data.records[5].name;
+                description_1_6.innerHTML = result.data.records[5].brief;
+            })
+        })
 }
 
-async function movieChange() {
+async function movieChange(x) {
+    var total;
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -223,34 +238,59 @@ async function movieChange() {
         // console.log(result);
         // console.log(result.data.name);
         // console.log(result.data.records.name);   
-        pic_1_1.setAttribute('src', result.data.records[0].cover);
-        name_1_1.innerHTML = result.data.records[0].name;
-        description_1_1.innerHTML = result.data.records[0].brief;
-        pic_1_2.setAttribute('src', result.data.records[1].cover);
-        name_1_2.innerHTML = result.data.records[1].name;
-        description_1_2.innerHTML = result.data.records[1].brief;
-        pic_1_3.setAttribute('src', result.data.records[2].cover);
-        name_1_3.innerHTML = result.data.records[2].name;
-        description_1_3.innerHTML = result.data.records[2].brief;
-        pic_1_4.setAttribute('src', result.data.records[3].cover);
-        name_1_4.innerHTML = result.data.records[3].name;
-        description_1_4.innerHTML = result.data.records[3].brief;
-        pic_1_5.setAttribute('src', result.data.records[4].cover);
-        name_1_5.innerHTML = result.data.records[4].name;
-        description_1_5.innerHTML = result.data.records[4].brief;
-        pic_1_6.setAttribute('src', result.data.records[5].cover);
-        name_1_6.innerHTML = result.data.records[5].name;
-        description_1_6.innerHTML = result.data.records[5].brief;
+        total = (result.data.total / result.data.size);          //获取 total/size 页 size=5 的indexPoster
+        total = total | 0;
+        if (x != null) {
+            if (page == total) page = 1;
+            else page++;
+        }
+        else page = 1;
+        urlMovie = url + "/video/search?type=电影&name=&size=6&page=" + page;
     })
-    if (page == total) page = 1;
-    else page++;
+        .then(async function () {
+            await fetch(urlMovie, requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        changeData = response.json();
+                    }
+                    else {
+                        console("Something error in secMoviechange");
+                    }
+                })
+            changeData.then(result => {
+                pic_1_1.setAttribute('src', result.data.records[0].cover);
+                name_1_1.innerHTML = result.data.records[0].name;
+                description_1_1.innerHTML = result.data.records[0].brief;
+                pic_1_2.setAttribute('src', result.data.records[1].cover);
+                name_1_2.innerHTML = result.data.records[1].name;
+                description_1_2.innerHTML = result.data.records[1].brief;
+                pic_1_3.setAttribute('src', result.data.records[2].cover);
+                name_1_3.innerHTML = result.data.records[2].name;
+                description_1_3.innerHTML = result.data.records[2].brief;
+                pic_1_4.setAttribute('src', result.data.records[3].cover);
+                name_1_4.innerHTML = result.data.records[3].name;
+                description_1_4.innerHTML = result.data.records[3].brief;
+                pic_1_5.setAttribute('src', result.data.records[4].cover);
+                name_1_5.innerHTML = result.data.records[4].name;
+                description_1_5.innerHTML = result.data.records[4].brief;
+                pic_1_6.setAttribute('src', result.data.records[5].cover);
+                name_1_6.innerHTML = result.data.records[5].name;
+                description_1_6.innerHTML = result.data.records[5].brief;
+            })
+
+        })
 }
 
 
 change_button.onclick = async function randomChange() {
-    if (type != "all") return;
-    else if (type == "movie") movieChange();
-    else if (type == "video") videoChange();
+    if (type == "movie") {
+        movieChange(1);     //传参来表示用户点击了换一换
+        return;
+    }
+    if (type == "video") {
+        videoChange(1);
+        return;
+    }
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -269,8 +309,8 @@ change_button.onclick = async function randomChange() {
             }
         })
     changeData.then(result => {
-        // console.log(result);
-        // console.log(result.data.name);
+        // console.log(result);  
+        // console.log(result.data[1].cover);
         // console.log(result.data.records.name);   
         pic_1_1.setAttribute('src', result.data[0].cover);
         name_1_1.innerHTML = result.data[0].name;
@@ -290,6 +330,24 @@ change_button.onclick = async function randomChange() {
         pic_1_6.setAttribute('src', result.data[5].cover);
         name_1_6.innerHTML = result.data[5].name;
         description_1_6.innerHTML = result.data[5].brief;
+        pic_2_1.setAttribute('src', result.data[6].cover);
+        name_2_1.innerHTML = result.data[6].name;
+        description_2_1.innerHTML = result.data[6].brief;
+        pic_2_2.setAttribute('src', result.data[7].cover);
+        name_2_2.innerHTML = result.data[7].name;
+        description_2_2.innerHTML = result.data[7].brief;
+        pic_2_3.setAttribute('src', result.data[8].cover);
+        name_2_3.innerHTML = result.data[8].name;
+        description_2_3.innerHTML = result.data[8].brief;
+        pic_2_4.setAttribute('src', result.data[9].cover);
+        name_2_4.innerHTML = result.data[9].name;
+        description_2_4.innerHTML = result.data[9].brief;
+        pic_2_5.setAttribute('src', result.data[10].cover);
+        name_2_5.innerHTML = result.data[10].name;
+        description_2_5.innerHTML = result.data[10].brief;
+        pic_2_6.setAttribute('src', result.data[11].cover);
+        name_2_6.innerHTML = result.data[11].name;
+        description_2_6.innerHTML = result.data[11].brief;
     })
 }
-// change_button.click(); //首先执行一次
+change_button.click(); //首先执行一次

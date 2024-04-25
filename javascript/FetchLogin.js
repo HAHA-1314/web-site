@@ -71,9 +71,6 @@ reg_button.onclick = async function () {
     )
     // var Reg_Result = Reg_Data.selectVaildEvent();
     Reg_Data.then(result => {
-        // console.log(result.errorMsg);
-        // Reg_Result = result;
-        // return result;
         if (result.errorMsg == null) {
             alert("注册成功!即将返回登录!");
             // setTimeout(SuccessReg, 1000);
@@ -82,9 +79,5 @@ reg_button.onclick = async function () {
             alert("重复的用户名!");
         }
     })
-    
     console.log(Reg_Data);
-    // console.log(result);
-    // console.log(Reg_Result);
-
 }

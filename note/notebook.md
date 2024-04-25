@@ -2,9 +2,9 @@
 ## 基础要求
 
 - 2.2.2 √换一换 随机排序
-- 2.2.3 ×重磅热播 tab 栏目切换
-- 2.2.5 ×小视频 hover 更换介绍文字 
-        ×海报背景颜色随海报颜色更换 鼠标悬停播放视频
+- 2.2.3 √重磅热播 tab 栏目切换
+- 2.2.5 √小视频 hover 更换介绍文字 
+        ×海报背景颜色随海报颜色 更换 鼠标悬停播放视频
         ×左上角与右下角的介绍 电视剧显示集数 电影显示评分 **303接口**
 - 2.2.6 ×搜索 热搜 接口 **304接口**
 - 2.2.7-1  ×视频详情页简介
@@ -26,19 +26,20 @@
 > ### 开发日志
 ```
 - 4月5日 学习 JavaScript Web API 部分 完成 视频详情页的视频简介鼠标点击呼出功能
-- 4月9日 使用CSS JS-if else语句完成登录窗口 用户是否同意登录政策
-- 4月10日 try to achieve register function...but no response...
+- 4月9日 使用if else语句完成登录窗口 用户是否同意登录政策
+- 4月10日 try to achieve register function...but no response... [CORS跨域问题]
+- 4月23日 重做首页和视频详细页
 ``` 
 
 - ### 布局问题
-  50%缩放下 顶部导航栏图标均存在问题
+  **remake已解决**50%缩放下 顶部导航栏图标均存在问题
   ![alt text](image-3.png)
-  各种缩放下均存在问题需要解决，左右两侧箭头，以及与视频的相对位置 ![alt text](image-2.png)
+  **remake已解决**各种缩放下均存在问题需要解决，左右两侧箭头，以及与视频的相对位置 ![alt text](image-2.png)
   ![alt text](image-7.png)
-  **半解决** hover头像布局问题![alt text](image-4.png) 
+  **remake已解决** hover头像布局问题![alt text](image-4.png) 
   **已解决**下拉菜单hover效果存在bug，hover盒子位置错误
   ![alt text](image-6.png)  
-  !!背景视频链接有bug，不能完全覆盖视频(初始布局知识不全面出现的bug)
+  **remake已解决**!!背景视频链接有bug，不能完全覆盖视频(初始布局知识不全面出现的bug)
 
 > ### 学习笔记
 
@@ -166,7 +167,8 @@
   json是JavaScript对象语法格式
   json存储在自己的文件之中，后缀为.json
 
-- #### 再完善媒体查询的笔记
+  #### CSS
+- 完善媒体查询笔记
   屏幕 16:10 2560×1600px
   50% width 2560px
   67% widih 1920px
@@ -179,8 +181,8 @@
   150% width 853px
   个人信息页媒体查询 （较为成功的个人案例）
   ![alt text](image-15.png)
-
-主站 媒体查询
+- grid布局
+  position:absolute; 不会撑大grid网格 应用于JS按键响应的页面弹窗
    
 ##### JSONP
   对于 fetch() 与 xmlhttprequest,一般会出现 cors 跨域问题
@@ -263,4 +265,15 @@ Promise构造方法传的是一个回调函数，回调函数里面也带着两�
 
 #### HTML5 Video标签
   ![alt text](image-16.png)
-  
+
+#### CSS 计数器
+- 1 首先使用counter-reset 创建它。
+- 2 使用 content 和 counter-increment 等 显示计数器值和改变计数器值
+- ![alt text](image-17.png)
+- ![alt text](image-18.png)
+
+#### Map的遍历与sort方法
+初始化 var map = new Map(); JS构造函数
+map转数组 [...map] 
+- ![alt text](image-20.png)
+- ![alt text](image-19.png)

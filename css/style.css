@@ -70,20 +70,19 @@ a.content-text {
      margin-top: 40px;
  }
 
- .first-line {
-     height: 90px;
-     position: relative;
-     top: min(70.5vw, 680px);
-     overflow: hidden;
-     left: 200px;
-     width: max(1600px,100%);
-     z-index: 2;
-     /* top: 20px; */
- }
+.first-line {
+    height: 90px;
+    position: relative;
+    top: 800px;
+    overflow: hidden;
+    left: 20px;
+    width: 100%;
+    z-index: 2;
+}
 
 .change-content {
     position: absolute;
-    right: 220px;
+    right: 280px;
     color: #d8dad4;
     font-size: 20px;
     display: inline-block;
@@ -396,8 +395,7 @@ a.content-text {
 
 .popular-video {
     display: inline-block;
-    position: relative;
-    
+    position: relative;   
     z-index: 18;
 }
 
