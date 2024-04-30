@@ -1,14 +1,6 @@
 var logoff_btn = document.querySelector(".logoff-btn");
 
-var logo = document.querySelector('.top-logo');
-
-logo.addEventListener("click", toIndex);
 logoff_btn.addEventListener("click", logoff);
-
-function toIndex() {
-    window.location.href = "index.html";
-    // 使用html a标签将影响grid布局
-}
 
 async function logoff() {
     var urlLogoff = url + "/user/logoff";

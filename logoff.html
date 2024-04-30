@@ -151,6 +151,11 @@
                 <span class="logoff-content-2">账号注销相关的操作管理</span>
                 <span class="logoff-btn">注销</span>
             </div>
+            <div class="logoff-box" style="margin-top:20px">
+                <span class="logoff-content-1">更改密码</span>
+                <span class="logoff-content-2">账号密码更改相关的操作管理</span>
+                <span class="change-btn">更改</span>
+            </div>
         </div>  
     </div>
     <div class="white-block"></div>
@@ -269,13 +274,36 @@
                      </div>
                  </div>
              </div>
-     
 
+             <!-- 修改密码模块 -->
+             <div class="change-qq-modal">
+                <div class="login-bar">
+                    <!-- <span class="login-back-to-first" id="reg-back"><img src="icon/left.png" alt="1" class="change-back-btn"></span> -->
+                    <span class="login-head-text" style="margin-left: 290px">QQ账号密码修改</span>
+                    <span class="login-close"><img src="icon/close.png" alt="1" class="change-close"></span>
+                </div>
+                <div class="login-qq-text">
+                    账号密码更改
+                </div>
+                <div class="login-qq-container">
+                    <div class="login-qq-box" style="border-right: 1px solid #8a87a144">
+                        <div class="qq-head-text">密码更改</div>
+                        <div style="margin-bottom: 20px">请输入旧密码与新密码</div>             
+                            <input type="password" class="qq-input" id="change-oldPassword" placeholder="请输入您账号的旧密码">
+                            <input type="password" class="qq-input" id="change-newPassword" placeholder="请输入新密码">
+                            <button class="login-qq-btn" style="margin-top: 40px" id="change-button">更改</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+     
+    <div style="display: none"><img src="#" alt="" id="discuss-avatar"></div>
     <script type="text/javascript" src="javascript/isLogined.js"></script>
     <script type="text/javascript" src="javascript/LoginModal.js"></script>
     <script type="text/javascript" src="javascript/FetchLogin.js"></script>
     <script type="text/javascript" src="javascript/PostAvatar.js"></script>
     <script type="text/javascript" src="javascript/Logoff.js"></script>
     <script type="text/javascript" src="javascript/Logout.js"></script>
+    <script type="text/javascript" src="javascript/ChangePassword.js"></script>
 </body>
 </html>

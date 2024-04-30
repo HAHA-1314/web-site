@@ -669,7 +669,6 @@ div.line-2 {
     height: 310px;
     top: -45px;
     padding-top: 60px;
-
     /* 图片高太大了，padding顶高 */
     overflow: hidden;
     /* text-overflow: ellipsis; */

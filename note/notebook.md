@@ -277,3 +277,27 @@ Promise构造方法传的是一个回调函数，回调函数里面也带着两�
 map转数组 [...map] 
 - ![alt text](image-20.png)
 - ![alt text](image-19.png)
+
+#### 选项卡之间传递参数
+- localStroage 
+- Cookie
+- 全局变量 windows.myGlobalId = id; var id = windows.myGlobalId;
+- query传递 
+  1.通过 URL 的查询字符串（即问号后面的参数）将参数传递给页面。可以通过location.search或URLSearchParams对象来获取和解析参数
+  2.
+  //传递参数
+const params = {id: 123, name: 'Alice'};
+const url = `http://example.com/page?${new URLSearchParams(params)}`;
+window.location.href = url;
+ 
+// 接收参数
+const searchParams = new URLSearchParams(window.location.search);
+const id = searchParams.get('id');
+const name = searchParams.get('name');
+
+#### 检测页面是否触底
+- windowHeight 视界高度
+- scrollHeight 文档高度
+- scrollTop 滚动长度
+
+当滚动长度加视界高度 + 5 >= 文档高度 视为触底

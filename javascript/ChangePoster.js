@@ -88,6 +88,8 @@ var urlChange = url + "/video/random?size=12";
 
 var urlVideo = url + "/video/search?type=电视剧&name=&size=6&page=" + page;
 
+var popularList = new Array();
+
 movie_tab.addEventListener("click", movieTab);
 all_tab.addEventListener("click", allTab);
 video_tab.addEventListener("click", videoTab);
@@ -176,13 +178,18 @@ async function videoChange(x) {
         total = (result.data.total / result.data.size);          //获取 total/size 页 size=5 的indexPoster
         total = total | 0;
         if (x != null) {
-            if (page == total) page = 1;
+            if (page == total) {
+                page = 1;
+                alert("没有更多了");
+            }
             else page++;
         }
         else page = 1;
+           
+        
     })
         .then(async function () {
-            urlVideo = url + "/video/search?type=电视剧&name=&size=6&page=" + (page);
+            urlVideo = url + "/video/search?type=电视剧&name=&size=12&page=" + (page);
             await fetch(urlVideo, requestOptions)
                 .then(response => {
                     if (response.ok) {
@@ -211,6 +218,27 @@ async function videoChange(x) {
                 pic_1_6.setAttribute('src', result.data.records[5].cover);
                 name_1_6.innerHTML = result.data.records[5].name;
                 description_1_6.innerHTML = result.data.records[5].brief;
+                pic_2_1.setAttribute('src', result.data.records[6].cover);
+                name_2_1.innerHTML = result.data.records[6].name;
+                description_2_1.innerHTML = result.data.records[6].brief;
+                pic_2_2.setAttribute('src', result.data.records[7].cover);
+                name_2_2.innerHTML = result.data.records[7].name;
+                description_2_2.innerHTML = result.data.records[7].brief;
+                pic_2_3.setAttribute('src', result.data.records[8].cover);
+                name_2_3.innerHTML = result.data.records[8].name;
+                description_2_3.innerHTML = result.data.records[8].brief;
+                pic_2_4.setAttribute('src', result.data.records[9].cover);
+                name_2_4.innerHTML = result.data.records[9].name;
+                description_2_4.innerHTML = result.data.records[9].brief;
+                pic_2_5.setAttribute('src', result.data.records[10].cover);
+                name_2_5.innerHTML = result.data.records[10].name;
+                description_2_5.innerHTML = result.data.records[10].brief;
+                pic_2_6.setAttribute('src', result.data.records[11].cover);
+                name_2_6.innerHTML = result.data.records[11].name;
+                description_2_6.innerHTML = result.data.records[11].brief;
+                for (let x = 0; x < 12; x++){
+                    popularList[x] = result.data.records[x].id;
+                }
             })
         })
 }
@@ -276,6 +304,9 @@ async function movieChange(x) {
                 pic_1_6.setAttribute('src', result.data.records[5].cover);
                 name_1_6.innerHTML = result.data.records[5].name;
                 description_1_6.innerHTML = result.data.records[5].brief;
+                for (let x = 0; x < 6; x++){
+                    popularList[x] = result.data.records[x].id;
+                }
             })
 
         })
@@ -348,6 +379,9 @@ change_button.onclick = async function randomChange() {
         pic_2_6.setAttribute('src', result.data[11].cover);
         name_2_6.innerHTML = result.data[11].name;
         description_2_6.innerHTML = result.data[11].brief;
+        for (let x = 0; x < 12; x++) {
+            popularList[x] = result.data[x].id;
+        }
     })
 }
 change_button.click(); //首先执行一次

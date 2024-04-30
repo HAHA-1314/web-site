@@ -161,12 +161,12 @@ a {
     opacity: 0.9;
 }
 
-.avatar-input:hover ~.avatar-upload {
-    display: inline-block; 
+.avatar-input:hover~.avatar-upload {
+    display: inline-block;
 }
 
-.user-avatar:hover ~.avatar-upload {
-    display: inline-block; 
+.user-avatar:hover~.avatar-upload {
+    display: inline-block;
 }
 
 .avatar-upload:hover {
@@ -287,7 +287,23 @@ a {
     line-height: 40px;
     width: 120px;
     cursor: pointer;
-    height: 40px;   
+    height: 40px;
+    border-radius: 20px;
+    background-color: wheat;
+}
+
+.change-btn {
+    float: right;
+    position: relative;
+    top: 50%;
+    /* height: 100%; */
+    margin-top: -20px;
+    margin-right: 40px;
+    text-align: center;
+    line-height: 40px;
+    width: 120px;
+    cursor: pointer;
+    height: 40px;
     border-radius: 20px;
     background-color: wheat;
 }
@@ -299,7 +315,7 @@ a {
     position: relative;
     width: 360px;
     height: 360px;
-    top: 15px;  
+    top: 15px;
     left: 80px;
     border-radius: 20px;
     cursor: pointer;
@@ -321,8 +337,8 @@ a {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid rgb(10, 10, 10);
-    content:' ';
-    z-index: 99;    
+    content: ' ';
+    z-index: 99;
 }
 
 #avatar-drop-content-1 {
@@ -338,7 +354,7 @@ a {
 #avatar-drop-content-2 {
     display: inline-block;
     position: relative;
-    color: rgba(180, 180, 180); 
+    color: rgba(180, 180, 180);
     width: 100%;
     text-align: center;
     margin-top: 38px;
@@ -372,7 +388,7 @@ a {
     display: none;
     width: 360px;
     height: 460px;
-    top: 10px;  
+    top: 10px;
     left: 50px;
     padding-top: 20px;
     z-index: 6;
@@ -426,7 +442,7 @@ a {
 }
 
 .avatar-logined-content {
-    color:  #d8dad3;
+    color: #d8dad3;
     margin-top: 10px;
 }
 
@@ -677,7 +693,7 @@ a {
 }
 
 .qq-input:hover {
-    color: #000;    
+    color: #000;
     /* 刷新hover效果，先前设置了input样式 */
 }
 
@@ -719,6 +735,7 @@ div.login-right-text span {
     top: -10px;
     position: relative;
 }
+
 .login-checkbox {
     width: 12px;
     /* border-radius: 12px; */
@@ -746,12 +763,31 @@ div.login-right-text {
     /* margin-top: auto; */
     left: -350px;
     top: calc(50% - 250px);
-    z-index: 99;   
+    z-index: 99;
 }
 
 #reg-username::placeholder {
     /* 设置注册输入框placeholder样式 */
     font-size: 14px;
+}
+
+.change-qq-modal {
+    background-color: white;
+    /* display: block; */
+    display: none;
+    position: fixed;
+    width: 700px;
+    height: 500px;
+    margin-left: 50%;
+    /* margin-top: auto; */
+    left: -350px;
+    top: calc(50% - 250px);
+    z-index: 99;
+}
+
+.change-back-btn {
+    width: 25px;
+    cursor: pointer;
 }
 
 
@@ -766,82 +802,97 @@ div.login-right-text {
     #history-icon {
         display: none;
     }
+
     #working-icon {
         display: none;
     }
+
     #documentary-context {
         display: none;
     }
+
     #game-context {
         display: none;
     }
+
     .body-box {
         grid-template-columns: 30px 350px 650px 50px;
         /* 留白 左侧功能 右侧功能 留白 */
     }
 }
 
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
     .body-box {
         grid-template-columns: 30px 350px 800px 50px;
         /* 留白 左侧功能 右侧功能 留白 */
     }
+
     .top-block {
         grid-template-columns: 50px 150px 520px 300px 320px;
         /* 留白 logo 导航栏 搜索栏 功能栏  */
     }
+
     .input-box {
         width: 100%;
         /* justify-self: center; */
     }
+
     .input-box input {
         width: 200px;
         margin-left: 20px;
     }
 }
 
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 1500px) {
     .body-box {
         grid-template-columns: 10% 350px 900px 50px;
         margin-left: -20px;
         /* 抵消gap:20px */
         /* 留白 左侧功能 右侧功能 留白 */
     }
+
     .top-block {
-        grid-template-columns: 10% 150px 520px 460px 520px ;
+        grid-template-columns: 10% 150px 520px 460px 520px;
         /* 留白 logo 导航栏 搜索栏 功能栏  */
     }
+
     .top-link {
         grid-column-start: 5;
     }
+
     .input-box {
         width: 100%;
         /* justify-self: center; */
     }
+
     .input-box input {
         width: 280px;
         margin-left: 20px;
     }
 }
 
-@media screen and (min-width: 1700px){
+@media screen and (min-width: 1700px) {
     .body-box {
         grid-template-columns: 10% 350px 1100px 50px;
         margin-left: -20px;
         /* 抵消gap:20px */
         /* 留白 左侧功能 右侧功能 留白 */
     }
+
     .top-block {
-        grid-template-columns: 10% 150px 620px 460px 520px ;
+        grid-template-columns: 10% 150px 620px 460px 520px;
         /* 留白 logo 导航栏 搜索栏 功能栏  */
     }
+
     .top-link {
         grid-column-start: 5;
     }
+
     .input-box {
         width: 100%;
         /* justify-self: center; */
     }
+
     .input-box input {
         width: 280px;
         margin-left: 20px;
@@ -849,44 +900,52 @@ div.login-right-text {
 }
 
 
-@media screen and (min-width: 2000px){
+@media screen and (min-width: 2000px) {
     .body-box {
         grid-template-columns: 20% 350px 1200px 50px;
         /* 留白 左侧功能 右侧功能 留白 */
     }
+
     .top-block {
         grid-template-columns: 20% 150px 720px 460px 520px;
         /* 留白 logo 导航栏 搜索栏 功能栏  */
     }
+
     .top-link {
         grid-column-start: 5;
     }
+
     .input-box {
         width: 100%;
         /* justify-self: center; */
     }
+
     .input-box input {
         width: 280px;
         margin-left: 20px;
     }
 }
 
-@media screen and (min-width: 2400px){
+@media screen and (min-width: 2400px) {
     .body-box {
         grid-template-columns: 20% 350px 1400px 50px;
         /* 留白 左侧功能 右侧功能 留白 */
     }
+
     .top-block {
         grid-template-columns: 20% 150px 1020px 460px 520px;
         /* 留白 logo 导航栏 搜索栏 功能栏  */
     }
+
     .top-link {
         grid-column-start: 5;
     }
+
     .input-box {
         width: 100%;
         /* justify-self: center; */
     }
+
     .input-box input {
         width: 280px;
         margin-left: 20px;

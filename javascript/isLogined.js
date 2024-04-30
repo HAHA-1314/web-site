@@ -6,11 +6,22 @@ var avatar = document.querySelector('#touxiang-link');
 
 var avatar_2 = document.querySelector('.user-avatar');
 
+var avatar_3 = document.querySelector('#discuss-avatar');
+
 var token = localStorage.getItem("token");
 
 var isLogined = 0;
 
 var url = "https://blog.zifeiyu.love";
+
+var logo = document.querySelector('.top-logo');
+
+logo.addEventListener("click", toIndex);
+
+function toIndex() {
+    window.open("remake-index.html");
+    // 使用html a标签将影响grid布局
+}
 
 var myHeaders = new Headers();
     myHeaders.append("token", token);
@@ -49,6 +60,7 @@ async function isLogin() {
                     console.log("avafileUrl", ava_pic);
                     avatar.setAttribute("src", ava_pic);
                     avatar_2.setAttribute('src', ava_pic);
+                    avatar_3.setAttribute('src', ava_pic);
                 }
                 console.log(result.data.username);
                 ava_pic = localStorage.getItem("avafileUrl");

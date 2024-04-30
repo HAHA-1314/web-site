@@ -22,12 +22,16 @@ var open_hotzone = document.querySelector('.search-hotbtn');
 
 var urlSearchTotal = url + "/video/search?type=&name=&page=1&size=" + 1;
 
+let searchcount = 0;
+
 var hotNameMap = new Map();
 var hotIdMap = new Map();   //1.避免重名电视剧电影而再创建的IdMap
 var sortNameMap = new Map();    //2. key array[0][1] value hotpot
 var sortIdMap = new Map();
 
 index_input.addEventListener("input", searchFunction);
+index_input.addEventListener("focus", function(){ inputZoneout=setTimeout(()=>{searchZone()},300)});
+index_input.addEventListener("focusout", function(){ inputZoneout=setTimeout(()=>{closeSearchZone()},150)}); //延迟开启关闭搜索栏避免动画bug
 open_hotzone.addEventListener("click", hotZone);
 close_hotzone.addEventListener("click", closeHotZone);
 
@@ -58,7 +62,7 @@ searchTotal();
 async function searchHot() {
     var total = localStorage.getItem('total');
     var hotLi = document.createElement('li'); //父节点 search_hot
-    console.log('total', total);
+    // console.log('total', total);
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -82,7 +86,7 @@ async function searchHot() {
             hotNameMap.set(result.data.records[i].name, result.data.records[i].hotpot);
             hotIdMap.set(result.data.records[i].id, result.data.records[i].hotpot);
         }
-        console.log(hotNameMap);
+        // console.log(hotNameMap);
         sortNameMap = new Map([...hotNameMap].sort((a, b) => b[1] - a[1]));
         sortIdMap = new Map([...hotIdMap].sort((a, b) => b[1] - a[1]));
     })
@@ -95,14 +99,13 @@ async function searchHot() {
             }
             var hotLiArray = document.querySelectorAll('.hot-result');
             // var hotLiArray = addEventListener("click", function(){ console.log(hotLiArray.textContent);});
-            for (let x = 0; x < 8; x++){
+            for (let x = 0; x < 8; x++) {
                 hotLiArray[x].onclick = function () {
                     // console.log(hotLiArray[x].textContent);
-                    console.log([...sortIdMap][x][0]);
+                    // console.log([...sortIdMap][x][0]);
+                    window.open(`remake-videosite.html?id=${[...sortIdMap][x][0]}`);
                 }
             }
-            console.log(hotLiArray);
-            console.log(hotLiArray[1].textContent);
         })
 }
 searchHot();
@@ -128,73 +131,87 @@ async function searchName() {
         search_line.style.display = "inline-block";
     }
     var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            'Content-Type': "application/json",
-            "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
-            mode: "cors",
-        };
-        var data;
-        var urlSearchName = url + "/video/search?type=&page=1&size=1&name=" + index_input.value;
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type': "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    };
+    var data;
+    var urlSearchName = url + "/video/search?type=&page=1&size=1&name=" + index_input.value;
     console.log("index_input", urlSearchName);
-        await fetch(urlSearchName, requestOptions)
-            .then(response => {
-                if (response.ok) {
-                    data = response.json();
-                }
-                else {
-                    console("Something error in searchtotal");
-                }
-            })
-    data.then(result => {
-        if (result.data.total == 0) {
-            return;
-        }
-        var searchResultli = document.createElement('li');
-        searchResultli.setAttribute('class', 'search-result');
-        searchResultli.innerHTML = result.data.records[0].name + " " + result.data.records[0].type;
-        searchResultli.setAttribute('searchdata', result.data.records[0].brief);
-        searchResultli.setAttribute("searchcover", + result.data.records[0].cover);
-        console.log(searchResultli.getAttribute('searchcover'));
-        search_line.appendChild(searchResultli);
-            console.log(result.data.records[0].name,result.data.records[0].id,result.data.records[0].brief)
+    await fetch(urlSearchName, requestOptions)
+        .then(response => {
+            if (response.ok) {
+                data = response.json();
+            }
+            else {
+                console("Something error in searchtotal");
+            }
         })
+    data.then(result => {
+        var searchtotal = result.data.total;
+        while (searchcount != 0) {
+            search_line.removeChild(document.querySelector('.search-result'));
+            search_line.removeChild(document.querySelector('.result-img'));
+            searchcount--;
+        }
+        if (searchtotal == 0) {
+            return;
+        }        
+        while (searchtotal != 0) {
+            var searchImageurl = "url(" + result.data.records[searchcount].cover + ")";
+            var searchResultli = document.createElement('li');
+            var searchResultspan = document.createElement('span');
+            searchResultli.setAttribute('class', 'search-result');
+            searchResultspan.setAttribute('class', 'result-img');
+            searchResultli.innerHTML = result.data.records[searchcount].name + " " + result.data.records[searchcount].type;
+            searchResultli.setAttribute('searchdata', result.data.records[searchcount].brief);
+            searchResultspan.style.backgroundImage = searchImageurl;
+            // searchResultli.setAttribute('searchcover', searchImageurl);
+            search_line.appendChild(searchResultli);
+            search_line.appendChild(searchResultspan);
+            searchcount++;
+            searchtotal--;
+        }
+    })
 }
 
 // window.setTimeout("hotZone()", 1000); //调试使用.
 function hotZone() {
     hot_zone.style.display = "inline-block";
+    clearTimeout(inputZoneout);
     // hot_zone.style.marginLeft = -200 + 'px'; 
     hot_zone.style.opacity = 0;
     var pos = 1;
-    var duration = setInterval(Animation, 0.05);
+    var duration = setInterval(Animation, 0.03);
     function Animation() {
-        if (pos == 100 ) {
+        if (pos == 100) {
             clearInterval(duration);
         }
         else {
             pos++;
-            hot_zone.style.opacity = pos/100;
-            hot_zone.style.marginLeft = (-200+2*pos) + 'px';
+            hot_zone.style.opacity = pos / 100;
+            hot_zone.style.marginLeft = (-200 + 2 * pos) + 'px';
         }
     }
     var hotlistLi;
     var total = localStorage.getItem('total');
-    for (let x = 0; x < total; x++){
+    for (let x = 0; x < total; x++) {
         hotlistLi = document.createElement('li');
         hotlistLi.setAttribute("class", 'hot-listli');
         hotlistLi.innerHTML = [...sortNameMap][x][0];
-        hotlistLi.setAttribute('hotdata',[...sortNameMap][x][1]);
+        hotlistLi.setAttribute('hotdata', [...sortNameMap][x][1]);
         hot_list.appendChild(hotlistLi);
     }
     var hotlistLiArray = document.querySelectorAll(".hot-listli");
-    for (let x = 0; x < total; x++){
+    for (let x = 0; x < total; x++) {
         hotlistLiArray[x].onclick = function () {
             // console.log(hotlistLiArray[x]);
-            console.log([...sortIdMap][x][0]);
+            // console.log([...sortIdMap][x][0]);
+            window.open(`remake-videosite.html?id=${[...sortIdMap][x][0]}`);
         }
     }
-    console.log("hotzone", sortNameMap);
 }
 
 function closeHotZone() {
@@ -203,13 +220,49 @@ function closeHotZone() {
     function Animation() {
         if (pos == 0) {
             hot_zone.style.display = "none";
+            closeSearchZone();
             clearInterval(duration);
         }
         else {
             pos--;
-            hot_zone.style.opacity = pos/100;
-            hot_zone.style.marginLeft = (-200+2*pos) + 'px';
+            hot_zone.style.opacity = pos / 100;
+            hot_zone.style.marginLeft = (-200 + 2 * pos) + 'px';
         }
     }
-    
+   
+}
+
+function searchZone() {
+    search_zone.style.display = "block";
+    search_zone.style.opacity = 0;
+    hot_zone.style.display = "none";
+    var openpos = 1;
+    var duration = setInterval(Animation, 0.03);
+    function Animation() {
+        if (openpos == 100) {
+            clearInterval(duration);
+        }
+        else {
+            openpos++;
+            search_zone.style.opacity = openpos / 100;
+            search_zone.style.marginTop = (-200 + 2 * openpos) + 'px';
+        }
+    }
+}
+
+function closeSearchZone() {
+    var pos = 100;
+    var duration = setInterval(Animation, 0.05);
+    function Animation() {
+        if (pos == 0) {
+            search_zone.style.display = "none";
+            clearInterval(duration);
+        }
+        else {
+            pos--;
+            search_zone.style.opacity = pos / 100;
+            search_zone.style.marginTop = ( -300 + 3 * pos) + 'px';
+        }
+    }
+    hot_zone.style.display = "none";
 }

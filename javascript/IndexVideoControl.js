@@ -42,6 +42,10 @@ const videoPic = document.querySelector(".video-pic");
 
 var vid;
 
+var indexVideoArray = new Array();
+
+var indexVideoBtn = document.querySelectorAll(".img-box");
+
 var indexPosterPage = 1;
 
 var urlQuery = url + "/video/query?id=" + vid;
@@ -108,6 +112,9 @@ async function indexPoster(x) {
             indexVideoname_4.innerHTML = result.data.records[3].name;
             indexVideoimg_5.setAttribute('src', result.data.records[4].cover);
             indexVideoname_5.innerHTML = result.data.records[4].name;
+            for (let x = 0; x < 5; x++){
+                indexVideoArray[x] =  result.data.records[x].id;
+            }
             if (indexPosterPage == 1) {
                 indexLeftBtn.style.display = "none";
                 indexRightBtn.style.display = "inline-block";
@@ -207,11 +214,23 @@ async function indexPoster(x) {
                     indexVideoname_4.innerHTML = result.data.records[3].name;
                     indexVideoimg_5.setAttribute('src', result.data.records[4].cover);
                     indexVideoname_5.innerHTML = result.data.records[4].name;
+                    for (let x = 0; x < 5; x++){
+                        indexVideoArray[x] =  result.data.records[x].id;
+                    }
                 })
             })         
     }
 }
 indexPoster();
+
+function clickIndexPoster() {
+    for (let x = 0; x < 5; x++){
+        indexVideoBtn[x].onclick = function () {
+            window.open(`remake-videosite.html?id=${indexVideoArray[x]}`);
+        }
+    }
+}
+clickIndexPoster();
 
 async function getIndexVideo() {
     var requestOptions = {
@@ -259,5 +278,5 @@ async function getIndexVideo() {
 getIndexVideo();
 
 function openVideo() {
-    console.log("yes");
+    window.open(`remake-videosite.html?id=${vid}`);
 }
