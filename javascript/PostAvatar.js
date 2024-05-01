@@ -7,10 +7,10 @@ avatar_btn.addEventListener("click", avatar_upload);
 async function modify(avatar_data) {
     var urlMod = url + "/user/modify";
     var Mod_Data;
-    var mod_body = {
-        avatar: avatar_data,
-        isSeen: "1",
-    }
+    var mod_body = JSON.stringify({
+        "avatar": avatar_data,
+        "isSeen": '1',
+    });
     var requestOptions = {
         method: 'PUT',
         headers: myHeaders,
@@ -23,6 +23,7 @@ async function modify(avatar_data) {
         .then(function (response) {
             if (response.ok) {
                 Mod_Data = response.json();     //转化为json
+                console.log(mod_body);
                 console.log(Mod_Data);
             }
             else {
@@ -87,7 +88,7 @@ function avatar_upload() {
             alert("上传成功!");
             console.log(result);
             localStorage.setItem("avafileUrl", result.data);
-            // modify(result.data); cors跨域问题
+            modify(result.data); //errorMsg: "Content type 'text/plain;charset=UTF-8' not supported",
             location.reload();  
         }
         else {

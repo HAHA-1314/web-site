@@ -228,15 +228,27 @@
                     <span class="discuss-title">讨论</span>
                     <span class="discuss-num">2604166</span>
                 </div>
+                
+
                 <div class="discuss-line" id="discuss-line-a">
                         <img src="icon/touxiang.png" alt="1" id="discuss-avatar">
-                        <span class="discuss-input">
+                        <div class="discuss-input">
                             <span class="discuss-login" style="display:">登录后可发言</span>
-                        </span>
+                        </div>
+                        <div class="discuss-area">
+                             <textarea type="text" class="discuss-input-zone" maxlength="200" minlength="1"></textarea>
+                             <div class="discuss-bottom">
+                                <span class="discuss-textcount">
+                                    0/200
+                                </span>
+                                <button class="submit-discuss">发布</button>
+                             </div> 
+                        </div>         
                         <span class="discuss-write">
                             <img src="icon/write.png" alt="2"> 写长文
                         </span>
                 </div>
+                
                 <div class="discuss-line">
                         <span class="discuss-tab" style="background-color: rgb(56,102,103);
                         color: rgb(91,177,179)">热门</span>
@@ -704,5 +716,6 @@
         <script type="text/javascript" src="javascript/videoIntro.js"></script>
         <script type="text/javascript" src="javascript/Advertise.js"></script>
         <script type="text/javascript" src="javascript/VideoTitle.js"></script>
+        <script type="text/javascript" src="javascript/commentModal.js"></script>
 </body>
 </html>

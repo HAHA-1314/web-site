@@ -42,6 +42,8 @@ var introintroduce = document.querySelector('#introduce');
 
 var videoNow = document.querySelector('.video');
 
+var episodeName = new Array(); //电影选集
+
 var chosenRow;
 
 var chosenText;
@@ -84,11 +86,15 @@ async function getVideoIntro() {
     })
         .then(() => {
             changeTitle();
-            changeIntro();
-            changeCount();
-            changeVideo();
-            onchoose();
-            console.log(videoname);
+            changeIntro();    
+            if (videotype == '电影') {
+                getEpisode();
+            }
+            else {
+                changeCount();
+                onchoose();
+                changeVideo();
+            }
         })
 }
 getVideoIntro();
@@ -97,7 +103,7 @@ function changeIntro() {
     if (videotype == "电视剧") {
         headtext.innerHTML = videoname;
         intropic.setAttribute('src', videocover);
-        secintro.innerHTML = videoHotpot + '·' + videoreleasePlace + '·' + videoreleaseTime;
+        secintro.innerHTML = videoHotpot + ' · ' + videoreleasePlace + ' · ' + videoreleaseTime;
         thiintro.innerHTML = videotag;
         forintro.innerHTML = "全" + videocount + "集";
         fifintro.innerHTML = videodaily;
@@ -118,33 +124,85 @@ function changeIntro() {
 
 }
 
+async function getEpisode() {
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type': "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    };
+    var Data;
+    urlGetIntro = url + "/video/queryEpisode?id=" + videoid;
+    await fetch(urlGetIntro, requestOptions)
+        .then(response => {
+            if (response.ok) {
+                Data = response.json();
+            }
+            else {
+                console("Something error in  getVideoIntro()");
+            }
+        })
+    Data.then(result => {
+        for (let x = 0; x < result.data.length; x++) {
+            episodeName[x] = result.data[x].name;
+        }
+        videocount = result.data.length;
+        changeCount();
+        onchoose();
+        changeVideo();
+    })
+}
+
 function changeCount() {
-    if (videotype == "电影") {
-        return;
-    }
     var vid = 1;
     var videoColumn = ((videocount / 6) | 0) + 1;
-    for (let i = 0; i < videoColumn; i++) {
-        var chooseList = document.createElement('div');
-        chooseList.setAttribute('class', 'choose-list');
-        countList.appendChild(chooseList);
-        for (let j = 0; j < ((i == videoColumn - 1) ? (videocount % 6) : 6); j++) {
-            var listRow = document.createElement('div');
-            var listNum = document.createElement('span');
-            listRow.setAttribute('class', 'list-row')
-            if (j == 0) {
-                listRow.style.marginLeft = 20 + 'px';
-            };
-            listNum.setAttribute('class', 'list-num');
-            listNum.innerHTML = vid;
-            chooseList.appendChild(listRow);
-            listRow.appendChild(listNum);
-            vid++;
+    if (videotype == "电影") {
+        for (let i = 0; i < videoColumn; i++) {
+            var chooseList = document.createElement('div');
+            chooseList.setAttribute('class', 'choose-list');
+            countList.appendChild(chooseList);
+            for (let j = 0; j < ((i == videoColumn - 1) ? (videocount % 6) : 6); j++) {
+                var listRow = document.createElement('div');
+                var listNum = document.createElement('span');
+                listRow.setAttribute('class', 'list-row')
+                if (j == 0) {
+                    listRow.style.marginLeft = 20 + 'px';
+                };
+                listNum.setAttribute('class', 'list-num');
+                listNum.innerHTML = episodeName[vid - 1];
+                chooseList.appendChild(listRow);
+                listRow.appendChild(listNum);
+                vid++;
+            }
         }
+        countButton = document.querySelectorAll('.list-row');
+        countText = document.querySelectorAll('.list-num');
+        console.log(countButton);
+        console.log(countText);
     }
-    countButton = document.querySelectorAll('.list-row');
-    countText = document.querySelectorAll('.list-num');
-    console.log(countButton);
+    else { //电视剧选集
+        for (let i = 0; i < videoColumn; i++) {
+            var chooseList = document.createElement('div');
+            chooseList.setAttribute('class', 'choose-list');
+            countList.appendChild(chooseList);
+            for (let j = 0; j < ((i == videoColumn - 1) ? (videocount % 6) : 6); j++) {
+                var listRow = document.createElement('div');
+                var listNum = document.createElement('span');
+                listRow.setAttribute('class', 'list-row')
+                if (j == 0) {
+                    listRow.style.marginLeft = 20 + 'px';
+                };
+                listNum.setAttribute('class', 'list-num');
+                listNum.innerHTML = vid;
+                chooseList.appendChild(listRow);
+                listRow.appendChild(listNum);
+                vid++;
+            }
+        }
+        countButton = document.querySelectorAll('.list-row');
+        countText = document.querySelectorAll('.list-num');
+    }
 }
 
 async function changeVideo() {

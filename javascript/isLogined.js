@@ -68,6 +68,7 @@ async function isLogin() {
                 user_name.innerHTML = result.data.username;
                 user_name_2.innerHTML = result.data.username;
                 isLogined = 1;
+                discussisLogined();
             }
         })
 
