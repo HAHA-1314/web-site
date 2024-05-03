@@ -4,6 +4,14 @@ var avatar_input = document.querySelector(".avatar-input");
 
 avatar_btn.addEventListener("click", avatar_upload);
 
+var editHeaders = new Headers();
+editHeaders.append("token", token);
+editHeaders.append("User-Agent", "Apifox/1.0.0 (https://apifox.com)");
+editHeaders.append("Content-Type", "application/json");
+editHeaders.append("Accept", "*/*");
+editHeaders.append("Host", "blog.zifeiyu.love");
+editHeaders.append("Connection", "keep-alive");
+
 async function modify(avatar_data) {
     var urlMod = url + "/user/modify";
     var Data;
@@ -14,12 +22,11 @@ async function modify(avatar_data) {
     });
     var requestOptions = {
         method: 'PUT',
-        headers: myHeaders,
+        headers: editHeaders,
         "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
         mode: "cors",
-        // body: JSON.stringify(res),
         body: mod_body,
-    }; 
+    };
     await fetch(urlMod, requestOptions)
         .then(function (response) {
             if (response.ok) {
@@ -31,7 +38,7 @@ async function modify(avatar_data) {
                 console.log("Something Wrong in Modify TAT");
                 return;
             }
-        }) 
+        })
     Data.then(result => { //Data有数据之后执行
         console.log(result);
     })
@@ -39,7 +46,7 @@ async function modify(avatar_data) {
 
 function avatar_upload() {  //用户点击头像上传
     if (isLogined == 0) {
-        alert("未登录！！");    
+        alert("未登录！！");
         return;     // 用户没有登录的情况
     }
     avatar_input.click(); //模拟点击input，呼出选择文件页面
@@ -64,10 +71,9 @@ function avatar_upload() {  //用户点击头像上传
             headers: myHeaders,
             "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
             mode: "cors",
-            // body: JSON.stringify(res),
             body: res,
-        }; 
-        var Data; 
+        };
+        var Data;
         await fetch(urlAva, requestOptions) //fetch
             .then(function (response) {
                 if (response.ok) {
@@ -78,19 +84,19 @@ function avatar_upload() {  //用户点击头像上传
                     console.log("Something Wrong in avatar TAT");
                 }
             }
-        )
+            )
         Data.then(result => {     //Data有数据之后执行
-        if (result.errorMsg == null) {  //服务器返回成功的数据
-            alert("上传成功!");
-            console.log(result);
-            localStorage.setItem("avafileUrl", result.data); 
-            modify(result.data); //errorMsg: "Content type 'text/plain;charset=UTF-8' not supported",//执行修改用户头像函数
-            // location.reload();  
-        }
-        else {
-            alert("错误TAT");
-            console.log(result);
-        }
+            if (result.errorMsg == null) {  //服务器返回成功的数据
+                alert("上传成功!");
+                console.log(result);
+                localStorage.setItem("avafileUrl", result.data);
+                modify(result.data); //errorMsg: "Content type 'text/plain;charset=UTF-8' not supported",//执行修改用户头像函数
+                // location.reload();  
+            }
+            else {
+                alert("错误TAT");
+                console.log(result);
+            }
         }) //ava_data.then
     })  //fetch.then    
 }

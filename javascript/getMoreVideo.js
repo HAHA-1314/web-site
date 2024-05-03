@@ -16,6 +16,14 @@ var isButtom = 0;
 
 var addPopular;
 
+var addPopular_name;
+
+var addPopular_cover;
+
+var addPopular_brief;
+
+var addPopular_subbtn;
+
 var adderSet = new Set();
 var adderArray = new Array();
 var addPopularArray = new Array();
@@ -24,24 +32,21 @@ var amount = 0;
 
 //滚动长度
 function getDocumentTop() {
-    var scrollTop = 0;
-    scrollTop = document.documentElement.scrollTop;
+    var scrollTop = document.documentElement.scrollTop;
     // console.log("scrollTop", scrollTop);
     return scrollTop;
 }
 
 //可视窗口高度
 function getWindowHeight() {
-    var windowHeight;
-    windowHeight = document.documentElement.clientHeight;
+    var windowHeight = document.documentElement.clientHeight;
     // console.log("windowheight", windowHeight);
     return windowHeight;
 }
 
 //文档高度
 function getScrollHeight() {
-    var scrollHeight = 0
-    scrollHeight = document.documentElement.scrollHeight;
+    var scrollHeight = document.documentElement.scrollHeight;
     // console.log("scrollHeight", scrollHeight);
     return scrollHeight;
 }
@@ -49,7 +54,7 @@ function getScrollHeight() {
 async function loading() {
     // console.log('maxrow', maxrow);
     // console.log('total',adder_total);
-    console.log("adder_row", adder_row);
+    // console.log("adder_row", adder_row);
     if (adder_row < maxrow) {
         adder_row++;
         amount += 6;
@@ -62,7 +67,7 @@ async function loading() {
         loading_box.innerHTML = '没有更多了';
         return;
     }
-    console.log("adder_row", adder_row);
+    // console.log("adder_row", adder_row);
     var add_row = document.createElement('div');
     adder_box.appendChild(add_row);
     add_row.setAttribute('class', 'fir-image');
@@ -114,28 +119,32 @@ async function loading() {
             sub_img.setAttribute('src', 'icon/column.png');
             column_sub.appendChild(sub_img);
             var sub_text = document.createElement('span');
-            sub_text.setAttribute('class', 'sub-text-2');
+            sub_text.setAttribute('class', 'sub-text');
             sub_text.innerHTML = ' ' + '追';
             column_sub.appendChild(sub_text);
-            
             addPopularArray[x] = result.data.id; // result.data.id==adderArray[x]
+            ifaddedFavorite(addPopularArray[x-12],x-12);
         })
             .then(() => {
+                addPopular_brief = document.querySelectorAll('.poster-description');
+                addPopular_name = document.querySelectorAll('.poster-name');
+                addPopular_subbtn = document.querySelectorAll('.sub-btn');
+                addPopular_cover = document.querySelectorAll('.popular-poster');
+                subText = document.querySelectorAll('.sub-text');
+                subimg = document.querySelectorAll('#subscribe-img');
                 addPopular = document.querySelectorAll('.popular');
                 adder_box.style.height = 300 + (adder_row) * 290 + 'px';
                 addPopularOnclick();
             })
     }
-
-
 }
-
 /*
 当滚动条滑动，触发事件，判断是否到达最底部
 然后调用ajax处理函数异步加载数据
 */
 window.onscroll = function () {
     //监听事件内容
+    //滚动条是否触底
     if (getDocumentTop() + getWindowHeight() + 5 >= getScrollHeight()) {
         if (adderArray.length == 0) {
             loading_box.style.display = 'inline-block';
@@ -184,19 +193,27 @@ async function getRandom() {
         }
         else {
             adderArray = Array.from(adderSet);
-            loading_box.innerHTML = "正在加载数据......上滑取消加载";
-            console.log(adderArray);
+            loading_box.innerHTML = "为您加载更多......上滑取消加载";
+            // console.log(adderArray);
         }
     })
 }
 getRandom();
 
 function addPopularOnclick() {
+    // console.log(addPopular_cover);
+    // console.log(addPopularArray.length);
     if (!addPopularArray.length) return;
-    for (let x = 12; x < addPopular.length; x++){
-        addPopular[x].onclick = function () {
-            console.log(addPopularArray[x-12]);
+    for (let x = 12; x < 12 + addPopular.length; x++){
+        ifaddedFavorite(addPopularArray[x-12], x);
+        addPopular_name[x]=addPopular_cover[x].onclick = function () {
             window.open(`remake-videosite.html?id=${addPopularArray[x-12]}`);
+        }
+        addPopular_brief[x].onclick = function () {
+            window.open(`remake-videosite.html?id=${addPopularArray[x-12]}`);
+        }
+        addPopular_subbtn[x].onclick = function () {
+            addFavorite(addPopularArray[x - 12],x);
         }
     }
 }

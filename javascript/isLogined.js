@@ -50,25 +50,25 @@ async function isLogin() {
         }
     )
     isLoginData.then(result => {
-        var ava_pic;
             if (result.errorMsg == "未登录" || result.errorMsg == "身份异常") {
                 return; 
             }
             else {
-                if (localStorage.getItem("avafileUrl") != "" && localStorage.getItem("avafileUrl") != null) {
-                    ava_pic = localStorage.getItem("avafileUrl");
-                    console.log("avafileUrl", ava_pic);
-                    avatar.setAttribute("src", ava_pic);
-                    avatar_2.setAttribute('src', ava_pic);
-                    avatar_3.setAttribute('src', ava_pic);
+                if (result.data.avatar != null) {
+                    // ava_pic = localStorage.getItem("avafileUrl");
+                    // console.log("avafileUrl", ava_pic);
+                    // console.log("avafileUrl", result.data.avatar);
+                    avatar.setAttribute("src", result.data.avatar);
+                    avatar_2.setAttribute('src', result.data.avatar);
+                    avatar_3.setAttribute('src', result.data.avatar);
                 }
-                console.log(result.data.username);
-                ava_pic = localStorage.getItem("avafileUrl");
-                console.log("avafileUrl", ava_pic);
+                // console.log(result.data.username);
+                // ava_pic = localStorage.getItem("avafileUrl");
+                // console.log("avafileUrl", ava_pic);
                 user_name.innerHTML = result.data.username;
                 user_name_2.innerHTML = result.data.username;
                 isLogined = 1;
-                discussisLogined();
+                // discussisLogined();
             }
         })
 

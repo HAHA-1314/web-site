@@ -24,6 +24,7 @@ async function logout () {
     LogoutData.then(result => {
         if (result.errorMsg == null) {
             alert("成功退出登录！");
+            localStorage.clear('token');
             location.reload();
         }
         else {

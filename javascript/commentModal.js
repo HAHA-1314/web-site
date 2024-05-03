@@ -16,3 +16,7 @@ function discussisLogined() {
 
     }
 }
+
+function discussFunction() {
+    console.log('discuss');
+}

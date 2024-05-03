@@ -6,77 +6,27 @@ var video_tab = document.querySelector('#content-video');
 
 const change_button = document.querySelector('.change-content');
 
-const pic_1_1 = document.querySelector('#pic-1-1');
+const popular = document.querySelectorAll('.popular')
 
-const name_1_1 = document.querySelector('#name-1-1');
+const popular_video = document.querySelectorAll('.popular-video');
 
-const description_1_1 = document.querySelector('#description-1-1');
+const popular_poster = document.querySelectorAll('.popular-poster');
 
-const pic_1_2 = document.querySelector('#pic-1-2');
+const popular_name = document.querySelectorAll('.poster-name');
 
-const name_1_2 = document.querySelector('#name-1-2');
+const popular_description = document.querySelectorAll('.poster-description');
 
-const description_1_2 = document.querySelector('#description-1-2');
+const popular_muteBtn = document.querySelectorAll('.popular-mutebtn');
 
-const pic_1_3 = document.querySelector('#pic-1-3');
+const popular_videobox = document.querySelectorAll('.popular-videobox');
 
-const name_1_3 = document.querySelector('#name-1-3');
+const videomuted = document.querySelectorAll('#popualr-video-muted');
 
-const description_1_3 = document.querySelector('#description-1-3');
+const videonotmuted = document.querySelectorAll('#popular-video-notmuted');
 
-const pic_1_4 = document.querySelector('#pic-1-4');
+const videoprogress = document.querySelectorAll('.videobar-progress');
 
-const name_1_4 = document.querySelector('#name-1-4');
-
-const description_1_4 = document.querySelector('#description-1-4');
-
-const pic_1_5 = document.querySelector('#pic-1-5');
-
-const name_1_5 = document.querySelector('#name-1-5');
-
-const description_1_5 = document.querySelector('#description-1-5');
-
-const pic_1_6 = document.querySelector('#pic-1-6');
-
-const name_1_6 = document.querySelector('#name-1-6');
-
-const description_1_6 = document.querySelector('#description-1-6');
-
-const pic_2_1 = document.querySelector('#pic-2-1');
-
-const name_2_1 = document.querySelector('#name-2-1');
-
-const description_2_1 = document.querySelector('#description-2-1');
-
-const pic_2_2 = document.querySelector('#pic-2-2');
-
-const name_2_2 = document.querySelector('#name-2-2');
-
-const description_2_2 = document.querySelector('#description-2-2');
-
-const pic_2_3 = document.querySelector('#pic-2-3');
-
-const name_2_3 = document.querySelector('#name-2-3');
-
-const description_2_3 = document.querySelector('#description-2-3');
-
-const pic_2_4 = document.querySelector('#pic-2-4');
-
-const name_2_4 = document.querySelector('#name-2-4');
-
-const description_2_4 = document.querySelector('#description-2-4');
-
-const pic_2_5 = document.querySelector('#pic-2-5');
-
-const name_2_5 = document.querySelector('#name-2-5');
-
-const description_2_5 = document.querySelector('#description-2-5');
-
-const pic_2_6 = document.querySelector('#pic-2-6');
-
-const name_2_6 = document.querySelector('#name-2-6');
-
-const description_2_6 = document.querySelector('#description-2-6');
+// console.log(popular);
 
 var page = 1;
 
@@ -89,6 +39,11 @@ var urlChange = url + "/video/random?size=12";
 var urlVideo = url + "/video/search?type=电视剧&name=&size=6&page=" + page;
 
 var popularList = new Array();
+
+var popularVideo; //计时器
+var videoBar; //计时器
+
+// var pvideoList = new Array();
 
 movie_tab.addEventListener("click", movieTab);
 all_tab.addEventListener("click", allTab);
@@ -185,8 +140,8 @@ async function videoChange(x) {
             else page++;
         }
         else page = 1;
-           
-        
+
+
     })
         .then(async function () {
             urlVideo = url + "/video/search?type=电视剧&name=&size=12&page=" + (page);
@@ -200,45 +155,13 @@ async function videoChange(x) {
                     }
                 })
             changeData.then(result => {
-                pic_1_1.setAttribute('src', result.data.records[0].cover);
-                name_1_1.innerHTML = result.data.records[0].name;
-                description_1_1.innerHTML = result.data.records[0].brief;
-                pic_1_2.setAttribute('src', result.data.records[1].cover);
-                name_1_2.innerHTML = result.data.records[1].name;
-                description_1_2.innerHTML = result.data.records[1].brief;
-                pic_1_3.setAttribute('src', result.data.records[2].cover);
-                name_1_3.innerHTML = result.data.records[2].name;
-                description_1_3.innerHTML = result.data.records[2].brief;
-                pic_1_4.setAttribute('src', result.data.records[3].cover);
-                name_1_4.innerHTML = result.data.records[3].name;
-                description_1_4.innerHTML = result.data.records[3].brief;
-                pic_1_5.setAttribute('src', result.data.records[4].cover);
-                name_1_5.innerHTML = result.data.records[4].name;
-                description_1_5.innerHTML = result.data.records[4].brief;
-                pic_1_6.setAttribute('src', result.data.records[5].cover);
-                name_1_6.innerHTML = result.data.records[5].name;
-                description_1_6.innerHTML = result.data.records[5].brief;
-                pic_2_1.setAttribute('src', result.data.records[6].cover);
-                name_2_1.innerHTML = result.data.records[6].name;
-                description_2_1.innerHTML = result.data.records[6].brief;
-                pic_2_2.setAttribute('src', result.data.records[7].cover);
-                name_2_2.innerHTML = result.data.records[7].name;
-                description_2_2.innerHTML = result.data.records[7].brief;
-                pic_2_3.setAttribute('src', result.data.records[8].cover);
-                name_2_3.innerHTML = result.data.records[8].name;
-                description_2_3.innerHTML = result.data.records[8].brief;
-                pic_2_4.setAttribute('src', result.data.records[9].cover);
-                name_2_4.innerHTML = result.data.records[9].name;
-                description_2_4.innerHTML = result.data.records[9].brief;
-                pic_2_5.setAttribute('src', result.data.records[10].cover);
-                name_2_5.innerHTML = result.data.records[10].name;
-                description_2_5.innerHTML = result.data.records[10].brief;
-                pic_2_6.setAttribute('src', result.data.records[11].cover);
-                name_2_6.innerHTML = result.data.records[11].name;
-                description_2_6.innerHTML = result.data.records[11].brief;
-                for (let x = 0; x < 12; x++){
+                for (let x = 0; x < 12; x++) {
+                    popular_poster[x].setAttribute("src", result.data.records[x].cover);
+                    popular_name[x].innerHTML = result.data.records[x].name;
+                    popular_description[x].innerHTML = result.data.records[x].brief;
                     popularList[x] = result.data.records[x].id;
                 }
+                changePopularVideo();
             })
         })
 }
@@ -286,27 +209,13 @@ async function movieChange(x) {
                     }
                 })
             changeData.then(result => {
-                pic_1_1.setAttribute('src', result.data.records[0].cover);
-                name_1_1.innerHTML = result.data.records[0].name;
-                description_1_1.innerHTML = result.data.records[0].brief;
-                pic_1_2.setAttribute('src', result.data.records[1].cover);
-                name_1_2.innerHTML = result.data.records[1].name;
-                description_1_2.innerHTML = result.data.records[1].brief;
-                pic_1_3.setAttribute('src', result.data.records[2].cover);
-                name_1_3.innerHTML = result.data.records[2].name;
-                description_1_3.innerHTML = result.data.records[2].brief;
-                pic_1_4.setAttribute('src', result.data.records[3].cover);
-                name_1_4.innerHTML = result.data.records[3].name;
-                description_1_4.innerHTML = result.data.records[3].brief;
-                pic_1_5.setAttribute('src', result.data.records[4].cover);
-                name_1_5.innerHTML = result.data.records[4].name;
-                description_1_5.innerHTML = result.data.records[4].brief;
-                pic_1_6.setAttribute('src', result.data.records[5].cover);
-                name_1_6.innerHTML = result.data.records[5].name;
-                description_1_6.innerHTML = result.data.records[5].brief;
-                for (let x = 0; x < 6; x++){
+                for (let x = 0; x < 6; x++) {
+                    popular_poster[x].setAttribute("src", result.data.records[x].cover);
+                    popular_name[x].innerHTML = result.data.records[x].name;
+                    popular_description[x].innerHTML = result.data.records[x].brief;
                     popularList[x] = result.data.records[x].id;
                 }
+                changePopularVideo();
             })
 
         })
@@ -341,47 +250,95 @@ change_button.onclick = async function randomChange() {
         })
     changeData.then(result => {
         // console.log(result);  
+        // console.log(popular_name);
+        // console.log(popular_poster);
+        // console.log(popular_description);
         // console.log(result.data[1].cover);
-        // console.log(result.data.records.name);   
-        pic_1_1.setAttribute('src', result.data[0].cover);
-        name_1_1.innerHTML = result.data[0].name;
-        description_1_1.innerHTML = result.data[0].brief;
-        pic_1_2.setAttribute('src', result.data[1].cover);
-        name_1_2.innerHTML = result.data[1].name;
-        description_1_2.innerHTML = result.data[1].brief;
-        pic_1_3.setAttribute('src', result.data[2].cover);
-        name_1_3.innerHTML = result.data[2].name;
-        description_1_3.innerHTML = result.data[2].brief;
-        pic_1_4.setAttribute('src', result.data[3].cover);
-        name_1_4.innerHTML = result.data[3].name;
-        description_1_4.innerHTML = result.data[3].brief;
-        pic_1_5.setAttribute('src', result.data[4].cover);
-        name_1_5.innerHTML = result.data[4].name;
-        description_1_5.innerHTML = result.data[4].brief;
-        pic_1_6.setAttribute('src', result.data[5].cover);
-        name_1_6.innerHTML = result.data[5].name;
-        description_1_6.innerHTML = result.data[5].brief;
-        pic_2_1.setAttribute('src', result.data[6].cover);
-        name_2_1.innerHTML = result.data[6].name;
-        description_2_1.innerHTML = result.data[6].brief;
-        pic_2_2.setAttribute('src', result.data[7].cover);
-        name_2_2.innerHTML = result.data[7].name;
-        description_2_2.innerHTML = result.data[7].brief;
-        pic_2_3.setAttribute('src', result.data[8].cover);
-        name_2_3.innerHTML = result.data[8].name;
-        description_2_3.innerHTML = result.data[8].brief;
-        pic_2_4.setAttribute('src', result.data[9].cover);
-        name_2_4.innerHTML = result.data[9].name;
-        description_2_4.innerHTML = result.data[9].brief;
-        pic_2_5.setAttribute('src', result.data[10].cover);
-        name_2_5.innerHTML = result.data[10].name;
-        description_2_5.innerHTML = result.data[10].brief;
-        pic_2_6.setAttribute('src', result.data[11].cover);
-        name_2_6.innerHTML = result.data[11].name;
-        description_2_6.innerHTML = result.data[11].brief;
         for (let x = 0; x < 12; x++) {
+            popular_poster[x].setAttribute("src", result.data[x].cover);
+            popular_name[x].innerHTML = result.data[x].name;
+            popular_description[x].innerHTML = result.data[x].brief;
             popularList[x] = result.data[x].id;
         }
+        changePopularVideo();   //获得所有的id再执行更换视频
     })
 }
 change_button.click(); //首先执行一次
+
+async function changePopularVideo() {
+    // console.log(popularList.length);
+    for (let x = 0; x < popularList.length; x++) {
+        var urlVideoChange = url + '/video/queryEpisode?id=' + popularList[x];
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            'Content-Type': "application/json",
+            "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+            mode: "cors",
+        };
+        var changeData;
+        await fetch(urlVideoChange, requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    changeData = response.json();
+                }
+                else {
+                    alert("Something error in change");
+                }
+            })
+        changeData.then(result => {
+            popular_video[x].setAttribute('src', result.data[0].url);
+        })
+    }
+    mouseonPoster();
+}
+
+function mouseonPoster() {
+    var isMuted = 0;
+    // console.log(popular_video);
+    for (let x = 0; x < popularList.length; x++) {
+        ifaddedFavorite(popularList[x], x);
+        popular_video[x].muted = 1;
+        videonotmuted[x].style.display = 'none';
+        popular[x].onmouseenter = function () {
+            videoBar = setInterval(() => {
+                // console.log('Time', popular_video[x].currentTime);
+                // console.log('duration', popular_video[x].duration);
+                videoprogress[x].style.width = 100*(popular_video[x].currentTime / popular_video[x].duration) + '%';
+            },50)
+            popularVideo = setTimeout(() => {
+                popular_poster[x].style.display = "none";
+                popular_video[x].style.display = "inline-block";
+                popular_video[x].play();
+                popular_video[x].volume = 0.3;
+                popular_video[x].loop = 1;
+                popular_videobox[x].style.display = "inline-block";
+                popular_muteBtn[x].onclick = function () {
+                    if (isMuted == 0) {
+                        popular_video[x].muted = 0;
+                        videomuted[x].style.display = 'none';
+                        videonotmuted[x].style.display = 'inline-block';
+                        isMuted = 1;
+                    }
+                    else {
+                        popular_video[x].muted = 1;
+                        videomuted[x].style.display = 'inline-block';
+                        videonotmuted[x].style.display = 'none';
+                        isMuted = 0;
+                    }
+                }
+            }, 300)
+        }
+        popular[x].onmouseleave = function () {
+            clearTimeout(popularVideo);
+            clearInterval(videoBar);
+            popular_poster[x].style.display = "inline-block";
+            popular_video[x].style.display = 'none';
+            popular_videobox[x].style.display = 'none';
+            popular_video[x].pause();
+        }
+        popular_video[x].onclick = function () {
+            window.open(`remake-videosite.html?id=${popularList[x]}`);
+        }
+    }
+}

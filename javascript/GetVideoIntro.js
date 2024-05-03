@@ -68,7 +68,7 @@ async function getVideoIntro() {
                 Data = response.json();
             }
             else {
-                console("Something error in  getVideoIntro()");
+                alert("Something error in  getVideoIntro()");
             }
         })
     Data.then(result => {
@@ -102,6 +102,7 @@ getVideoIntro();
 function changeIntro() {
     if (videotype == "电视剧") {
         headtext.innerHTML = videoname;
+        if (videoname.length >= 10) headtext.style.fontSize = 20 + 'px';
         intropic.setAttribute('src', videocover);
         secintro.innerHTML = videoHotpot + ' · ' + videoreleasePlace + ' · ' + videoreleaseTime;
         thiintro.innerHTML = videotag;
@@ -114,6 +115,7 @@ function changeIntro() {
     }
     else {
         headtext.innerHTML = videoname;
+        if (videoname.length >= 10) headtext.style.fontSize = 20 + 'px';
         intropic.setAttribute('src', videocover);
         secintro.innerHTML = videoHotpot + ' · ' + videoreleasePlace + ' · ' + videoreleaseTime;
         thiintro.innerHTML = videotag;

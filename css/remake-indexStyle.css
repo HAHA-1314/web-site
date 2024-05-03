@@ -1034,10 +1034,75 @@ div.login-right-text {
     height: 168px;
     /* margin-right: 20px; */
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.popular-videobox {
+    display: inline-block;
+    display: none;
+    width: 300px;
+    height: 168px;
+    position: absolute;
+    top: 0px;
+}
+
+.popular-video {
+    width: 300px;
+    height: 168px;
+    cursor: pointer;
+}
+
+.popular-mutebtn {
+    display: inline-block;
+    /* display: none; */
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+    z-index: 3;
+}
+
+.popular-videobar {
+    display: inline-block;
+    /* display: none; */
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+    height: 8px;
+    top: 155px;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 3;
+}
+
+.videobar-progress {
+    display: inline-block;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #4397f7;
+    border-radius: 4px;
+}
+
+.popular-mutebtn img{
+    display: inline-block;
+    position: absolute;
+    /* left: -40px; */
+    width: 30px;
+    z-index: 3;
+    cursor: pointer;
 }
 
 #pic-1-1 {
    display: inline-block;
+}
+
+.popular-source {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 168px;
 }
 
 .popular-video {
@@ -1045,14 +1110,13 @@ div.login-right-text {
    display: none;
    position: relative;
    z-index: 2;
-   
+   object-fit: fill;
 }
 
 .popular {
     display: inline-block;
     position: relative;
     margin-right: 20px;
-    cursor: pointer;
 }
 
 .popular:hover {
@@ -1080,16 +1144,12 @@ div.login-right-text {
     }
 }
 
-.popular>a {
-    text-decoration: none;
-}
-
 .poster-name {
     color: white;
     font-size: 20px;
-    /* margin:  10px 8px 8px; */
-    /* padding: 4px; */
+    width: 180px;
     line-height: 35px;
+    cursor: pointer;
 }
 
 .poster-description {
@@ -1101,6 +1161,7 @@ div.login-right-text {
    text-overflow: ellipsis;
     font-size: 16px;
     color: #999b95;
+    cursor: pointer;
     /* margin: 12px; */
 }
 
@@ -1108,29 +1169,24 @@ div.login-right-text {
     display: none;
     position: absolute;
     background-color: rgba(210, 208, 208, 0.663);
-    width: 70px;
+    width: 80px;
     height: 35px;
     font-size: 20px;
     border-radius: 35px;
     top: 182px;
     left: 215px;
     color: white;
+    cursor: pointer;
 }
 
 .sub-text {
     /* span.sub-text 调整文字位置 */
     position: relative;
     display: inline-block;
-    top: -3px;
-    left: 3px;
-}
-
-.sub-text-2 {
-    /* span.sub-text 调整文字位置 */
-    position: relative;
-    display: inline-block;
-    top: -4px;
-    left: 7px;
+    top: -5px;
+    /* left: 3px; */
+    left: 10px; 
+    font-size: 16px;
 }
 
 #subscribe-img {
@@ -1437,6 +1493,25 @@ div.login-right-text {
     line-height: 200px;
     text-align: center;
     background-color: rgb(205, 203, 203);
+}
+
+.addedFavorite {
+    display: inline-block;
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #FEEDDF;
+    /* 粉色月下配色 */
+    color: #334358;
+    /* 会向瑶台配色 */
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
 }
 
 @media screen and (min-width: 1100px) {

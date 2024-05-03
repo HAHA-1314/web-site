@@ -32,14 +32,14 @@
 ``` 
 
 - ### 布局问题
-  **remake已解决**50%缩放下 顶部导航栏图标均存在问题
+  **remake-index已解决**50%缩放下 顶部导航栏图标均存在问题
   ![alt text](image-3.png)
-  **remake已解决**各种缩放下均存在问题需要解决，左右两侧箭头，以及与视频的相对位置 ![alt text](image-2.png)
+  **remake-index已解决**各种缩放下均存在问题需要解决，左右两侧箭头，以及与视频的相对位置 ![alt text](image-2.png)
   ![alt text](image-7.png)
-  **remake已解决** hover头像布局问题![alt text](image-4.png) 
-  **remake已解决**下拉菜单hover效果存在bug，hover盒子位置错误
+  **remake-index已解决** hover头像布局问题![alt text](image-4.png) 
+  **remake-index已解决**下拉菜单hover效果存在bug，hover盒子位置错误
   ![alt text](image-6.png)  
-  **remake已解决**!!背景视频链接有bug，不能完全覆盖视频(初始布局知识不全面出现的bug)
+  **remake-index已解决**!!背景视频链接有bug，不能完全覆盖视频(初始布局知识不全面出现的bug)(其他div遮挡造成的)
 
 > ### 学习笔记
 
@@ -235,7 +235,7 @@ Promise构造方法传的是一个回调函数，回调函数里面也带着两�
   ```
 
 #### 数学公式
-- 广告轮播图 
+- 广告轮播图实例 
   ##### 第i张图片与按钮数列关系
   ![alt text](image-13.png)
 
@@ -273,8 +273,9 @@ Promise构造方法传的是一个回调函数，回调函数里面也带着两�
 - ![alt text](image-18.png)
 
 #### Map的遍历与sort方法
-初始化 var map = new Map(); JS构造函数
-map转数组 [...map] 
+读取写入方法 Map.get(key); Map.set(key,value);
+初始化 var map = new Map(); //构造函数
+map,set等数据结构转数组 [...map]  
 - ![alt text](image-20.png)
 - ![alt text](image-19.png)
 
@@ -297,7 +298,22 @@ const name = searchParams.get('name');
 
 #### 检测页面是否触底
 - windowHeight 视界高度
+  获取视界高度 var windowHeight = document.documentElement.clientHeight;
 - scrollHeight 文档高度
+  获取文档高度 var scrollHeight = document.documentElement.scrollHeight;
 - scrollTop 滚动长度
-
+  获取滚动长度 var scrollTop = document.documentElement.scrollTop;
 当滚动长度加视界高度 + 5 >= 文档高度 视为触底
+
+#### 请求头注意！
+![alt text](image-21.png)
+对于接口100，请求头的Content-Type需要特别设定，默认的Content-type否则出现报错
+"Content type 'text/plain;charset=UTF-8' not supported"
+
+#### addEventListener 事件侦听
+- 右键 'contextmenu'
+- 左键 'click'
+- 鼠标移入 'mouseenter' 'mouseover' 全部元素 仅父元素 区别
+- 鼠标移出 'mouseleave' 'mouseout' 
+- 鼠标点击 'mousedown' 'mouseup'
+- 鼠标移动 'mouseover'
