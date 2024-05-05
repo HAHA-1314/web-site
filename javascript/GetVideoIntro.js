@@ -16,7 +16,9 @@ var urlGetIntro = url + "/video/query?id="
 
 var searchId = new URLSearchParams(window.location.search);
 
-var videoid = searchId.get("id");
+var videoid = searchId.get("id");  //videoId;
+
+var episodeNid;
 
 var headtext = document.querySelector('#head-text');
 
@@ -180,8 +182,8 @@ function changeCount() {
         }
         countButton = document.querySelectorAll('.list-row');
         countText = document.querySelectorAll('.list-num');
-        console.log(countButton);
-        console.log(countText);
+        // console.log(countButton);
+        // console.log(countText);
     }
     else { //电视剧选集
         for (let i = 0; i < videoColumn; i++) {
@@ -223,41 +225,42 @@ async function changeVideo() {
                 Data = response.json();
             }
             else {
-                console("Something error in  videoCount()");
+                alert("Something error in  videoCount()");
             }
         })
     Data.then(result => {
         if (videoNewUid != null) {
             videoNow.setAttribute('src', result.data[videoNewUid - 1].url);
+            episodeNid = result.data[videoNewUid - 1].id;
+            clearDiscuss();
+            loadFatherDiscuss();
+            // joinVideo(episodeNid);
         }
         else {
             videoNow.setAttribute('src', result.data[videoUid - 1].url);
+            episodeNid = result.data[videoUid - 1].id;
+            clearDiscuss();
+            loadFatherDiscuss();
+            // joinVideo(episodeNid);
         }
     })
         .then(() => {
             if (videoNewUid != null) {
                 countButton[videoUid - 1].setAttribute('id', '');
                 countText[videoUid - 1].setAttribute('id', '');
-                // countButton[videoUid - 1].style.background = "rgb(88, 88, 88)";
-                // countText[videoUid - 1].style.color = "#b3b6b0";
                 countButton[videoNewUid - 1].setAttribute('id', 'onchoose-back');
                 countText[videoNewUid - 1].setAttribute('id', 'onchoose-text');
-                // countButton[videoNewUid - 1].style.background = "rgb(56, 102, 103)";
-                // countText[videoNewUid - 1].style.color = "rgb(81, 177, 179)";
                 videoUid = videoNewUid;
             }
             else {
                 countButton[videoUid - 1].setAttribute('id', 'onchoose-back');
                 countText[videoUid - 1].setAttribute('id', 'onchoose-text');
-                // countButton[videoUid - 1].style.background = "rgb(56, 102, 103)";
-                // countText[videoUid - 1].style.color = "rgb(81, 177, 179)";
             }
-
         })
 }
 
 function onchoose() {
-    console.log('videocount', videocount);
+    // console.log('videocount', videocount);
     for (let x = 0; x < videocount; x++) {
         countButton[x].onclick = function () {
             videoNewUid = x + 1;

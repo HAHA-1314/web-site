@@ -649,7 +649,6 @@ div.login-right-text {
     width: 100%;
 }
 
-
 .discuss-title {
     position: relative;
     display: inline-block;
@@ -669,7 +668,7 @@ div.login-right-text {
 }
 
 .discuss-head-line {
-    margin-bottom: 25px;
+    margin-bottom: 0px;
 }
 
 .discuss-line {
@@ -677,7 +676,8 @@ div.login-right-text {
     display: inline-block;
     width: 100%;
     /* top: 100px; */
-    height: 100px;
+    height: 40px;
+    margin-top: 50px;
     /* width: 740px; */
     /* overflow: hidden; */
 }
@@ -796,12 +796,218 @@ div.login-right-text {
 }
 
 .submit-discuss {
-    background-color: #4397f7;
+    background-color: #808281;
     width: 60px;
     height: 30px;
     border-radius: 15px;
     color: white;
     margin-left: 2px;
+}
+
+.discuss-content {
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.discuss-info-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.discuss-info-name {
+    display: inline-block;
+    /* width: 100px; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.discuss-info-time {
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 16px;
+    color: #d8dad3;
+}
+
+.discuss-text {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.discuss-bottom-banner {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.discuss-like-btn img {
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.discuss-self-liked {
+    display: none;
+}
+
+.discuss-like-count {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    text-indent: 30px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+    cursor: default;
+}
+
+.discuss-lower-banner {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.discuss-lower-btn {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.discuss-edit {
+    margin-left: 30px;
+}
+
+.discuss-edit-text {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    margin-bottom: 3px;
+    color: white;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.discuss-edit img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.discuss-delete {
+    margin-left: 30px;
+}
+
+.discuss-delete-text {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    margin-bottom: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.discuss-delete img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.discuss-lower-count {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 3px;
+    cursor: default;
+}
+
+.discuss-lower-area {
+    display: block;
+    display: none;
+    position: relative;
+    /* left: 10px; */
+    margin-left: 5px;
+    margin-top: 20px;
+    height: 100px;
+    width: 80%;
+}
+
+.submit-lower-discuss {
+    background-color: #808281;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    margin-left: 2px;
+}
+
+.discuss-lower-input-zone {
+    display: inline-block;
+    /* display: none; */
+    position: relative;
+    background-color: rgb(48, 47, 47);
+    top: -8px;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    resize: none;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.discuss-lower-textcount {
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.lower-discuss {
+    display: inline-block;
+    width: 70%;
+    margin-top: 20px;
+    background-color: #5d5e5c;
+}
+
+.lower-discuss-name {
+    color: white;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.lower-time {
+    color: #d8dad3;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.lower-discuss-content {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .intro-modal {

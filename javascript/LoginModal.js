@@ -42,6 +42,10 @@ var login_alert = document.querySelector(".login-alert");   //请勾选用户协
 
 var login_selected = 0;    //用户登录是否同意政策
 
+var isLogined;
+
+var loginedbox;//计时器
+
 login_1.addEventListener("click", myLoginOpen);
 login_2.addEventListener("click", myLoginOpen);
 login_back_toModal.addEventListener("click", myLoginOpen);
@@ -128,7 +132,7 @@ function myRegQQ() {
 function openLoginBox() {
     if (isLogined == 1) {
         isLoginedbox.style.display = "block";
-        console.log("yes");
+        // console.log("yes");
         avatarButton.onmouseover = isLoginedbox.onmouseover = function () {
             isLoginedbox.style.display = "block";
             clearTimeout(loginedbox);

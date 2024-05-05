@@ -12,6 +12,8 @@ var token = localStorage.getItem("token");
 
 var isLogined = 0;
 
+var userId;
+
 var url = "https://blog.zifeiyu.love";
 
 var logo = document.querySelector('.top-logo');
@@ -68,7 +70,8 @@ async function isLogin() {
                 user_name.innerHTML = result.data.username;
                 user_name_2.innerHTML = result.data.username;
                 isLogined = 1;
-                // discussisLogined();
+                userId = result.data.id;
+                discussisLogined();
             }
         })
 
