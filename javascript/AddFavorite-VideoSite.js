@@ -34,8 +34,14 @@ async function addFavorite() {
             }
         })
     Data.then(result => {
-        if (result.data == '取消收藏') addBtn.setAttribute('src','icon/column.png');
-        else if (result.data == '收藏成功') addBtn.setAttribute('src','icon/favorite-selected.png'); 
+        if (result.data == '取消收藏') {
+            addBtn.setAttribute('src', 'icon/column.png');
+            favoriteList.delete(Number(oid));
+        }
+        else if (result.data == '收藏成功') {
+            addBtn.setAttribute('src', 'icon/favorite-selected.png');
+            favoriteList.set(Number(oid),1);
+        }
         addedFavorite.innerHTML = result.data;
         FavoriteFunction();
     })

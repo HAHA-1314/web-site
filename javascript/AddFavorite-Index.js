@@ -5,7 +5,7 @@ var subimg = document.querySelectorAll('#subscribe-img');
 var addedFavorite = document.querySelector('.addedFavorite');
 
 // console.log(popularArray);
-console.log(subBtn);
+// console.log(subBtn);
 
 var outFavorite;
 var runFavorite;
@@ -41,11 +41,13 @@ async function addFavorite(oid, x) {
             subText[x].style.left = 10 + 'px';
             subText[x].innerHTML = '追';
             subimg[x].setAttribute('src', 'icon/column.png');
+            favoriteList.delete(Number(oid));
         }
         else if (result.data == '收藏成功') {
             subText[x].style.left = 3 + 'px';
             subText[x].innerHTML = '加追';
             subimg[x].setAttribute('src', 'icon/favorite-selected-noColor.png');
+            favoriteList.set(Number(oid), 1);
         }
         addedFavorite.innerHTML = result.data;
         FavoriteFunction();
@@ -53,13 +55,14 @@ async function addFavorite(oid, x) {
 }
 
 function ifaddedFavorite(oid, x) {
+    // subText = document.querySelectorAll('.sub-text');
     if (favoriteList.get(Number(oid)) == 1) {
-        subText[x].style.left = 3 + 'px';
+        subText[x].style.left = 3 + "px";
         subText[x].innerHTML = '加追';
         subimg[x].setAttribute('src', 'icon/favorite-selected-noColor.png');
     }
     else {
-        subText[x].style.left = 10 + 'px';
+        subText[x].style.left = 10 + "px";
         subText[x].innerHTML = '追';
         subimg[x].setAttribute('src', 'icon/column.png');
     }

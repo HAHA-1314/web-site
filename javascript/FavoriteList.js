@@ -2,6 +2,8 @@ var favoriteTotal;
 
 var favoriteList = new Map();
 
+var favoriteArray = new Array();
+
 async function FavoriteList() {
     var requestOptions = {
         method: 'GET',
@@ -28,14 +30,6 @@ async function FavoriteList() {
 }
 FavoriteList(); //首先执行一次检测用户收藏总数
 
-function deleteFavorite(delete_num) {
-    if (delete_num == 0) {
-        for (let x = 0; x < favoriteTotal; x++) {
-
-        }
-    }
-}
-
 async function getFavoriteIdList() {
     var requestOptions = {
         method: 'GET',
@@ -59,10 +53,12 @@ async function getFavoriteIdList() {
         for (let x = 0; x < favoriteTotal; x++) {
             favoriteList.set(result.data.records[x].episodeId, 1);
         }
-        console.log(favoriteList);
+        // console.log(favoriteList);
     })
-        .then(() => {
-            ifaddedFavorite();
+        .then(() => { 
+            favoriteArray = Array.from(favoriteList);
+            if(window.location.href == 'http://127.0.0.1:5500/info.html') ifaddedFavorite();
+            // console.log('favoriteArray',favoriteArray);
         })
 }
 

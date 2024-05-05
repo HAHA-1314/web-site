@@ -123,7 +123,7 @@ async function loading() {
             sub_text.innerHTML = ' ' + '追';
             column_sub.appendChild(sub_text);
             addPopularArray[x] = result.data.id; // result.data.id==adderArray[x]
-            ifaddedFavorite(addPopularArray[x-12],x-12);
+            ifaddedFavorite(addPopularArray[x-12],x);
         })
             .then(() => {
                 addPopular_brief = document.querySelectorAll('.poster-description');
@@ -134,6 +134,9 @@ async function loading() {
                 subimg = document.querySelectorAll('#subscribe-img');
                 addPopular = document.querySelectorAll('.popular');
                 adder_box.style.height = 300 + (adder_row) * 290 + 'px';
+                for (let x = 0; x < popularArray.length; x++){
+                    ifaddedFavorite(popularList[x], x);
+                }
                 addPopularOnclick();
             })
     }

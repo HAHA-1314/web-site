@@ -20,6 +20,8 @@ var close_hotzone = document.querySelector(".closeHotZone");
 
 var open_hotzone = document.querySelector('.search-hotbtn');
 
+var delete_history = document.querySelector('.search-historybtn');
+
 var urlSearchTotal = url + "/video/search?type=&name=&page=1&size=" + 1;
 
 let searchcount = 0;
@@ -28,12 +30,20 @@ var hotNameMap = new Map();
 var hotIdMap = new Map();   //1.避免重名电视剧电影而再创建的IdMap
 var sortNameMap = new Map();    //2. key array[0][1] value hotpot
 var sortIdMap = new Map();
+var searchHistorySet; // 搜索历史
+var searchHistoryArray = new Array();
+
+var history_result;     //历史记录li
+var history_result_btn;
+var searchItem;     // 搜索结果li
+var searchId;
 
 index_input.addEventListener("input", searchFunction);
-index_input.addEventListener("focus", function(){ inputZoneout=setTimeout(()=>{searchZone()},300)});
-index_input.addEventListener("focusout", function(){ inputZoneout=setTimeout(()=>{closeSearchZone()},150)}); //延迟开启关闭搜索栏避免动画bug
+index_input.addEventListener("focus", function () { inputZoneout = setTimeout(() => { searchZone() }, 300) });
+index_input.addEventListener("focusout", function () { inputZoneout = setTimeout(() => { closeSearchZone() }, 150) }); //延迟开启关闭搜索栏避免动画bug
 open_hotzone.addEventListener("click", hotZone);
 close_hotzone.addEventListener("click", closeHotZone);
+delete_history.addEventListener('click', clearHistory);
 
 async function searchTotal() {
     var requestOptions = {
@@ -57,7 +67,7 @@ async function searchTotal() {
         localStorage.setItem('total', result.data.total);
     })
 }
-searchTotal();
+searchTotal();  //向服务器询问video全部数量
 
 async function searchHot() {
     var total = localStorage.getItem('total');
@@ -110,7 +120,7 @@ async function searchHot() {
 }
 searchHot();
 
-function searchFunction() {
+function searchFunction() { //---可能新增功能
     searchName();
 }
 
@@ -158,7 +168,7 @@ async function searchName() {
         }
         if (searchtotal == 0) {
             return;
-        }        
+        }
         while (searchtotal != 0) {
             var searchImageurl = "url(" + result.data.records[searchcount].cover + ")";
             var searchResultli = document.createElement('li');
@@ -174,7 +184,12 @@ async function searchName() {
             searchcount++;
             searchtotal--;
         }
+        searchItem = document.querySelector('.search-result');
+        searchId = result.data.records[0].id;
     })
+        .then(() => {
+            searchHistory();
+        })
 }
 
 // window.setTimeout("hotZone()", 1000); //调试使用.
@@ -229,7 +244,7 @@ function closeHotZone() {
             hot_zone.style.marginLeft = (-200 + 2 * pos) + 'px';
         }
     }
-   
+
 }
 
 function searchZone() {
@@ -261,8 +276,95 @@ function closeSearchZone() {
         else {
             pos--;
             search_zone.style.opacity = pos / 100;
-            search_zone.style.marginTop = ( -300 + 3 * pos) + 'px';
+            search_zone.style.marginTop = (-300 + 3 * pos) + 'px';
         }
     }
     hot_zone.style.display = "none";
 }
+
+function searchHistory() {
+    if (localStorage.getItem('history') != null) {
+        searchHistoryArray = Array.from(JSON.parse(localStorage.getItem('history')));
+    }
+    // searchHistorySet = new Set(searchHistoryArray);
+    searchItem.onclick = function () {
+        searchHistoryArray.push(searchId);
+        searchHistorySet = new Set(searchHistoryArray);
+        localStorage.setItem("history", JSON.stringify([...searchHistorySet]));
+        // console.log(searchHistorySet);
+        loadHistory(1);
+        window.open(`remake-videosite.html?id=${searchId}`);
+    }
+}
+
+function maxHistoryLength() {
+    if (localStorage.getItem('history') == null) {
+        history_line.style.display = 'none';
+        return;
+    }
+    searchHistoryArray = Array.from(JSON.parse(localStorage.getItem('history')));
+    while (searchHistoryArray.length >= 6) {
+        searchHistoryArray.shift();
+    }
+    localStorage.setItem("history", JSON.stringify(searchHistoryArray));
+    loadHistory();
+}
+maxHistoryLength();
+
+async function loadHistory(ops) {
+    searchHistoryArray = Array.from(JSON.parse(localStorage.getItem('history')));
+    if (ops == 1) {
+        while (document.querySelector('.history-result') != null) search_history.removeChild(document.querySelector('.history-result'));
+    }
+    console.log(searchHistoryArray);
+    for (let x = 0; x < searchHistoryArray.length; x++) {
+        // console.log(searchHistoryArray[x]);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            'Content-Type': "application/json",
+            "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+            mode: "cors",
+        };
+        var data;
+        var urlHistory = url + '/video/query?id=' + String(searchHistoryArray[x]);
+        await fetch(urlHistory, requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    data = response.json();
+                }
+                else {
+                    console("Something error in searchtotal");
+                }
+            })
+        data.then(result => {
+            history_result = document.createElement('li');
+            history_result.setAttribute('class', 'history-result');
+            history_result.innerHTML = result.data.name;
+            search_history.appendChild(history_result);
+            history_result_btn = document.querySelectorAll('.history-result');
+        })
+            .then(() => {
+                history_result_btn[x].onclick = function () {
+                    window.open(`remake-videosite.html?id=${searchHistoryArray[x]}`);
+                }
+            })
+    }
+}
+
+function clearHistory() {
+    localStorage.removeItem('history');
+    searchHistoryArray = JSON.parse(localStorage.getItem('history'));
+    while (document.querySelector('.history-result') != null) search_history.removeChild(document.querySelector('.history-result'));
+    history_line.style.display = 'none';
+    location.reload();
+    // console.log(searchHistoryArray);
+}
+
+function historyload() {    //调试历史功能
+    if (localStorage.getItem('history') != null) {
+        searchHistoryArray = Array.from(JSON.parse(localStorage.getItem('history')));
+    }
+    console.log(searchHistoryArray);
+}
+// historyload();

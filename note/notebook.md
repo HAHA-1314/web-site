@@ -87,7 +87,25 @@
 ![alt text](<屏幕截图 2024-04-07 230219.png>)
   2.es6 的 Promising
     promise的状态只能从 未完成->完成, 未完成->失败 且状态不可逆转
-
+  3.es6 的 JSON数组形式转换成数组Array及其其他伪数组 （实例：搜索历史本地记录）
+    ```
+    JSON 数组格式转换成数组  Array.from(xxx)
+    let json = {
+        '0': 'a',
+        '1': 'b',
+        '2': 'c',
+        length:3
+    }
+    let arr=Array.from(json);
+    console.log(arr) // ['a','b','c']
+    ```
+    ```
+    文本或者变量转换成数组 Array.of(xxx)
+    let arr =Array.of(3,4,5,6);
+    console.log(arr); // [3,4,5,6]
+    let arr =Array.of('a','b','c');
+    console.log(arr); // ['a','b','c']
+    ```
 
 - ##### ajax 
     ajax=JavaScript + 异步

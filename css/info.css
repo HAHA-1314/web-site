@@ -800,7 +800,7 @@ div.login-right-text {
 }
 
 .favor-row {
-    display: inline-block;
+    display: none;
     width: 100%;
 }
 
@@ -817,6 +817,14 @@ div.login-right-text {
     font-size: 14px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.delete-allfavor img {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    /* 位置微调 */
 }
 
 .poster-resource {
