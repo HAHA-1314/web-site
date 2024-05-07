@@ -57,7 +57,7 @@ async function getFavoriteIdList() {
     })
         .then(() => { 
             favoriteArray = Array.from(favoriteList);
-            if(window.location.href == 'http://127.0.0.1:5500/info.html') ifaddedFavorite();
+            if(window.location.href != 'http://127.0.0.1:5500/remake-index.html') ifaddedFavorite(); //首页的iffaddedFavorite必须带参数
             // console.log('favoriteArray',favoriteArray);
         })
 }

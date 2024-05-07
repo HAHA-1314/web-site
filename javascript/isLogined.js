@@ -71,7 +71,10 @@ async function isLogin() {
                 user_name_2.innerHTML = result.data.username;
                 isLogined = 1;
                 userId = result.data.id;
-                discussisLogined();
+                if (window.location.href != 'http://127.0.0.1:5500/remake-index.html'
+                    && window.location.href != 'http://127.0.0.1:5500/info.html'
+                    && window.location.href != 'http://127.0.0.1:5500/logoff.html'
+                    && window.location.href != 'http://127.0.0.1:5500/history.html') discussisLogined();
             }
         })
 

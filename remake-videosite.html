@@ -129,7 +129,53 @@
     <div class="body-box">
         <div class="left-box">
             <div class="video-box">
-                <video src="video/ad.mp4" class="video" controls ></video>
+                <div class="bullet-tips">一共有条弹幕大军袭来~~~~~</div>
+                <video src="video/ad.mp4" class="video" ></video> 
+                <!-- 视频内容 -->
+                <span class="bullet-father">
+                   
+                </span>
+                <!-- 弹幕功能 -->
+                <div class="video-control">
+                    <span class="video-play-btn">
+                        <img src="icon/video-play-btn.png" alt="" id='video-play-img'>
+                        <img src="icon/video-pause-btn.png" alt="" id='video-pause-img'>
+                    </span>
+                    <span class="video-progress">
+                        0:00 / 0:03
+                    </span>
+                    <span class="video-progress-bar">
+                        <span class="video-progress-target"></span>
+                    </span>
+                    <span class="video-volumn-btn">
+                        <img src="icon/mute-btn1.png" alt="" id='video-notmute-img'>
+                        <img src="icon/mute-btn2.png" alt="" id='video-mute-img'>
+                    </span>
+                    <span class="video-rate-btn">
+                        1.0X
+                    </span>
+                    <span class="video-bullet-btn">
+                        <img src="icon/video-bullet-open.png" alt="" id='bullet-open-img'>
+                        <img src="icon/video-bullet-close.png" alt="" id='bullet-close-img'>
+                    </span>
+                    <span class="video-bullet">
+                        <img src="icon/video-bullet.png" alt="" id='bullet-send'>
+                    </span>
+                </div>
+                
+                <div class="bullet-input-zone">
+                    <textarea id="bullet-input" placeholder="发送弹幕聊一下吧~" maxlength='20' minlength='1'></textarea>
+                    <div class="bullet-input-bottom">
+                        <div class="bullet-textcount">
+                            0/20
+                        </div>
+                        <div class="bullet-submitBtn">
+                            发送
+                        </div>
+                    </div>
+                </div>
+                <!-- 自定义播放器 -->
+                
             </div>
             <div class="video-info">
                 <div class="bottom-header">
@@ -255,11 +301,7 @@
                         <span class="discuss-tab">最新</span>
                 </div>
 
-               
-                    <!-- </div> -->
-                    <!-- </div>       -->
-                    <!-- </div> -->
-                <!-- </div> -->
+            
             </div>
         </div>
         <div class="right-list">
@@ -731,5 +773,7 @@
         <script type="text/javascript" src="javascript/AddFavorite-VideoSite.js"></script>
         <script type="text/javascript" src="javascript/FavoriteList.js"></script>
         <script type="text/javascript" src="javascript/JoinVideo.js"></script>
+        <script type="text/javascript" src="javascript/VideoSiteControl.js"></script>
+        <script type="text/javascript" src="javascript/RealTimeComment.js"></script>
 </body>
 </html>

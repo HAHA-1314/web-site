@@ -60,6 +60,7 @@ var discussLowerSpanTime;
 var discussLowerContent;
 
 var discussCount = 0; //一级评论数量
+var discussLikeArray = new Array(); //一级评论like数组
 var discussArray = new Array(); //一级评论ID数组
 
 discussarea.addEventListener('click', discussFunction);
@@ -155,8 +156,59 @@ async function discussSubmit(fatherId) {
             // loadFatherDiscuss();
         }
     })
-    console.log('episodeid', episodeNid);
-    console.log('submit value', discussSubmitZone.value);
+    // console.log('episodeid', episodeNid);
+    // console.log('submit value', discussSubmitZone.value);
+}
+
+async function loadChirendDiscuss(talkId) {
+    var urlCount = url + '/talk/children' + "?talkId=" + talkId;
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        'Content-Type': "application/json",
+        "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+        mode: "cors",
+    };
+    var Data;
+    await fetch(urlCount, requestOptions)
+        .then(response => {
+            if (response.ok) {
+                Data = response.json();
+            }
+            else {
+                alert("Something error in loadChilden()");
+            }
+        })
+    Data.then(async function (result) {
+        if (result.data.children.length == 0) return;
+        // console.log(talkId);
+        discussLower = document.createElement('div');
+        discussLower.setAttribute('class', 'lower-discuss');
+        discussContent.appendChild(discussLower);
+        for (let x = 0; x < result.data.children.length; x++) {
+            discussRow = document.createElement('div');
+            discussLowerName = document.createElement('div');
+            discussLowerSpanName = document.createElement('span');
+            discussLowerSpanTime = document.createElement('span');
+            discusslowerSpanEdit = document.createElement('span');
+            discusslowerSpanEditImg = document.createElement('img');
+            discusslowerSpanDelete = document.createElement('span');
+            discusslowerSpanDeleteImg = document.createElement('img');  //占位符
+            discussLowerContent = document.createElement('div');
+            discussLowerName.setAttribute('class', 'lower-discuss-name');
+            discussLowerSpanTime.setAttribute('class', 'lower-time');
+            discussLowerContent.setAttribute('class', 'lower-discuss-content');
+            discussLowerSpanName.innerHTML = result.data.children[x].userInfo.username;
+            discussLowerSpanTime.innerHTML = result.data.children[x].createdTime;
+            discussLowerContent.innerHTML = result.data.children[x].content;
+            discussLower.appendChild(discussRow);
+            discussRow.appendChild(discussLowerName);
+            discussLowerName.appendChild(discussLowerSpanName);
+            discussLowerName.appendChild(discussLowerSpanTime);
+            discussRow.appendChild(discussLowerContent);
+            discussLowerCount.innerHTML = result.data.children.length;
+        }
+    })
 }
 
 async function loadFatherDiscuss() {
@@ -178,10 +230,15 @@ async function loadFatherDiscuss() {
                 alert("Something error in  videoCount()");
             }
         })
-    Data.then(result => {
+    Data.then(async function (result) {
+        discussArray.length = 0;    //防止旧数据依旧存在
+        discussLikeArray.length = 0;
         discussCount = result.data.length;
         for (let x = 0; x < result.data.length; x++) {
+            // console.log('await',result.data[x].id);
+            await loadChirendDiscuss(result.data[x].id);        //完成一次then后执行
             discussArray[x] = result.data[x].id;
+            discussLikeArray[x] = (result.data[x].isLike == 0) ? true : false;
             discussContent = document.createElement('div');
             discussInfo = document.createElement('div');
             discussInfoAvatar = document.createElement('img');
@@ -234,6 +291,7 @@ async function loadFatherDiscuss() {
             discussInfoAvatar.setAttribute('src', result.data[x].userInfo.avatar);
             discussText.innerHTML = result.data[x].content;
             discussLikeCount.innerHTML = result.data[x].likeCount;
+            discussLowerCount.innerHTML = '0';
             discussLowerSubmitBtn.innerHTML = "发布";
             discussBox.appendChild(discussContent);
             discussContent.appendChild(discussInfo);
@@ -248,7 +306,7 @@ async function loadFatherDiscuss() {
             discussBottomBanner.appendChild(discussLikeCount);
             discussBottomBanner.appendChild(discussLowerBanner);
             discussLowerBanner.appendChild(discussLowerBtn);
-            discussBottomBanner.appendChild(discussLowerCount);
+            discussLowerBanner.appendChild(discussLowerCount);
             if (result.data[x].isLike == false) {
                 discussLikedImg.style.display = 'inline-block';
                 discussNotlikeImg.style.display = 'none';
@@ -257,7 +315,6 @@ async function loadFatherDiscuss() {
                 discussLikedImg.style.display = 'none';
                 discussNotlikeImg.style.display = 'inline-block';
             }
-
             discussEdit = document.createElement('span');
             discussEditImg = document.createElement('img');
             discussEditText = document.createElement('span');
@@ -287,11 +344,16 @@ async function loadFatherDiscuss() {
             discussLowerArea.appendChild(discussLowerInputBottom);
             discussLowerInputBottom.appendChild(discussLowerInputText);
             discussLowerInputBottom.appendChild(discussLowerSubmitBtn);
+            discussLowerCount.querySelector('.discuss-lower-count');
         }
     })
         .then(() => {
             discussEdit = document.querySelectorAll('.discuss-edit');
             discussDelete = document.querySelectorAll('.discuss-delete');
+            discussLikeBtn = document.querySelectorAll('.discuss-like-btn');
+            discussLikeCount = document.querySelectorAll('.discuss-like-count');
+            discussLowerBtn = document.querySelectorAll('.discuss-lower-btn');
+            discussLowerBanner = document.querySelectorAll('.discuss-lower-banner');
             discussLowerArea = document.querySelectorAll('.discuss-lower-area');
             discussLowerInputZone = document.querySelectorAll('.discuss-lower-input-zone');
             discussLowerSubmitBtn = document.querySelectorAll(".submit-lower-discuss");
@@ -303,12 +365,14 @@ async function loadFatherDiscuss() {
             editDiscuss();
             likeDiscuss();
             deleteDiscuss();
+            discussSubmitLower();
         })
 }
 
 function editDiscuss() {
     for (let x = 0; x < discussArray.length; x++) {
         discussEdit[x].onclick = function () {
+            discussLowerInputZone[x].setAttribute('placeholder', '这里输入修改您的评论');
             discussLowerArea[x].style.display = "block";
             discussLowerSubmitBtn[x].innerHTML = "编辑";
             // console.log(x);
@@ -382,7 +446,78 @@ function deleteDiscuss() {
 }
 
 function likeDiscuss() {
-    
+    if (isLogined != 1) {
+        alert('未登录！');
+        return;
+    }
+    for (let x = 0; x < discussArray.length; x++) {
+        discussLikeBtn[x].onclick = async function () {
+            var requestOptions = {
+                method: 'PUT',
+                headers: myHeaders,
+                "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+                mode: "cors",
+            };
+            var urlCount = url + '/talk/like?talkId=' + discussArray[x] + '&like=' + discussLikeArray[x];
+            var Data;
+            await fetch(urlCount, requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        Data = response.json();
+                    }
+                    else {
+                        alert("Something error in  videoLike()");
+                    }
+                })
+            Data.then(result => {
+                // discussLikeCount[x].innerHTML = discussLikeCount[x].innerHTML + 1;
+                clearDiscuss();
+                loadFatherDiscuss();
+                alert(result.data);
+            })
+        }
+    }
+}
+
+function discussSubmitLower() {
+    for (let x = 0; x < discussArray.length; x++) {
+        discussLowerBtn[x].onclick = async function () {
+            console.log('?');
+            discussLowerInputZone[x].setAttribute('placeholder', '和谐评论，一同维护网络环境');
+            discussLowerArea[x].style.display = "block";
+            discussLowerSubmitBtn[x].innerHTML = "发布";
+            discussLowerSubmitBtn[x].onclick = async function () {
+                var submit_body = {
+                    'fatherId': discussArray[x],
+                    'content': discussLowerInputZone[x].value,
+                    'episodeId': episodeNid
+                };
+                myHeaders.append("Content-type", "application/json");
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: JSON.stringify(submit_body),
+                };
+                var urlDiscuss = url + '/talk';
+                var Data;
+                await fetch(urlDiscuss, requestOptions)
+                    .then(response => {
+                        if (response.ok) {
+                            Data = response.json();
+                        }
+                        else {
+                            alert("Something error in  discussSubmit()");
+                        }
+                    })
+                Data.then(result => {
+                    if (result.data == '添加成功') {
+                        alert('成功发布');
+                        location.reload();
+                    }
+                })
+            }
+        }
+    }
 }
 
 function clearDiscuss() {

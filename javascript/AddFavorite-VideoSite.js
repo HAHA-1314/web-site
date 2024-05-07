@@ -36,11 +36,11 @@ async function addFavorite() {
     Data.then(result => {
         if (result.data == '取消收藏') {
             addBtn.setAttribute('src', 'icon/column.png');
-            favoriteList.delete(Number(oid));
+            favoriteList.delete(Number(videoid));
         }
         else if (result.data == '收藏成功') {
             addBtn.setAttribute('src', 'icon/favorite-selected.png');
-            favoriteList.set(Number(oid),1);
+            favoriteList.set(Number(videoid),1);
         }
         addedFavorite.innerHTML = result.data;
         FavoriteFunction();

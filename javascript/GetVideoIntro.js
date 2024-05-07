@@ -234,6 +234,8 @@ async function changeVideo() {
             episodeNid = result.data[videoNewUid - 1].id;
             clearDiscuss();
             loadFatherDiscuss();
+            videoPlayFuntion();
+            getBullet();
             // joinVideo(episodeNid);
         }
         else {
@@ -241,6 +243,8 @@ async function changeVideo() {
             episodeNid = result.data[videoUid - 1].id;
             clearDiscuss();
             loadFatherDiscuss();
+            videoPlayFuntion();
+            getBullet();
             // joinVideo(episodeNid);
         }
     })

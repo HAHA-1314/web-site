@@ -335,3 +335,29 @@ const name = searchParams.get('name');
 - 鼠标移出 'mouseleave' 'mouseout' 
 - 鼠标点击 'mousedown' 'mouseup'
 - 鼠标移动 'mouseover'
+
+#### 已知知识自制的简易弹幕系统
+``` 
+1.生成弹幕逻辑
+[video][video][弹幕初始位置]
+[video][video]
+[video][video]
+在弹幕初始位置生成x条弹幕
+弹幕id == 用户ID 弹幕样式 2px solid white 以及 可用的 编辑删除弹幕功能
+video.offsetWidth == 弹幕移动距离 (|marginLeft|) (负值)
+相近时间（ i < happendTimeArray[x] < i + duration）发射的弹幕 top 递增
+非相近时间 top = 0；//清零top 
+```
+
+```
+2.生成弹幕
+3.发射弹幕逻辑
+如果video.currentTime 与 happendTimeArray[x] 相近 （video.currentTime -10 <= happendTimeArray[x]）
+则发射第x条弹幕
+弹幕动画，当 弹幕移动距离|marginLeft| > video.offsetWidth 样式display=none marginLeft清零
+```
+
+```
+鼠标悬停，暂停弹幕动画
+鼠标点击相应功能，暂停播放等待用户完成功能指引
+```
